@@ -1,0 +1,36 @@
+[Reading 32 lines from start (total: 32 lines, 0 remaining)]
+
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "DDALKAK: Dev Server",
+      "type": "shell",
+      "command": "npm",
+      "windows": { "command": "npm.cmd" },
+      "args": ["run", "dev"],
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "clear": true
+      }
+    },
+    {
+      "label": "DDALKAK: Production Build",
+      "type": "shell",
+      "command": "npm",
+      "windows": { "command": "npm.cmd" },
+      "args": ["run", "build"],
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    }
+  ]
+}
+
+[executed on device: DESKTOP-SPQVV5S (c1e4473b-97e1-4ad4-b789-92ac2f03e3a9)]
