@@ -1,0 +1,61 @@
+name: Research proposal
+description: Define a research question or pilot before implementation.
+title: "[Research] "
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for a new study, pilot, replication, or method test. Do not include participant-level or sensitive data.
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: What exactly are we trying to explain, compare, or test?
+    validations:
+      required: true
+  - type: textarea
+    id: mechanism
+    attributes:
+      label: Mechanism / theoretical expectation
+      description: What process do we expect to produce the outcome?
+    validations:
+      required: true
+  - type: dropdown
+    id: method
+    attributes:
+      label: Primary method
+      options:
+        - Experiment / survey
+        - Content analysis
+        - Text / computational analysis
+        - Behavioral data
+        - HAI / usability
+        - Mixed methods
+        - Other / undecided
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: Data and sampling plan
+      description: What will be observed, from where, and under what inclusion/exclusion rules?
+    validations:
+      required: true
+  - type: textarea
+    id: ai
+    attributes:
+      label: AI involvement
+      description: Where will AI be used, and where will human verification occur?
+  - type: textarea
+    id: ethics
+    attributes:
+      label: Ethics / privacy considerations
+      description: Note participant, privacy, consent, licensing, or disclosure issues.
+  - type: textarea
+    id: success
+    attributes:
+      label: Definition of done
+      description: What outputs must exist before this can move from Draft to Closed?
+    validations:
+      required: true
