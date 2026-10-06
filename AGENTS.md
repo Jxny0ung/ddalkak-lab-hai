@@ -1,5 +1,3 @@
-[Reading 48 lines from start (total: 48 lines, 0 remaining)]
-
 # DDALKAK LAB — Codex Project Instructions
 
 ## Mission
@@ -41,12 +39,10 @@ Do not invent empirical findings, sample sizes, partnerships, publications, awar
 - Next.js App Router + React + TypeScript.
 - Prefer server components unless client interactivity is required.
 - Keep dependencies minimal.
-- Run a production build before considering a task complete.
+- Run lint and a production build before considering a task complete.
 - Keep metadata and README aligned with the actual site.
 - Use small reusable components when a page begins to repeat patterns.
 
 ## Content safety
 
 Public-facing code may be committed. Raw research notes, unpublished participant data, private emails, local datasets, and secrets must remain outside the repository.
-
-[executed on device: DESKTOP-SPQVV5S (c1e4473b-97e1-4ad4-b789-92ac2f03e3a9)]
