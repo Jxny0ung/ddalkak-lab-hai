@@ -4,10 +4,18 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { agenda, researchAreas } from "@/lib/content";
 
+const description =
+  "DDALKAK LAB의 Human–AI Interaction, 미디어커뮤니케이션, 플랫폼·경영 연구 질문을 소개합니다.";
+
 export const metadata: Metadata = {
   title: "Research",
-  description:
-    "DDALKAK LAB의 Human–AI Interaction, 미디어커뮤니케이션, 플랫폼·경영 연구 질문을 소개합니다.",
+  description,
+  alternates: { canonical: "/research" },
+  openGraph: {
+    title: "Research | DDALKAK LAB",
+    description,
+    url: "/research",
+  },
 };
 
 const framing = [
@@ -29,7 +37,7 @@ export default function ResearchPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <PageHero
           eyebrow="Research"
           title="사람, AI, 미디어와 조직이 만나는 지점에서 질문을 만듭니다."
