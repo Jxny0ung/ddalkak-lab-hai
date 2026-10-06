@@ -4,7 +4,8 @@
 
 DDALKAK LAB(딸깍 연구소)은 경영학과 미디어커뮤니케이션의 질문을 Human–AI Interaction 관점에서 연결하는 학부 연구 프로젝트입니다.
 
-**Live site:** https://ddalkak-lab-hai.vercel.app
+**Live site:** https://ddalkak-lab-hai.vercel.app  
+**Deployment:** GitHub `main` → Vercel Production automatic deployment
 
 ## Research focus
 
