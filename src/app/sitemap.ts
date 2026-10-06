@@ -3,7 +3,15 @@ import type { MetadataRoute } from "next";
 const baseUrl = "https://ddalkak-lab-hai.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = ["", "/research", "/methods", "/projects", "/archive", "/about"];
+  const routes = [
+    "",
+    "/research",
+    "/methods",
+    "/projects",
+    "/registry",
+    "/archive",
+    "/about",
+  ];
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
