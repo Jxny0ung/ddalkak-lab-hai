@@ -4,10 +4,18 @@ import { PageHero } from "@/components/page-hero";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 
+const description =
+  "DDALKAK LAB의 공개 가능한 연구 방법, 코드, 로그, 결과물을 단계별로 정리하는 아카이브입니다.";
+
 export const metadata: Metadata = {
   title: "Archive",
-  description:
-    "DDALKAK LAB의 공개 가능한 연구 방법, 코드, 로그, 결과물을 단계별로 정리하는 아카이브입니다.",
+  description,
+  alternates: { canonical: "/archive" },
+  openGraph: {
+    title: "Archive | DDALKAK LAB",
+    description,
+    url: "/archive",
+  },
 };
 
 const archiveTypes = [
@@ -37,7 +45,7 @@ export default function ArchivePage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <PageHero
           eyebrow="Archive"
           title="연구의 결과뿐 아니라 과정과 판단 근거를 남깁니다."
