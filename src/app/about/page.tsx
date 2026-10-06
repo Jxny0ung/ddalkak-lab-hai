@@ -4,17 +4,25 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { principles } from "@/lib/content";
 
+const description =
+  "경영학 × 미디어커뮤니케이션 × Human–AI Interaction 학부 연구 프로젝트 DDALKAK LAB을 소개합니다.";
+
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "경영학 × 미디어커뮤니케이션 × Human–AI Interaction 학부 연구 프로젝트 DDALKAK LAB을 소개합니다.",
+  description,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About | DDALKAK LAB",
+    description,
+    url: "/about",
+  },
 };
 
 export default function AboutPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <PageHero
           eyebrow="About"
           title="AI를 보여주기보다, AI를 연구하는 과정을 보여주는 프로젝트."
