@@ -4,10 +4,18 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { methods, workflow } from "@/lib/content";
 
+const description =
+  "DDALKAK LAB의 실험, 설문, 내용분석, 텍스트 분석, 행동 데이터, HAI 연구 방법을 정리합니다.";
+
 export const metadata: Metadata = {
   title: "Methods",
-  description:
-    "DDALKAK LAB의 실험, 설문, 내용분석, 텍스트 분석, 행동 데이터, HAI 연구 방법을 정리합니다.",
+  description,
+  alternates: { canonical: "/methods" },
+  openGraph: {
+    title: "Methods | DDALKAK LAB",
+    description,
+    url: "/methods",
+  },
 };
 
 const checks = [
@@ -22,7 +30,7 @@ export default function MethodsPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <PageHero
           eyebrow="Methods"
           title="좋은 도구보다 검증 가능한 연구 절차를 먼저 설계합니다."
