@@ -26,10 +26,20 @@ DDALKAK LAB(딸깍 연구소)은 경영학과 미디어커뮤니케이션의 질
 - `/research` — research areas and current agenda
 - `/methods` — methods, outputs, reproducibility checklist
 - `/projects` — project status board and publication rules
+- `/registry` — study record structure and research status lifecycle
 - `/archive` — staged public research archive
 - `/about` — mission and research principles
 
 The public site intentionally distinguishes planned work from completed empirical findings. No sample sizes, effects, partnerships, publications, awards, or team information should be invented to fill empty sections.
+
+## Research governance
+
+- Start study or pilot planning with `docs/research-record-template.md`.
+- Use the Research Proposal issue template to define a question, method, data plan, AI involvement, and ethics/privacy considerations.
+- Use pull requests for substantial changes and document whether a research claim changed.
+- Keep participant data, credentials, private correspondence, and restricted datasets outside the public repository.
+
+See `CONTRIBUTING.md` and `AGENTS.md` for the project rules.
 
 ## Tech stack
 
@@ -65,8 +75,6 @@ Do not commit:
 - private emails or unpublished correspondence
 - raw private research datasets
 - materials that collaborators have not approved for public release
-
-See `AGENTS.md` for the project-specific coding and research-content rules.
 
 ---
 
