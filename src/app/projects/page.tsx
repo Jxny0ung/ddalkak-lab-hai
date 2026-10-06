@@ -4,17 +4,25 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { projects } from "@/lib/content";
 
+const description =
+  "DDALKAK LAB에서 구축 중이거나 계획 중인 연구 프로젝트와 공개 상태를 확인합니다.";
+
 export const metadata: Metadata = {
   title: "Projects",
-  description:
-    "DDALKAK LAB에서 구축 중이거나 계획 중인 연구 프로젝트와 공개 상태를 확인합니다.",
+  description,
+  alternates: { canonical: "/projects" },
+  openGraph: {
+    title: "Projects | DDALKAK LAB",
+    description,
+    url: "/projects",
+  },
 };
 
 export default function ProjectsPage() {
   return (
     <>
       <SiteHeader />
-      <main>
+      <main id="main-content">
         <PageHero
           eyebrow="Projects"
           title="완성된 결과보다 현재 어디까지 왔는지를 정확하게 표시합니다."
