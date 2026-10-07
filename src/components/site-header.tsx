@@ -4,6 +4,7 @@ const navigation = [
   { href: "/research", label: "Research" },
   { href: "/projects", label: "Projects" },
   { href: "/methods", label: "Methods" },
+  { href: "/lab", label: "HAI Lab" },
   { href: "/system", label: "System" },
 ];
 

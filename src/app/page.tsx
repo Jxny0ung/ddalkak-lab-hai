@@ -275,9 +275,39 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="section hai-teaser-section">
+          <div className="hai-teaser">
+            <div className="hai-teaser__copy">
+              <p className="eyebrow">05 / HAI Lab</p>
+              <h2>
+                박수 두 번으로
+                <br />
+                <em>AI를 깨우는</em> 인터랙션.
+              </h2>
+              <p>
+                마이크를 직접 허용한 뒤 두 번의 박수를 의도 신호로 감지하는
+                HAI 프로토타입과, 향후 MCP 도구를 오가며 일하는 작은 AI 회사를
+                움직이는 캐릭터로 시각화했습니다.
+              </p>
+              <Link className="button-primary" href="/lab">
+                Enter HAI Lab <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+
+            <div className="hai-teaser__visual" aria-hidden="true">
+              <span className="hai-teaser__clap hai-teaser__clap--1">CLAP 01</span>
+              <div className="hai-teaser__core">
+                <span>DOUBLE CLAP</span>
+                <strong>CORE</strong>
+              </div>
+              <span className="hai-teaser__clap hai-teaser__clap--2">CLAP 02</span>
+            </div>
+          </div>
+        </section>
+
         <section className="section system-section">
           <div className="system-section__intro">
-            <span className="eyebrow">05 / Research OS</span>
+            <span className="eyebrow">06 / Research OS</span>
             <h2>
               질문부터 공개까지,
               <br />

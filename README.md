@@ -26,13 +26,26 @@ DDALKAK LAB(딸깍 연구소)은 경영학과 미디어커뮤니케이션의 질
 - `/research` — research areas and current agenda
 - `/projects` — project status board and publication rules
 - `/methods` — methods, validation, and reproducibility checklist
+- `/lab` — clap-to-activate HAI prototype and future MCP company concept
 - `/system` — research operating system and quality gates
 - `/registry` — study record structure and research status lifecycle
 - `/handbook` — research integrity, AI use, data management, and reproducibility standards
 - `/archive` — staged public research archive
 - `/about` — mission and research principles
 
-The public site intentionally distinguishes planned work from completed empirical findings. No sample sizes, effects, partnerships, publications, awards, or team information should be invented to fill empty sections.
+The public site intentionally distinguishes planned work from completed empirical findings or connected product capabilities.
+
+## HAI prototype
+
+The current HAI Lab uses the browser Web Audio API to detect a double clap after explicit microphone permission.
+
+- audio is analyzed locally
+- raw audio is not intentionally recorded or uploaded
+- a manual activation fallback is provided
+- sensitivity is adjustable
+- MCP tools and autonomous company behavior remain future architecture, not current live capability
+
+See `docs/hai-clap-mcp-architecture.md`.
 
 ## Research governance
 
@@ -47,10 +60,11 @@ The public site intentionally distinguishes planned work from completed empirica
 
 See `CONTRIBUTING.md`, `SECURITY.md`, and `AGENTS.md` for the project rules.
 
-## Design and information architecture
+## Design and reusable workflows
 
 - `docs/site-architecture.md` — navigation, page responsibilities, visual language, and release checks
-- `docs/skills/ddalkak-site-design.md` — reusable redesign workflow and validation criteria
+- `docs/skills/ddalkak-site-design.md` — reusable site redesign workflow
+- `docs/skills/hai-clap-mcp-prototype.md` — reusable HAI signal → MCP action workflow
 
 ## Tech stack
 
@@ -58,6 +72,7 @@ See `CONTRIBUTING.md`, `SECURITY.md`, and `AGENTS.md` for the project rules.
 - React 19
 - TypeScript
 - CSS
+- Browser Web Audio API
 - Vercel
 - GitHub Actions CI
 - Dependabot

@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import Link from "next/link";
 import "./globals.css";
 import "./visual-system.css";
 
@@ -54,6 +55,21 @@ export default function RootLayout({
           본문으로 바로가기
         </a>
         {children}
+        <Link
+          aria-label="HAI Lab의 DDALKAK CORE 열기"
+          className="global-core-dock"
+          href="/lab"
+        >
+          <span className="global-core-dock__face" aria-hidden="true">
+            <i />
+            <i />
+          </span>
+          <span className="global-core-dock__copy">
+            <small>HAI LAB</small>
+            <strong>CORE</strong>
+          </span>
+          <span className="global-core-dock__signal" aria-hidden="true" />
+        </Link>
       </body>
     </html>
   );

@@ -107,11 +107,25 @@ export const projects = [
     note: "현재 사이트 구조와 공개 아카이브 체계를 구축하는 단계입니다.",
   },
   {
+    status: "BUILDING",
+    title: "Clap HAI Interface",
+    description:
+      "사용자가 명시적으로 마이크를 허용한 뒤 두 번의 박수를 의도 신호로 감지해 AI 인터페이스를 활성화하는 HAI 프로토타입입니다.",
+    note: "현재 버전은 Web Audio API에서 로컬 분석만 수행하며 오디오를 저장하거나 서버로 전송하지 않습니다.",
+  },
+  {
     status: "PLANNED",
     title: "HAI Method Sprint",
     description:
       "선행연구의 핵심 설계를 작은 단위로 재구성해 측정, 조작, 상호작용 설계의 문제를 점검하는 방법론 스프린트를 준비합니다.",
     note: "완료된 실증 결과가 아니라 연구 설계 단계입니다.",
+  },
+  {
+    status: "PLANNED",
+    title: "MCP Agent Company",
+    description:
+      "사용자 의도를 agent router가 해석하고 MCP gateway를 통해 허용된 도구를 호출하는 감사 가능한 AI 조직 구조를 설계합니다.",
+    note: "현재는 시각화와 아키텍처 계획 단계이며 실제 자율 도구 실행은 아직 연결하지 않았습니다.",
   },
   {
     status: "PLANNED",

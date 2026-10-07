@@ -2,14 +2,15 @@
 
 ## Purpose
 
-DDALKAK LAB is a research interface, not a generic portfolio. The information architecture should answer four questions in order:
+DDALKAK LAB is a research interface, not a generic portfolio. The information architecture should answer five questions:
 
 1. **What do we study?** → Research
 2. **What are we building?** → Projects
 3. **How do we test it?** → Methods
-4. **How do we keep the work accountable?** → System
+4. **How do people interact with it?** → HAI Lab
+5. **How do we keep the work accountable?** → System
 
-Archive is treated as the public record rather than another top-level content category.
+Archive is the public record rather than a marketing page.
 
 ## Primary navigation
 
@@ -18,6 +19,7 @@ Home
 ├─ Research
 ├─ Projects
 ├─ Methods
+├─ HAI Lab
 ├─ System
 │  ├─ Registry
 │  ├─ Handbook
@@ -47,12 +49,42 @@ Workflow
       ↓
 Project Board
       ↓
+HAI Lab
+      ↓
 Research Operating System
       ↓
 Manifesto / About
 ```
 
-The homepage should move from **identity → questions → methods → work → accountability**.
+The homepage should move from **identity → questions → methods → work → interaction → accountability**.
+
+## HAI Lab
+
+The HAI Lab is the interactive prototype layer.
+
+Current prototype:
+
+```text
+explicit mic permission
+→ local Web Audio analysis
+→ double clap detection
+→ DDALKAK CORE activation
+```
+
+Future architecture:
+
+```text
+human intent
+→ CORE
+→ agent router
+→ approval gate
+→ MCP gateway
+→ tools
+→ verifier
+→ audit log
+```
+
+The animated AI company is a concept visualization. It must not imply that autonomous MCP agents are already connected.
 
 ## Visual system
 
@@ -70,20 +102,22 @@ The homepage should move from **identity → questions → methods → work → 
 - visible grids and thin rules
 - large Korean display type with concise English labels
 - circular / orbital diagrams for Human–AI interaction
+- small caricature-like agents for the future-company concept
 - orange as the primary research signal
-- lime only as a secondary systems/status signal
+- lime as a limited system/status signal
 - no generic SaaS gradients, glass cards, or heavy shadows
-- motion is subtle and disabled with `prefers-reduced-motion`
+- motion is disabled with `prefers-reduced-motion`
 
 ## Content integrity
 
-The design must not create the appearance of research accomplishments that do not exist.
+The design must not create the appearance of research or product capabilities that do not exist.
 
 Allowed:
 
-- counts derived from the site structure, e.g. number of research axes
-- project status such as BUILDING or PLANNED
+- counts derived from the site structure
+- BUILDING / PLANNED project status
 - documented methods and protocols
+- clearly labelled prototypes and future architecture
 
 Not allowed without evidence:
 
@@ -94,6 +128,7 @@ Not allowed without evidence:
 - partnerships or affiliations
 - invented team members
 - completed-study claims
+- claims that MCP tools are connected when they are only planned
 
 ## Release checks
 
@@ -102,8 +137,9 @@ Before production:
 1. `eslint src`
 2. `next build`
 3. verify all public routes
-4. verify mobile CSS rules
-5. confirm Git working tree only contains intended changes
-6. push to `main`
-7. wait for GitHub Actions and Vercel success
-8. verify production homepage and System page
+4. verify microphone start/stop and manual fallback when testing HAI Lab
+5. verify mobile CSS and reduced-motion rules
+6. confirm Git working tree only contains intended changes
+7. push to `main`
+8. wait for GitHub Actions and Vercel success
+9. verify production homepage, HAI Lab, and System page
