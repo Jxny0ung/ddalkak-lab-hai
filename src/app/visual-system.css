@@ -3799,3 +3799,67 @@ body {
     flex: 0 0 auto;
   }
 }
+
+
+/* Homepage hero reactor integration */
+
+.hero-reactor-core {
+  position: absolute;
+  z-index: 5;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+
+.hero-reactor-core .reactor-core--panel {
+  --reactor-size: clamp(176px, 17vw, 236px);
+}
+
+.hero-reactor-core__caption {
+  padding: 6px 9px;
+  border: 1px solid rgba(17, 17, 17, 0.34);
+  border-radius: 999px;
+  background: rgba(245, 242, 234, 0.82);
+  color: var(--ink);
+  font-size: 7px;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  backdrop-filter: blur(8px);
+}
+
+.hero-orbit {
+  background:
+    radial-gradient(circle at center, rgba(89, 232, 255, 0.12), transparent 29%),
+    radial-gradient(circle at center, rgba(255, 90, 54, 0.13), transparent 47%),
+    rgba(245, 242, 234, 0.62);
+}
+
+.hero-orbit .orbit-ring--inner {
+  width: 42%;
+  height: 42%;
+  border-color: rgba(89, 232, 255, 0.72);
+  box-shadow: 0 0 20px rgba(89, 232, 255, 0.12);
+}
+
+.hero-orbit .orbit-ring--middle {
+  border-color: rgba(17, 17, 17, 0.28);
+}
+
+.hero-orbit .orbit-ring--outer::after {
+  background: var(--reactor-cyan-strong);
+  box-shadow: 0 0 8px rgba(89, 232, 255, 0.75);
+}
+
+@media (max-width: 760px) {
+  .hero-reactor-core .reactor-core--panel {
+    --reactor-size: 150px;
+  }
+
+  .hero-reactor-core__caption {
+    display: none;
+  }
+}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ReactorCore } from "@/components/reactor-core";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -100,9 +101,16 @@ export default function Home() {
               <span className="orbit-node orbit-node--ai">AI</span>
               <span className="orbit-node orbit-node--media">MEDIA</span>
               <span className="orbit-node orbit-node--org">ORG</span>
-              <div className="orbit-core">
-                <span>DDALKAK</span>
-                <strong>LAB</strong>
+              <div className="hero-reactor-core">
+                <ReactorCore
+                  ariaLabel="DDALKAK LAB rotating energy core"
+                  eyebrow="DDALKAK"
+                  label="CORE"
+                  size="panel"
+                />
+                <span className="hero-reactor-core__caption">
+                  HUMAN × AI SIGNAL CORE
+                </span>
               </div>
               <span className="orbit-caption">OBSERVE / TEST / VERIFY / SHARE</span>
             </div>
