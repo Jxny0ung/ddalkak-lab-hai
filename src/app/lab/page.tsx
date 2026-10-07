@@ -78,6 +78,18 @@ const references = [
     text: "파일·Git·Fetch·Memory 같은 reference server 구조와 함께, production에서는 각 서비스의 보안 요구를 별도로 평가해야 한다는 원칙을 참고합니다.",
     href: "https://github.com/modelcontextprotocol/servers",
   },
+  {
+    title: "MCP Inspector",
+    type: "Test harness",
+    text: "향후 실제 MCP server를 붙일 때 Web·CLI·TUI에서 tools, resources, auth와 응답을 점검하는 공식 검사 도구를 테스트 게이트로 사용할 수 있습니다.",
+    href: "https://github.com/modelcontextprotocol/inspector",
+  },
+  {
+    title: "Vercel AI SDK",
+    type: "Optional app layer",
+    text: "모델 스트리밍과 tool-facing UI가 필요해지면 참고할 수 있는 애플리케이션 계층입니다. 현재 clap prototype에는 의존성을 추가하지 않았습니다.",
+    href: "https://github.com/vercel/ai",
+  },
 ];
 
 export default function LabPage() {
