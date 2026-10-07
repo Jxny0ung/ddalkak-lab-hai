@@ -104,6 +104,14 @@ export default function LabPage() {
           meta="Clap → Intent → Agent → Tool"
         />
 
+        <nav className="lab-index" aria-label="HAI Lab sections">
+          <a href="#clap-interface"><span>01</span> Clap Interface</a>
+          <a href="#hai-principles"><span>02</span> HAI Principles</a>
+          <a href="#ai-company"><span>03</span> AI Company</a>
+          <a href="#lab-references"><span>04</span> References</a>
+          <a href="#lab-roadmap"><span>05</span> Roadmap</a>
+        </nav>
+
         <section className="content-section lab-intro-section">
           <div className="lab-intro-grid">
             <div>
@@ -129,11 +137,11 @@ export default function LabPage() {
           </div>
         </section>
 
-        <section className="content-section tone-soft lab-console-section">
+        <section className="content-section tone-soft lab-console-section" id="clap-interface">
           <HaiClapConsole />
         </section>
 
-        <section className="content-section lab-principles-section">
+        <section className="content-section lab-principles-section" id="hai-principles">
           <div className="section-heading section-heading--display">
             <span>02 / HAI principles</span>
             <div>
@@ -153,13 +161,13 @@ export default function LabPage() {
           </div>
         </section>
 
-        <section className="content-section tone-dark lab-company-section">
+        <section className="content-section tone-dark lab-company-section" id="ai-company">
           <AiCompanyScene />
         </section>
 
-        <section className="content-section lab-reference-section">
+        <section className="content-section lab-reference-section" id="lab-references">
           <div className="section-heading section-heading--display">
-            <span>03 / References</span>
+            <span>04 / References</span>
             <div>
               <p className="section-overline">PRACTICAL OPEN SOURCE</p>
               <h2>작게 구현하고, 검증된 공개 자료를 기준점으로 삼습니다.</h2>
@@ -184,9 +192,9 @@ export default function LabPage() {
           </div>
         </section>
 
-        <section className="content-section lab-roadmap-section">
+        <section className="content-section lab-roadmap-section" id="lab-roadmap">
           <div className="section-heading">
-            <span>04 / Roadmap</span>
+            <span>05 / Roadmap</span>
             <h2>Clap demo에서 실제 AI company orchestration까지</h2>
           </div>
 

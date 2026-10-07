@@ -1,12 +1,21 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
+import { ReactorCore } from "@/components/reactor-core";
 
-type ConsoleState = "idle" | "requesting" | "listening" | "active" | "error";
+type ConsoleState =
+  | "idle"
+  | "requesting"
+  | "calibrating"
+  | "listening"
+  | "active"
+  | "error";
 
 const DOUBLE_CLAP_MIN_MS = 180;
 const DOUBLE_CLAP_MAX_MS = 900;
 const REFRACTORY_MS = 170;
+const CALIBRATION_MS = 850;
+const METER_PAINT_MS = 80;
 
 export function HaiClapConsole() {
   const [state, setState] = useState<ConsoleState>("idle");
@@ -24,6 +33,8 @@ export function HaiClapConsole() {
   const lastTransientRef = useRef(0);
   const firstClapRef = useRef<number | null>(null);
   const noiseFloorRef = useRef(0.018);
+  const calibrationUntilRef = useRef(0);
+  const lastMeterPaintRef = useRef(0);
   const stateRef = useRef<ConsoleState>("idle");
   const sensitivityRef = useRef(sensitivity);
 
@@ -128,16 +139,19 @@ export function HaiClapConsole() {
       noiseFloorRef.current = 0.018;
       firstClapRef.current = null;
       lastTransientRef.current = 0;
-      stateRef.current = "listening";
-      setState("listening");
+      lastMeterPaintRef.current = 0;
+      calibrationUntilRef.current = performance.now() + CALIBRATION_MS;
+      stateRef.current = "calibrating";
+      setState("calibrating");
       setClapCount(0);
-      setMessage("Listening locally — 박수 두 번으로 CORE를 깨워보세요.");
+      setMessage("주변 소음을 0.85초 동안 보정하고 있습니다. 잠시만 조용히 있어주세요.");
 
       const timeData = new Float32Array(analyser.fftSize);
       const frequencyData = new Uint8Array(analyser.frequencyBinCount);
 
       const monitor = () => {
         if (
+          stateRef.current !== "calibrating" &&
           stateRef.current !== "listening" &&
           stateRef.current !== "active"
         ) {
@@ -177,8 +191,18 @@ export function HaiClapConsole() {
         const totalAverage = totalEnergy / Math.max(frequencyData.length - 1, 1);
         const highRatio = highAverage / Math.max(totalAverage, 1);
 
+        const now = performance.now();
         const floor = noiseFloorRef.current;
-        if (rms < floor * 2.2) {
+
+        if (stateRef.current === "calibrating") {
+          noiseFloorRef.current = floor * 0.9 + rms * 0.1;
+
+          if (now >= calibrationUntilRef.current) {
+            stateRef.current = "listening";
+            setState("listening");
+            setMessage("Listening locally — 박수 두 번으로 CORE를 깨워보세요.");
+          }
+        } else if (rms < floor * 2.2) {
           noiseFloorRef.current = floor * 0.985 + rms * 0.015;
         }
 
@@ -196,10 +220,15 @@ export function HaiClapConsole() {
           100,
           Math.round((rms / Math.max(noiseFloorRef.current * 7, 0.14)) * 100),
         );
-        setMeter(visualLevel);
 
-        const now = performance.now();
+        if (now - lastMeterPaintRef.current >= METER_PAINT_MS) {
+          lastMeterPaintRef.current = now;
+          setMeter(visualLevel);
+        }
+
         const transient =
+          stateRef.current === "listening" &&
+          now > calibrationUntilRef.current + 120 &&
           peak > peakThreshold &&
           rms > rmsThreshold &&
           crest > 2.05 &&
@@ -272,7 +301,8 @@ export function HaiClapConsole() {
     activateCore();
   }, [activateCore]);
 
-  const listening = state === "listening" || state === "active";
+  const listening =
+    state === "calibrating" || state === "listening" || state === "active";
 
   return (
     <section className={`clap-console clap-console--${state}`}>
@@ -346,10 +376,18 @@ export function HaiClapConsole() {
             <small>{state === "active" ? "ONLINE" : "STANDBY"}</small>
           </div>
 
-          <div className="core-panel__face" aria-hidden="true">
-            <span className="core-panel__eye" />
-            <span className="core-panel__eye" />
-            <i />
+          <div className="core-panel__reactor">
+            <ReactorCore
+              active={state === "active"}
+              ariaLabel={
+                state === "active"
+                  ? "활성화된 DDALKAK energy core"
+                  : "대기 중인 DDALKAK energy core"
+              }
+              eyebrow="DDALKAK"
+              label="CORE"
+              size="panel"
+            />
           </div>
 
           <div className="core-panel__body">

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ReactorCore } from "@/components/reactor-core";
 
 const departments = [
   {
@@ -38,7 +39,7 @@ export function AiCompanyScene() {
     <section className="ai-company">
       <div className="ai-company__intro">
         <div>
-          <p className="eyebrow">Future Company / MCP-ready concept</p>
+          <p className="eyebrow">03 / Future Company · MCP-ready concept</p>
           <h2>
             귀여운 작은 AI 회사가
             <br />
@@ -55,11 +56,17 @@ export function AiCompanyScene() {
       <div className="company-stage" aria-label="DDALKAK AI company concept diagram">
         <div className="company-stage__grid" aria-hidden="true" />
 
-        <div className="company-hq">
-          <div className="company-hq__halo" aria-hidden="true" />
-          <span>MCP</span>
-          <strong>GATEWAY</strong>
-          <small>permission · routing · logs</small>
+        <div className="company-reactor-wrap">
+          <ReactorCore
+            ariaLabel="DDALKAK MCP Gateway rotating energy core"
+            eyebrow="MCP"
+            label="CORE"
+            size="hq"
+          />
+          <div className="company-reactor-caption">
+            <strong>MCP GATEWAY</strong>
+            <small>permission · routing · audit</small>
+          </div>
         </div>
 
         <div className="company-conduit company-conduit--h" aria-hidden="true" />

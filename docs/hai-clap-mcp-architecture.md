@@ -30,6 +30,8 @@ DDALKAK CORE UI activation
 
 No audio recording, upload, speech recognition, or server-side audio processing is required for the current prototype.
 
+The detector now begins with a short **0.85 second local noise-floor calibration** and throttles visual meter updates so audio analysis does not force a React re-render on every animation frame.
+
 ## 2. Why this is HAI
 
 The clap gesture is treated as an interaction design problem rather than a novelty effect.
@@ -44,7 +46,19 @@ Design requirements:
 - **Privacy:** raw microphone audio remains local.
 - **Recoverability:** the user can stop listening and reset the interaction.
 
-## 3. Future MCP company
+## 3. DDALKAK Reactor Core
+
+The central moving visual is an original **DDALKAK Reactor Core**: a circular energy-core interface with counter-rotating rails, segmented rings, radial spokes, a scanning sweep, and a pulsing center.
+
+It is inspired by the general cinematic idea of a compact glowing reactor rather than reproducing a specific copyrighted prop design. The same visual language is reused in:
+
+- the HAI Lab activation panel
+- the center of the animated AI company
+- the global HAI Lab dock
+
+When CORE becomes active, rotation speeds increase and the cyan energy glow intensifies. `prefers-reduced-motion` disables the animations.
+
+## 4. Future MCP company
 
 ```text
 Human intent
@@ -74,7 +88,7 @@ Verifier
 Human-visible result + audit log
 ```
 
-## 4. Company roles
+## 5. Company roles
 
 The animated company scene is a visual model, not a claim that these autonomous workers exist today.
 
@@ -84,7 +98,7 @@ The animated company scene is a visual model, not a claim that these autonomous 
 - **Operator / Release:** validate, deploy, monitor, and record status.
 - **MCP Gateway:** controls tool access and produces a tool-call audit trail.
 
-## 5. Permission model for future implementation
+## 6. Permission model for future implementation
 
 A future MCP-backed version should not let an agent perform every action merely because a connector exists.
 
@@ -99,7 +113,7 @@ Recommended levels:
 
 High-impact actions should remain approval-gated.
 
-## 6. Open-source references
+## 7. Open-source references
 
 ### Browser audio
 
@@ -128,7 +142,7 @@ The official TypeScript SDK currently separates client and server packages and s
 
 This is a possible later layer for model streaming and tool-facing UI. It is not required by the current clap prototype.
 
-## 7. Next implementation stages
+## 8. Next implementation stages
 
 ```text
 v0.1  local double-clap detector              ← current

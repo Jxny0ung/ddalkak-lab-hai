@@ -55,6 +55,9 @@ The current clap prototype:
 - must provide a manual fallback
 - must allow stopping the microphone
 - must expose sensitivity rather than pretending detection is perfect
+- should calibrate against the local noise floor before accepting clap events
+- should throttle purely visual meter updates instead of re-rendering at audio-frame frequency
+- must provide reduced-motion behavior for the rotating reactor visual
 - must label MCP company behavior as future / prototype until actually connected
 
 ## Future MCP rule

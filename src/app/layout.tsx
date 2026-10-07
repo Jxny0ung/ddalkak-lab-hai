@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
+import { ReactorCore } from "@/components/reactor-core";
 import "./globals.css";
 import "./visual-system.css";
 
@@ -60,10 +61,12 @@ export default function RootLayout({
           className="global-core-dock"
           href="/lab"
         >
-          <span className="global-core-dock__face" aria-hidden="true">
-            <i />
-            <i />
-          </span>
+          <ReactorCore
+            ariaLabel="HAI Lab energy core"
+            eyebrow="HAI"
+            label="CORE"
+            size="mini"
+          />
           <span className="global-core-dock__copy">
             <small>HAI LAB</small>
             <strong>CORE</strong>
