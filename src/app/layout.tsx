@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
+import "./visual-system.css";
 
 const siteUrl = "https://ddalkak-lab-hai.vercel.app";
 

@@ -22,10 +22,11 @@ DDALKAK LAB(딸깍 연구소)은 경영학과 미디어커뮤니케이션의 질
 
 ## Public site structure
 
-- `/` — research overview
+- `/` — research identity and overview
 - `/research` — research areas and current agenda
-- `/methods` — methods, outputs, reproducibility checklist
 - `/projects` — project status board and publication rules
+- `/methods` — methods, validation, and reproducibility checklist
+- `/system` — research operating system and quality gates
 - `/registry` — study record structure and research status lifecycle
 - `/handbook` — research integrity, AI use, data management, and reproducibility standards
 - `/archive` — staged public research archive
@@ -45,6 +46,11 @@ The public site intentionally distinguishes planned work from completed empirica
 - Keep participant data, credentials, private correspondence, and restricted datasets outside the public repository.
 
 See `CONTRIBUTING.md`, `SECURITY.md`, and `AGENTS.md` for the project rules.
+
+## Design and information architecture
+
+- `docs/site-architecture.md` — navigation, page responsibilities, visual language, and release checks
+- `docs/skills/ddalkak-site-design.md` — reusable redesign workflow and validation criteria
 
 ## Tech stack
 

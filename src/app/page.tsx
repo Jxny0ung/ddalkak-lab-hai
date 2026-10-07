@@ -9,116 +9,233 @@ import {
   workflow,
 } from "@/lib/content";
 
+const systemLinks = [
+  {
+    index: "01",
+    title: "Registry",
+    label: "Pre-commit the question",
+    description:
+      "연구 질문, 가설, 표본, 변수와 분석 계획을 결과보다 먼저 기록합니다.",
+    href: "/registry",
+  },
+  {
+    index: "02",
+    title: "Handbook",
+    label: "Make the process legible",
+    description:
+      "AI 사용, 데이터 관리, 재현성, 공개 기준을 살아 있는 운영 문서로 관리합니다.",
+    href: "/handbook",
+  },
+  {
+    index: "03",
+    title: "Archive",
+    label: "Leave an audit trail",
+    description:
+      "공개 가능한 코드, 방법 노트, 재현 기록과 검증된 결과를 단계별로 축적합니다.",
+    href: "/archive",
+  },
+];
+
 export default function Home() {
   return (
     <>
       <SiteHeader />
       <main id="main-content">
-        <section className="hero" id="top">
-          <div className="eyebrow">Business × Media & Communication × HAI</div>
-          <h1 className="hero-title">
-            <span>인간과 AI가 함께</span>
-            <span>생각하는 방식을</span>
-            <span>연구합니다.</span>
-          </h1>
-          <div className="hero-bottom">
-            <p className="hero-copy">
-              딸깍 연구소는 경영학과 미디어커뮤니케이션의 질문을
-              Human–AI Interaction의 관점에서 연결하는 학부 연구 프로젝트입니다.
-            </p>
-            <p className="hero-meta">
-              Undergraduate Research Project
-              <br />
-              Korea · 2026 —
-            </p>
-          </div>
-          <div className="hero-actions" aria-label="Quick links">
-            <Link className="text-button" href="/research">
-              Research →
-            </Link>
-            <Link className="text-button" href="/methods">
-              Methods →
-            </Link>
+        <section className="hero hero--redesign" id="top">
+          <div className="hero-grid">
+            <div className="hero-copyblock">
+              <div className="eyebrow-row">
+                <span className="eyebrow">Business × Media × HAI</span>
+                <span className="live-pill">
+                  <i aria-hidden="true" />
+                  Research system online
+                </span>
+              </div>
+
+              <h1 className="hero-title hero-title--redesign">
+                <span>인간과 AI가</span>
+                <span className="hero-title__accent">함께 판단하는</span>
+                <span>방식을 연구합니다.</span>
+              </h1>
+
+              <div className="hero-bottom hero-bottom--redesign">
+                <p className="hero-copy">
+                  딸깍 연구소는 경영학과 미디어커뮤니케이션의 질문을
+                  Human–AI Interaction의 관점에서 연결하고, 아이디어를
+                  검증 가능한 연구 과정으로 바꾸는 학부 연구 프로젝트입니다.
+                </p>
+
+                <div className="hero-actions">
+                  <Link className="button-primary" href="/research">
+                    Explore research <span aria-hidden="true">↗</span>
+                  </Link>
+                  <Link className="button-ghost" href="/projects">
+                    View projects
+                  </Link>
+                </div>
+              </div>
+
+              <div className="hero-facts" aria-label="DDALKAK LAB overview">
+                <div>
+                  <strong>{String(researchAreas.length).padStart(2, "0")}</strong>
+                  <span>Research axes</span>
+                </div>
+                <div>
+                  <strong>{String(methods.length).padStart(2, "0")}</strong>
+                  <span>Method families</span>
+                </div>
+                <div>
+                  <strong>{String(workflow.length).padStart(2, "0")}</strong>
+                  <span>Workflow stages</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="hero-orbit" aria-hidden="true">
+              <div className="orbit-grid" />
+              <div className="orbit-ring orbit-ring--outer" />
+              <div className="orbit-ring orbit-ring--middle" />
+              <div className="orbit-ring orbit-ring--inner" />
+              <span className="orbit-node orbit-node--human">HUMAN</span>
+              <span className="orbit-node orbit-node--ai">AI</span>
+              <span className="orbit-node orbit-node--media">MEDIA</span>
+              <span className="orbit-node orbit-node--org">ORG</span>
+              <div className="orbit-core">
+                <span>DDALKAK</span>
+                <strong>LAB</strong>
+              </div>
+              <span className="orbit-caption">OBSERVE / TEST / VERIFY / SHARE</span>
+            </div>
           </div>
         </section>
 
-        <section className="status-strip" aria-label="Research status">
-          <span>STATUS</span>
-          <strong>BUILDING</strong>
-          <p>
-            현재 공개된 내용은 연구 방향·방법·프로젝트 구조입니다. 검증되지 않은
-            실증 결과는 게시하지 않습니다.
-          </p>
-        </section>
-
-        <section className="section" id="research">
-          <div className="section-heading">
-            <span>01 / Research</span>
-            <h2>AI를 도구가 아니라, 인간의 판단을 바꾸는 상호작용 환경으로 봅니다.</h2>
+        <div className="signal-marquee" aria-hidden="true">
+          <div className="signal-marquee__track">
+            <span>HUMAN–AI INTERACTION</span>
+            <i>✦</i>
+            <span>MEDIA & TRUST</span>
+            <i>✦</i>
+            <span>PLATFORM INCENTIVES</span>
+            <i>✦</i>
+            <span>COMPUTATIONAL COMMUNICATION</span>
+            <i>✦</i>
+            <span>HUMAN–AI INTERACTION</span>
+            <i>✦</i>
+            <span>MEDIA & TRUST</span>
+            <i>✦</i>
           </div>
-          <div className="card-grid research-grid">
-            {researchAreas.map((area) => (
-              <article className="card" key={area.code}>
-                <div className="card-index">{area.code}</div>
-                <h3>{area.title}</h3>
-                <p>{area.description}</p>
+        </div>
+
+        <section className="section research-showcase" id="research">
+          <div className="section-heading section-heading--display">
+            <span>01 / Research field</span>
+            <div>
+              <p className="section-overline">QUESTION BEFORE TOOL</p>
+              <h2>
+                서로 다른 학문의 질문을
+                <br />
+                하나의 <em>interaction</em>으로 봅니다.
+              </h2>
+            </div>
+          </div>
+
+          <div className="research-mosaic">
+            {researchAreas.map((area, index) => (
+              <article
+                className={index === 0 ? "research-tile research-tile--feature" : "research-tile"}
+                key={area.code}
+              >
+                <div className="research-tile__top">
+                  <span className="card-index">{area.code}</span>
+                  <span className="research-tile__arrow" aria-hidden="true">
+                    ↗
+                  </span>
+                </div>
+                <div className="research-tile__body">
+                  <h3>{area.title}</h3>
+                  <p>{area.description}</p>
+                </div>
+                <Link
+                  className="research-tile__link"
+                  href={`/research#${area.slug}`}
+                  aria-label={`${area.title} 자세히 보기`}
+                >
+                  Open field
+                </Link>
               </article>
             ))}
           </div>
-          <div className="section-link">
-            <Link className="text-button" href="/research">
-              연구 질문과 프레이밍 자세히 보기 →
-            </Link>
-          </div>
         </section>
 
-        <section className="section agenda-section" aria-labelledby="agenda-title">
-          <div className="section-heading compact-heading">
-            <span>Current Agenda</span>
-            <h2 id="agenda-title">지금 질문을 만들고 있는 네 개의 교차점</h2>
+        <section className="section agenda-section agenda-section--redesign">
+          <div className="agenda-intro">
+            <span className="eyebrow">Current agenda / 2026</span>
+            <h2>지금 질문을 만들고 있는 교차점.</h2>
+            <p>
+              연구 주제는 고정된 카테고리가 아니라 서로 부딪히는 문제의
+              교차점에서 시작합니다.
+            </p>
           </div>
-          <div className="agenda-list">
+
+          <div className="agenda-stack">
             {agenda.map((item, index) => (
-              <div className="agenda-item" key={item}>
+              <div className="agenda-row" key={item}>
                 <span>{String(index + 1).padStart(2, "0")}</span>
                 <strong>{item}</strong>
+                <i aria-hidden="true">↗</i>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="section methods-section" id="methods">
-          <div className="section-heading">
-            <span>02 / Methods</span>
-            <h2>아이디어를 검증 가능한 연구로 바꾸는 방법을 배웁니다.</h2>
-          </div>
-          <div className="method-list">
-            {methods.slice(0, 4).map((method, index) => (
-              <article className="method-item" key={method.title}>
-                <span className="method-number">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3>{method.title}</h3>
-                <p>{method.description}</p>
-              </article>
-            ))}
-          </div>
-          <div className="section-link section-link--light">
-            <Link className="text-button" href="/methods">
-              전체 방법론과 체크리스트 보기 →
-            </Link>
+        <section className="section methods-section methods-section--redesign" id="methods">
+          <div className="method-spotlight">
+            <div className="method-spotlight__intro">
+              <span className="eyebrow">02 / Methods</span>
+              <h2>
+                아이디어가 아니라
+                <br />
+                <em>증거의 구조</em>를 설계합니다.
+              </h2>
+              <p>
+                실험, 내용분석, 텍스트 분석, 행동 데이터와 HAI 방법을
+                연구 질문에 맞춰 조합하고, AI 사용 자체도 검증 대상으로 봅니다.
+              </p>
+              <Link className="button-on-dark" href="/methods">
+                Methods system <span aria-hidden="true">↗</span>
+              </Link>
+            </div>
+
+            <div className="method-rail">
+              {methods.map((method, index) => (
+                <article key={method.title}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <div>
+                    <h3>{method.title}</h3>
+                    <p>{method.output}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </section>
 
-        <section className="section workflow-section" id="workflow">
-          <div className="section-heading">
+        <section className="section workflow-section workflow-section--redesign" id="workflow">
+          <div className="section-heading section-heading--display">
             <span>03 / Workflow</span>
-            <h2>Explore → Rebuild → Improve → Share</h2>
+            <div>
+              <p className="section-overline">RESEARCH OPERATING LOOP</p>
+              <h2>Explore → Rebuild → Improve → Share</h2>
+            </div>
           </div>
-          <div className="workflow-grid">
+
+          <div className="workflow-path">
             {workflow.map((item, index) => (
-              <article className="workflow-card" key={item.title}>
-                <span>{String(index + 1).padStart(2, "0")}</span>
+              <article className="workflow-step" key={item.title}>
+                <div className="workflow-step__index">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <i aria-hidden="true" />
+                </div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
               </article>
@@ -126,55 +243,86 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section" id="projects">
-          <div className="section-heading">
-            <span>04 / Projects</span>
-            <h2>완료 여부를 숨기지 않는 프로젝트 보드</h2>
+        <section className="section project-stage" id="projects">
+          <div className="section-heading section-heading--display">
+            <span>04 / Project board</span>
+            <div>
+              <p className="section-overline">STATUS, NOT HYPE</p>
+              <h2>진행 상태가 보이는 연구 프로젝트.</h2>
+            </div>
           </div>
-          <div className="roadmap">
-            {projects.map((project) => (
-              <article key={project.title}>
-                <span className="status">{project.status}</span>
+
+          <div className="project-stage__grid">
+            {projects.map((project, index) => (
+              <article className="project-stage__card" key={project.title}>
+                <div className="project-stage__meta">
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <span className={`status-chip status-chip--${project.status.toLowerCase()}`}>
+                    {project.status}
+                  </span>
+                </div>
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
+                <small>{project.note}</small>
               </article>
             ))}
           </div>
+
           <div className="section-link">
-            <Link className="text-button" href="/projects">
-              프로젝트 상태와 공개 원칙 보기 →
+            <Link className="button-ghost" href="/projects">
+              Open full project board <span aria-hidden="true">↗</span>
             </Link>
           </div>
         </section>
 
-        <section className="section about-section" id="about">
-          <div className="section-heading">
-            <span>05 / About</span>
-            <h2>AI를 보여주는 사이트보다, 연구하는 과정을 보여주는 사이트.</h2>
-          </div>
-          <div className="about-grid">
-            <p className="wide-copy">
-              서로 다른 전공의 언어를 연결해 AI 시대의 인간 행동, 정보와
-              커뮤니케이션, 조직과 플랫폼을 함께 설명할 수 있는 연구를 지향합니다.
+        <section className="section system-section">
+          <div className="system-section__intro">
+            <span className="eyebrow">05 / Research OS</span>
+            <h2>
+              질문부터 공개까지,
+              <br />
+              연구의 <em>운영체계</em>를 만듭니다.
+            </h2>
+            <p>
+              DDALKAK LAB은 결과 페이지가 아니라 연구가 어떻게 만들어졌는지
+              추적할 수 있는 구조를 목표로 합니다.
             </p>
-            <div className="principles">
-              <div>
-                <span>01</span>
-                <p>질문을 먼저 정하고 도구는 그다음에 선택합니다.</p>
-              </div>
-              <div>
-                <span>02</span>
-                <p>재현 가능한 기록과 명확한 근거를 남깁니다.</p>
-              </div>
-              <div>
-                <span>03</span>
-                <p>AI가 만든 결과를 연구 결과와 혼동하지 않습니다.</p>
-              </div>
-            </div>
           </div>
-          <div className="section-link">
-            <Link className="text-button" href="/about">
-              프로젝트 원칙 자세히 보기 →
+
+          <div className="system-links">
+            {systemLinks.map((item) => (
+              <Link className="system-card" href={item.href} key={item.title}>
+                <div className="system-card__top">
+                  <span>{item.index}</span>
+                  <i aria-hidden="true">↗</i>
+                </div>
+                <p>{item.label}</p>
+                <h3>{item.title}</h3>
+                <small>{item.description}</small>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="section manifesto-section">
+          <div className="manifesto-line">
+            <span>QUESTION</span>
+            <i>→</i>
+            <span>METHOD</span>
+            <i>→</i>
+            <span>EVIDENCE</span>
+            <i>→</i>
+            <span>RECORD</span>
+          </div>
+
+          <div className="manifesto-copy">
+            <p>
+              AI를 보여주는 사이트보다,
+              <br />
+              <strong>AI를 연구하는 과정을 보여주는 사이트.</strong>
+            </p>
+            <Link className="button-primary" href="/about">
+              About the lab <span aria-hidden="true">↗</span>
             </Link>
           </div>
         </section>

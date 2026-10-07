@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/research",
     "/methods",
     "/projects",
+    "/system",
     "/registry",
     "/handbook",
     "/archive",
@@ -18,6 +19,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === "" ? "weekly" : "monthly",
-    priority: route === "" ? 1 : 0.8,
+    priority: route === "" ? 1 : route === "/system" ? 0.9 : 0.8,
   }));
 }
