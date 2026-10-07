@@ -49,7 +49,7 @@ export default function Home() {
                 <span className="eyebrow">Business × Media × HAI</span>
                 <span className="live-pill">
                   <i aria-hidden="true" />
-                  Research system online
+                  CORE prototype online
                 </span>
               </div>
 
@@ -283,32 +283,83 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="section hai-teaser-section">
-          <div className="hai-teaser">
-            <div className="hai-teaser__copy">
-              <p className="eyebrow">05 / HAI Lab</p>
-              <h2>
-                박수 두 번으로
-                <br />
-                <em>AI를 깨우는</em> 인터랙션.
-              </h2>
-              <p>
-                마이크를 직접 허용한 뒤 두 번의 박수를 의도 신호로 감지하는
-                HAI 프로토타입과, 향후 MCP 도구를 오가며 일하는 작은 AI 회사를
-                움직이는 캐릭터로 시각화했습니다.
-              </p>
-              <Link className="button-primary" href="/lab">
-                Enter HAI Lab <span aria-hidden="true">↗</span>
-              </Link>
+        <section className="section core-lab-section" id="hai-lab">
+          <div className="core-lab">
+            <div className="core-lab__visual" aria-hidden="true">
+              <div className="core-lab__halo core-lab__halo--outer" />
+              <div className="core-lab__halo core-lab__halo--inner" />
+              <div className="core-lab__reactor">
+                <ReactorCore
+                  active
+                  ariaLabel="DDALKAK CORE active research interface"
+                  eyebrow="DDALKAK"
+                  label="CORE"
+                  size="hq"
+                />
+              </div>
+
+              <span className="core-lab__node core-lab__node--trust">TRUST</span>
+              <span className="core-lab__node core-lab__node--reason">REASONING</span>
+              <span className="core-lab__node core-lab__node--decision">DECISION</span>
+              <span className="core-lab__node core-lab__node--collab">COLLAB</span>
+
+              <div className="core-lab__telemetry">
+                <span>SIGNAL / HUMAN × AI</span>
+                <strong>CORE ONLINE</strong>
+                <small>visual research interface · local prototype</small>
+              </div>
             </div>
 
-            <div className="hai-teaser__visual" aria-hidden="true">
-              <span className="hai-teaser__clap hai-teaser__clap--1">CLAP 01</span>
-              <div className="hai-teaser__core">
-                <span>DOUBLE CLAP</span>
-                <strong>CORE</strong>
+            <div className="core-lab__copy">
+              <p className="eyebrow">05 / DDALKAK CORE · HAI Lab</p>
+              <h2>
+                사람의 의도를
+                <br />
+                <em>AI와 도구 사이의 신호</em>로 바꿉니다.
+              </h2>
+              <p className="core-lab__lead">
+                DDALKAK CORE는 인간–AI 상호작용, 연구 방법론, 실험 설계와
+                에이전트 협업을 하나의 인터페이스로 연결하는 연구소의 상징이자
+                프로토타입입니다.
+              </p>
+
+              <div className="core-lab__modules">
+                <article>
+                  <span>01 / HAI LAB</span>
+                  <h3>Clap → Intent</h3>
+                  <p>
+                    사용자가 직접 마이크를 허용한 뒤 두 번의 박수를 의도 신호로
+                    감지합니다. 오디오는 서버로 전송하지 않고 브라우저에서 로컬 분석합니다.
+                  </p>
+                </article>
+                <article>
+                  <span>02 / AGENT COMPANY</span>
+                  <h3>Intent → Agent → Tool</h3>
+                  <p>
+                    Research, Analysis, Build, Ops 역할을 분리하고, 향후 MCP gateway에서
+                    승인·라우팅·감사 로그를 거쳐 도구를 호출하는 구조를 설계합니다.
+                  </p>
+                </article>
               </div>
-              <span className="hai-teaser__clap hai-teaser__clap--2">CLAP 02</span>
+
+              <div className="core-lab__architecture" aria-label="DDALKAK CORE future workflow">
+                <span>Human signal</span>
+                <i aria-hidden="true">→</i>
+                <span>DDALKAK CORE</span>
+                <i aria-hidden="true">→</i>
+                <span>Agent router</span>
+                <i aria-hidden="true">→</i>
+                <span>MCP tools</span>
+              </div>
+
+              <div className="core-lab__actions">
+                <Link className="button-primary" href="/lab">
+                  Enter HAI Lab <span aria-hidden="true">↗</span>
+                </Link>
+                <Link className="button-ghost" href="/lab#ai-company">
+                  View Agent Company
+                </Link>
+              </div>
             </div>
           </div>
         </section>
