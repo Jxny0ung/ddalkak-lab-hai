@@ -51,6 +51,18 @@ const resources = [
     href: "https://github.com/Jxny0ung/ddalkak-lab-hai/blob/main/docs/ai-use-policy.md",
   },
   {
+    title: "AI Coding Validation",
+    description:
+      "LLM이 코딩·분류·추출을 보조할 때 사람 기준표본, 블라인드 평가, 오류 분석, 재검증 절차를 기록합니다.",
+    href: "https://github.com/Jxny0ung/ddalkak-lab-hai/blob/main/docs/ai-assisted-coding-validation.md",
+  },
+  {
+    title: "Content Analysis Codebook",
+    description:
+      "분석 단위, 표본, 변수, 범주 정의, 모호한 사례, 신뢰도와 AI 보조 코딩 규칙을 일관된 형식으로 작성합니다.",
+    href: "https://github.com/Jxny0ung/ddalkak-lab-hai/blob/main/docs/content-analysis-codebook-template.md",
+  },
+  {
     title: "Data Management Plan",
     description:
       "공개·제한·민감 자료를 분리하고 저장, 백업, 버전, 보존, 삭제 원칙을 관리합니다.",
