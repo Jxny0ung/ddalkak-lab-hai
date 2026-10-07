@@ -37,6 +37,8 @@ The public site intentionally distinguishes planned work from completed empirica
 
 - Start study or pilot planning with `docs/research-record-template.md`.
 - Follow `docs/ai-use-policy.md` when AI materially affects research design, coding, analysis, interpretation, or writing.
+- Use `docs/ai-assisted-coding-validation.md` when AI labels, classifies, extracts, or codes research material.
+- Start content-analysis variables and coding rules from `docs/content-analysis-codebook-template.md`.
 - Follow `docs/data-management-plan.md` to separate public, restricted, and sensitive research material.
 - Use the Research Proposal issue template to define a question, method, data plan, AI involvement, and ethics/privacy considerations.
 - Use pull requests for substantial changes and document whether a research claim changed.
