@@ -77,9 +77,37 @@ export default function ResearchPage() {
           </div>
         </section>
 
+        <section className="content-section" id="hai-distinction">
+          <div className="section-heading">
+            <span>03 / Research orientation</span>
+            <h2>AI를 연구에 쓰는 것과 AI 상호작용을 연구하는 것은 다릅니다.</h2>
+          </div>
+          <div className="three-column">
+            <article>
+              <span>01</span>
+              <h3>AI as a research tool</h3>
+              <p>자료 수집, 뉴스 텍스트 분석, 분류와 요약에 AI를 활용하는 접근입니다. 연구자는 수집 기준과 모델 출력의 타당성을 별도로 검증합니다.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>HAI as a research topic</h3>
+              <p>사람이 AI의 설명과 추천을 어떻게 이해하고 신뢰하며 판단을 바꾸는지 관찰하는 접근입니다. 참여자의 행동과 선택이 연구의 중심입니다.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Putting them together</h3>
+              <p>AI가 서로 다른 뉴스 보도를 비교해 제시하고, 이용자가 편향과 근거를 어떻게 인식하는지 실험하도록 설계할 수 있습니다. 아직 검증된 효과를 의미하지 않습니다.</p>
+            </article>
+          </div>
+          <div className="research-note">
+            <strong>HCI와 HAI의 관계</strong>
+            <p>HAI는 HCI를 대체한다기보다, 인공지능의 설명, 불확실성, 의사결정 지원과 인간의 상호작용을 집중적으로 다루는 연구 방향입니다. 아래 의제는 연구 가능성이지 완료된 실험 결과가 아닙니다.</p>
+          </div>
+        </section>
+
         <section className="content-section">
           <div className="section-heading">
-            <span>03 / Agenda</span>
+            <span>04 / Agenda</span>
             <h2>현재 질문을 만들고 있는 교차점</h2>
           </div>
           <div className="agenda-list">
