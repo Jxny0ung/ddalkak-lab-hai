@@ -24,6 +24,18 @@ const nextConfig: NextConfig = {
           },
         ],
       },
+      {
+        // The HAI clap experiment requires microphone permission, but only
+        // after the visitor explicitly activates it. All other routes deny it.
+        // Later, path-specific headers override the shared policy for /lab.
+        source: "/lab",
+        headers: [
+          {
+            key: "Permissions-Policy",
+            value: "camera=(), microphone=(self), geolocation=()",
+          },
+        ],
+      },
     ];
   },
 };
