@@ -17,7 +17,7 @@ const workflow = [
 const activity = [
   { label: "플랫폼 구축 중", date: "2026.10", title: "Projects·Learn 중심의 실습 플랫폼 개편", description: "실제로 열어보고 따라할 수 있는 데모와 제작 기록 구조를 구축합니다." },
   { label: "연구 실험", date: "진행 중", title: "Clap HAI Interface", description: "동의 기반 박수 인식 실험을 HAI Lab에서 확인할 수 있습니다." },
-  { label: "설계 단계", date: "다음 작업", title: "Agent Company와 연구 방법론 기록", description: "에이전트 작업을 실행 결과와 구분하고 검증 기준을 마련합니다." },
+  { label: "설계 공개", date: "2026.10", title: "Agent Company 역할 모듈 설계", description: "모듈별 역할과 승인·검증 원칙을 공개했습니다. 실제 MCP 실행 연결은 아직 없습니다." },
 ] as const;
 
 export default function Home() {
@@ -63,6 +63,7 @@ export default function Home() {
                     <div className="sl-project-tags"><span>{project.category}</span><span>{project.status}</span></div>
                     <h3>{project.title}</h3>
                     <p>{project.subtitle}</p>
+                    <div className="sl-project-verification"><span>검증 상태</span><strong>{project.verification}</strong></div>
                     <div className="sl-project-tech">{project.technology}<span aria-hidden="true">↗</span></div>
                   </div>
                 </Link>
