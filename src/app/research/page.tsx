@@ -77,9 +77,41 @@ export default function ResearchPage() {
           </div>
         </section>
 
+        <section className="content-section" id="hai-framing">
+          <div className="section-heading">
+            <span>03 / HAI research framing</span>
+            <h2>AI를 사용하는 연구와 AI를 연구하는 일은 다릅니다.</h2>
+          </div>
+          <div className="three-column">
+            <article>
+              <span>01</span>
+              <h3>AI as a Tool</h3>
+              <p>뉴스 수집, 자료 분류, 텍스트 분석에 AI를 이용합니다. 이때 검증해야 할 것은 모델 출력의 재현성, 편향과 분석 품질입니다.</p>
+            </article>
+            <article>
+              <span>02</span>
+              <h3>AI as a Research Subject</h3>
+              <p>사람들이 AI의 요약이나 설명을 얼마나 믿고, 어떤 판단과 행동을 하는지 관찰합니다. 이때 사람의 반응이 연구의 중심입니다.</p>
+            </article>
+            <article>
+              <span>03</span>
+              <h3>Combining Both</h3>
+              <p>AI로 정보 제시 방식을 만들고, 실험·설문·인터랙션 기록으로 사용자의 신뢰·판단·선택을 평가할 수 있습니다.</p>
+            </article>
+          </div>
+          <div className="research-note">
+            <strong>연구 설계 아이디어 · 아직 수행된 실험이 아닙니다</strong>
+            <p>예를 들어 같은 정치 이슈를 다룬 서로 다른 뉴스 보도와 AI 요약을 조건별로 제시한 뒤, 이용자의 편향 인식·근거 검토·신뢰 변화를 조사할 수 있습니다. 실제 참여자 대상 실험을 진행하려면 윤리 심의 필요성, 동의 절차, 표본·무작위 배정·측정 문항을 먼저 검토해야 합니다.</p>
+          </div>
+          <div className="research-note">
+            <strong>HCI와 HAI의 관계</strong>
+            <p>HAI는 인간이 AI와 상호작용하는 상황을 집중적으로 연구하는 영역입니다. 기존 HCI가 대체되었다는 의미가 아니며, 사용성·접근성·피드백·사용자 통제 같은 HCI 원칙은 HAI에도 중요합니다.</p>
+          </div>
+        </section>
+
         <section className="content-section">
           <div className="section-heading">
-            <span>03 / Agenda</span>
+            <span>04 / Agenda</span>
             <h2>현재 질문을 만들고 있는 교차점</h2>
           </div>
           <div className="agenda-list">
