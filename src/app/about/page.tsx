@@ -59,6 +59,25 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+        <section className="sl-section sl-section-soft" id="team-contact">
+          <div className="sl-container sl-detail-columns">
+            <aside>
+              <span className="sl-kicker">04 / TEAM & CONTACT</span>
+              <h2>구성원과 연락 방법은 확인된 정보만 공개합니다.</h2>
+            </aside>
+            <div className="sl-detail-copy">
+              <h3>연구팀</h3>
+              <p>학부 연구생 중심의 독립 프로젝트이며, 구성원 명단이나 지도 관계는 각자의 공개 동의와 사실 확인을 거친 뒤 안내합니다. 공식 대학 기관으로 오해될 표현은 사용하지 않습니다.</p>
+              <h3>공개된 피드백 채널</h3>
+              <p>오탈자, 접근성 문제, 작동 오류, 연구 기록 개선 제안은 GitHub Issues로 전달할 수 있습니다. 이 채널은 공개되므로 개인정보, 참여자 자료, 비공개 연구 내용은 올리지 마세요.</p>
+              <div className="sl-actions">
+                <a className="sl-btn sl-btn-dark" href="https://github.com/Jxny0ung/ddalkak-lab-hai/issues" target="_blank" rel="noopener noreferrer">GitHub에서 제안하기 ↗</a>
+                <Link className="sl-btn sl-btn-outline" href="/registry">연구 기록 원칙 보기 ↗</Link>
+              </div>
+              <p>별도의 공식 모집·개인 문의 이메일은 아직 확인되지 않았습니다.</p>
+            </div>
+          </div>
+        </section>
         <section className="sl-section sl-section-soft">
           <div className="sl-container sl-small-callout">
             <div><span className="sl-kicker">AFFILIATION & TRANSPARENCY</span><h2>학생 중심의 독립적인 실습·연구 프로젝트</h2></div>
