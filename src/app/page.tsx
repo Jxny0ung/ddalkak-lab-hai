@@ -143,8 +143,8 @@ export default function Home() {
             <div className="sl-section-head"><div><span className="sl-kicker">LATEST LAB ACTIVITY</span><h2>연구소의 현재 기록</h2><p>확인할 수 있는 개발·연구 진행 상태만 공개합니다.</p></div><Link className="sl-text-link" href="/lab">HAI Lab 보기 ↗</Link></div>
             <div className="sl-activity-list">
               {activity.map((item)=><article key={item.title}><span>{item.date}</span><div><small>{item.label}</small><h3>{item.title}</h3><p>{item.description}</p></div></article>)}
-              <div className="sl-actions sl-activity-evidence-link"><Link className="sl-btn sl-btn-outline" href="/outputs">확인할 수 있는 작업물과 공개 기록 보기 ↗</Link></div>
             </div>
+            <div className="sl-actions sl-activity-evidence-link"><Link className="sl-btn sl-btn-outline" href="/outputs">확인할 수 있는 작업물과 공개 기록 보기 ↗</Link></div>
           </div>
         </section>
 
