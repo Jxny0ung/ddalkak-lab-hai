@@ -30,6 +30,17 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
               {projectCategories.map((c)=><Link className={activeCategory===c?"selected":""} key={c} href={`/projects?category=${encodeURIComponent(c)}`}>{c} ({studentProjects.filter(p=>p.category===c).length})</Link>)}
             </nav>
             <p className="sl-results">{visible.length}개의 항목 · 제공 상태를 확인하고 시작하세요.</p>
+            {visible.length === 0 ? (
+              <div className="sl-empty-state" role="status">
+                <span className="sl-kicker">NOT YET PUBLISHED</span>
+                <h2>{activeCategory} 분야의 공개된 프로젝트가 아직 없습니다.</h2>
+                <p>실제로 준비된 프로젝트를 확인한 뒤 공개합니다. 다른 분야의 작동하는 데모와 연구 실험을 먼저 살펴보세요.</p>
+                <div className="sl-actions">
+                  <Link className="sl-btn sl-btn-dark" href="/projects">전체 프로젝트 보기 ↗</Link>
+                  <Link className="sl-btn sl-btn-outline" href="/learn">실습 가이드 보기</Link>
+                </div>
+              </div>
+            ) : (
             <div className="sl-project-grid sl-all-projects">
               {visible.map((p)=><Link className="sl-project-card" href={`/projects/${p.slug}`} key={p.slug}>
                 <ProjectVisual visual={p.visual} />
@@ -40,6 +51,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
                 </div>
               </Link>)}
             </div>
+            )}
           </div>
         </section>
         <section className="sl-section sl-section-soft">
