@@ -30,8 +30,8 @@ export default async function ProjectDetail({params}:{params:Promise<{slug:strin
           <div className="sl-detail-meta"><span>{p.category}</span><span>{p.status}</span><span>{p.level} · 약 {p.minutes}분</span></div>
           <h1>{p.title}</h1><p>{p.subtitle}</p>
           <div className="sl-actions">
-            <a href="#try" className="sl-btn sl-btn-dark">직접 만들어보기 ↘</a>
-            <a href="https://github.com/Jxny0ung/ddalkak-lab-hai" className="sl-btn sl-btn-outline" target="_blank" rel="noopener noreferrer">연구소 GitHub ↗</a>
+            <a href="#try" className="sl-btn sl-btn-dark">{p.status === "사용 가능한 데모" ? "실습 열기" : p.status === "연구 실험" ? "프로토타입 보기" : "기획 예시 보기"} ↘</a>
+            <a href={`https://github.com/Jxny0ung/ddalkak-lab-hai/blob/main/${p.sourcePath}`} className="sl-btn sl-btn-outline" target="_blank" rel="noopener noreferrer">관련 소스 확인 ↗</a>
           </div>
         </div></section>
         <section className="sl-section sl-detail-visual"><div className="sl-container">
@@ -42,6 +42,24 @@ export default async function ProjectDetail({params}:{params:Promise<{slug:strin
           <div className="sl-container sl-detail-columns">
             <aside><span className="sl-kicker">01 / OVERVIEW</span><h2>무엇을, 왜 만들까?</h2></aside>
             <div className="sl-detail-copy"><h3>무엇을 만들었나</h3><p>{p.summary}</p><h3>왜 만들었나</h3><p>{p.motivation}</p><h3>사용한 기술</h3><p>{p.technology}</p></div>
+          </div>
+        </section>
+        <section className="sl-section sl-research-evidence" id="research-record">
+          <div className="sl-container sl-detail-columns">
+            <aside>
+              <span className="sl-kicker">RESEARCH & EVIDENCE</span>
+              <h2>연구 질문과 공개 근거</h2>
+              <p>구현 시연과 사람을 대상으로 검증한 연구 결과는 다른 종류의 자료입니다.</p>
+            </aside>
+            <div className="sl-evidence-grid">
+              <article><span>01 / 연구 질문</span><h3>{p.researchQuestion}</h3></article>
+              <article><span>02 / 접근 방법</span><h3>{p.researchMethod}</h3></article>
+              <article><span>03 / 현재 검증 상태</span><h3>{p.verification}</h3></article>
+              <article><span>04 / 공개 가능한 결과물</span><h3>{p.outputEvidence}</h3>
+                <a className="sl-text-link" href={`https://github.com/Jxny0ung/ddalkak-lab-hai/blob/main/${p.sourcePath}`} target="_blank" rel="noopener noreferrer">관련 구현 코드 보기 ↗</a>
+              </article>
+              <p className="sl-evidence-grid__note">연구 참여자·결과 수치·논문이나 수료증은 확인된 자료가 있을 때만 연결합니다. <Link href="/archive">공개 기록 원칙 살펴보기 ↗</Link></p>
+            </div>
           </div>
         </section>
         <section className="sl-section sl-section-soft">
@@ -58,7 +76,7 @@ export default async function ProjectDetail({params}:{params:Promise<{slug:strin
         </section>
         <section className="sl-section sl-section-soft" id="try">
           <div className="sl-container">
-            <div className="sl-section-head"><div><span className="sl-kicker">04 / TRY IT YOURSELF</span><h2>이제 직접 실행해보세요.</h2><p>데모는 브라우저에서 작동합니다. 민감정보·API 키는 입력하지 마세요.</p></div></div>
+            <div className="sl-section-head"><div><span className="sl-kicker">04 / TRY IT YOURSELF</span><h2>이제 직접 실행해보세요.</h2><p>브라우저 데모, 연구용 프로토타입, 기획 예시를 구분해 안내합니다. 민감정보·API 키는 입력하지 마세요.</p></div></div>
             <LearningDemo visual={p.visual} />
           </div>
         </section>
