@@ -99,9 +99,9 @@ export default function LabPage() {
       <main id="main-content">
         <PageHero
           eyebrow="HAI Lab"
-          title="박수, 움직임, 도구 호출까지—사람과 AI 사이의 인터랙션을 직접 실험합니다."
+          title="두 번의 박수부터, 사람과 AI 사이의 인터랙션을 실험합니다."
           description="영화 속 음성 비서의 즉각적인 반응에서 영감을 얻되, 실제 구현은 사용자의 동의·피드백·오류 복구·검증 가능성을 중심으로 다시 설계합니다."
-          meta="Clap → Intent → Agent → Tool"
+          meta="Clap → Intent → Visual Feedback / Future agent tools"
         />
 
         <nav className="lab-index" aria-label="HAI Lab sections">
@@ -129,7 +129,7 @@ export default function LabPage() {
                 하나의 의도 신호로 감지해 DDALKAK CORE를 활성화합니다.
               </p>
               <p>
-                지금 버전은 오디오를 서버에 보내지 않는 로컬 프로토타입입니다.
+                지금 버전은 브라우저에서 직접 동의를 받고 오디오를 서버에 보내지 않는 로컬 프로토타입입니다. 페이지를 떠나거나 종료를 누르면 마이크 스트림을 중단합니다.
                 향후에는 이 활성화 이벤트를 MCP agent router에 넘겨 실제 도구 호출
                 워크플로의 시작점으로 사용할 수 있습니다.
               </p>
