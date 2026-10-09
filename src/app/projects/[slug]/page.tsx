@@ -38,7 +38,7 @@ export default async function ProjectDetail({params}:{params:Promise<{slug:strin
           <div className="sl-container sl-project-record__layout">
             <div><span>RESEARCH QUESTION / 학습·연구 질문</span><strong>{p.researchQuestion}</strong></div>
             <div><span>APPROACH / 접근 방법</span><strong>{p.method}</strong></div>
-            <div><span>DISCLOSURE / 공개 상태</span><strong>{p.status}</strong><small>학술 출판이나 검증된 효과를 뜻하지 않습니다.</small></div>
+            <div><span>DISCLOSURE / 검증 상태</span><strong>{p.status}</strong><small>{p.verification} · 검증된 학술 효과를 뜻하지 않습니다.</small></div>
           </div>
         </section>
         <section className="sl-section sl-detail-visual"><div className="sl-container">
@@ -48,7 +48,7 @@ export default async function ProjectDetail({params}:{params:Promise<{slug:strin
         <section className="sl-section">
           <div className="sl-container sl-detail-columns">
             <aside><span className="sl-kicker">01 / OVERVIEW</span><h2>무엇을, 왜 만들까?</h2></aside>
-            <div className="sl-detail-copy"><h3>무엇을 만들었나</h3><p>{p.summary}</p><h3>왜 만들었나</h3><p>{p.motivation}</p><h3>사용한 기술</h3><p>{p.technology}</p><h3>담당자 및 산출물</h3><p>이 프로젝트의 공개 참여자 명단 및 개별 연구 성과는 현재 확인되지 않았습니다. 확인된 코드와 설계 기록은 <Link href="/outputs">공개 산출물 페이지</Link>에서 구분해 안내합니다.</p></div>
+            <div className="sl-detail-copy"><h3>무엇을 만들었나</h3><p>{p.summary}</p><h3>왜 만들었나</h3><p>{p.motivation}</p><h3>사용한 기술</h3><p>{p.technology}</p><h3>확인 가능한 산출물</h3><p>{p.outputEvidence}</p><div className="sl-actions"><a className="sl-btn sl-btn-outline" href={`https://github.com/Jxny0ung/ddalkak-lab-hai/blob/main/${p.sourcePath}`} target="_blank" rel="noopener noreferrer">해당 구현 코드 직접 확인 ↗</a><Link className="sl-btn sl-btn-outline" href="/outputs">출판·증빙 구분 기준 보기</Link></div><h3>담당자와 출판 여부</h3><p>확인된 공개 참여자 명단이나 개별 학술 실적이 아직 없습니다. 코드 구현 사실을 인간 대상 효과 검증이나 논문 발표와 혼동하지 않습니다.</p></div>
           </div>
         </section>
         <section className="sl-section sl-section-soft">
