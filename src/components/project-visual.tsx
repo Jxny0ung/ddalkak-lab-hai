@@ -32,7 +32,7 @@ export function ProjectVisual({ visual }: { visual: LearningProject["visual"] })
         <div className="sl-art-top"><span className="sl-art-dot"/> Business snapshot <span>DEMO DATA</span></div>
         <div className="sl-dashboard-metrics">
           <div><span>매출 (예시)</span><strong>₩ 24.8M</strong><small>가상 증감</small></div>
-          <div><span>전환율 (예시)</span><strong>3.8%</strong><small>+0.6%p ↗</small></div>
+          <div><span>전환율 (예시)</span><strong>3.8%</strong><small>가상 증감</small></div>
         </div>
         <div className="sl-chart-bars" aria-hidden="true">
           {[38, 55, 47, 72, 63, 85, 76, 95, 81, 100].map((v, i) => (
