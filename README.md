@@ -28,6 +28,15 @@ npm run lint
 npm run build
 ```
 
+## Interview feedback: applied and scoped
+
+The two face-to-face interviews evaluated **another undergraduate research-lab website**, not this product. DDALKAK LAB selectively adapts the transferable guidelines: real link affordances, readable 1.6-ish typography, balanced whitespace, responsive project cards and evidence-first public records.
+
+- `/projects`: linked Project Board with method/status/time labels and honest detail pages.
+- `/outputs`: verified public code/protocol links, plus explicit disclosure criteria for researchers, papers, certificates and awards. No unverified claims.
+- `/research`: AI used **as a research tool** is distinguished from HAI used **as a research object**.
+- `docs/interview-feedback-adaptation-2026-10.md`: precise decision and deferral matrix.
+
 ## Verified development quality (October 2026)
 
 For local verification after the Next.js build:
