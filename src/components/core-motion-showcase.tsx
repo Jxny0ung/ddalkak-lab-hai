@@ -13,10 +13,10 @@ export function CoreMotionShowcase() {
   const [motionPaused, setMotionPaused] = useState(false);
 
   return (
-    <section className="sl-core-feature" aria-labelledby="sl-core-feature-title">
+    <section className="sl-core-feature" id="hai-lab" aria-labelledby="sl-core-feature-title">
       <div className="sl-container sl-core-feature__layout">
         <div className="sl-core-feature__copy">
-          <span className="sl-kicker">INTERACTIVE LAB / 01</span>
+          <span className="sl-kicker">HAI LAB / HUMAN–AI INTERACTION</span>
           <h2 id="sl-core-feature-title">
             화면을 넘어,
             <br />
