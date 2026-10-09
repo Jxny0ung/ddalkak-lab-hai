@@ -1,5 +1,7 @@
 # DDALKAK LAB — Site Architecture
 
+> **Historical research-first architecture.** As of October 2026 the homepage and primary navigation follow the student-first Projects / Learn experience. The existing Research / Methods / System / Archive structure remains accessible for scholarly provenance. See [signature-motion-design.md](signature-motion-design.md) for current integration rules.
+
 ## Purpose
 
 DDALKAK LAB is a research interface, not a generic portfolio. The information architecture should answer five questions:
