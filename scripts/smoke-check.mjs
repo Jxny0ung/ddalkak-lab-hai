@@ -59,7 +59,7 @@ try {
   const routes = [
     "/", "/projects", "/projects/idea-map", "/projects/prompt-builder",
     "/projects/business-dashboard", "/projects/clap-interface", "/learn",
-    "/lab", "/about", "/research", "/methods", "/archive", "/registry",
+    "/lab", "/about", "/research", "/methods", "/archive", "/outputs", "/registry",
     "/handbook", "/system", "/projects?category=Data",
     "/sitemap.xml", "/robots.txt",
   ];
@@ -73,6 +73,14 @@ try {
     if (route === "/") {
       assert(html.includes("RESEARCH BEHIND THE BUILD"), "Homepage research bridge missing");
       assert(html.includes("DDALKAK"), "Homepage signature CORE missing");
+    }
+    if (route === "/outputs") {
+      assert(html.includes("CURRENT PUBLIC OUTPUTS"), "Public outputs page should contain verified records");
+      assert(html.includes("EVIDENCE BEFORE PUBLICATION"), "Output evidence rules were removed");
+    }
+    if (route === "/projects/idea-map") {
+      assert(html.includes("RESEARCH &amp; EVIDENCE") || html.includes("RESEARCH & EVIDENCE"), "Project evidence panel missing");
+      assert(html.includes("learning-demo.tsx"), "Project should link to real implementation source");
     }
     if (route === "/lab") {
       assert(html.includes("Clap-to-Activate"), "Lab clap prototype was removed");
