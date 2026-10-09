@@ -28,6 +28,14 @@ npm run lint
 npm run build
 ```
 
+## Selected design direction · Recommendation A
+
+- **DDALKAK CORE** is the original homepage hero symbol, with interactive activation, selectable research concepts and animation pause.
+- **HAI Lab** remains its own homepage interaction preview and a dedicated `/lab` route for consent-based double-clap experiments.
+- **Agent Company** has a separate homepage module architecture diagram showing five proposed roles, while the older animated lab concept remains intact. It is not real autonomous execution.
+- **Projects → Learn** still lead the student experience rather than being displaced by cinematic decoration.
+- The decision log and implementation gaps are in [`docs/recommendation-a-master.md`](docs/recommendation-a-master.md).
+
 ## Student projects
 
 프로젝트 정의: `src/lib/student-content.ts`
