@@ -3,6 +3,7 @@ import "./globals.css";
 import "./visual-system.css";
 import "./student-platform.css";
 import "./core-showcase.css";
+import "./recommendation-a.css";
 
 const siteUrl = "https://ddalkak-lab-hai.vercel.app";
 
