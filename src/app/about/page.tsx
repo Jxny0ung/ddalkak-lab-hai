@@ -33,7 +33,7 @@ export default function AboutPage() {
               <p>AI로 만든 앱, 도구, 대시보드, 인터페이스를 그대로 소비하지 않고 작은 단위로 다시 구현합니다. 만드는 과정에서 실무 문제 해결과 학문적 탐구를 함께 배우는 학부 연구생 중심의 공간입니다.</p>
               <h3>어떤 질문을 다루나요?</h3>
               <p>경영학의 의사결정·조직·플랫폼과 미디어커뮤니케이션의 정보 처리·신뢰·표현을 Human–AI Interaction(HAI)과 연결합니다.</p>
-              <div className="sl-actions"><Link className="sl-btn sl-btn-outline" href="/research">연구 주제 ↗</Link><Link className="sl-btn sl-btn-outline" href="/methods">연구 방법 ↗</Link></div>
+              <div className="sl-actions"><Link className="sl-btn sl-btn-outline" href="/research">연구 주제 ↗</Link><Link className="sl-btn sl-btn-outline" href="/methods">연구 방법 ↗</Link><Link className="sl-btn sl-btn-outline" href="/outputs">공개 결과물 ↗</Link></div>
             </div>
           </div>
         </section>
