@@ -31,3 +31,6 @@ jobs:
 
       - name: Production build
         run: npm run build
+
+      - name: Production route and permission smoke checks
+        run: npm run smoke
