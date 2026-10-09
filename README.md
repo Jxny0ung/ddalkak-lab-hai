@@ -28,6 +28,27 @@ npm run lint
 npm run build
 ```
 
+## Verified development quality (October 2026)
+
+For local verification after the Next.js build:
+
+```sh
+npm ci
+npm run lint
+npm run build
+npm run smoke
+```
+
+The smoke suite checks site pages, missing-project behavior and the browser
+microphone policy. The `/lab` route is the **only** route allowed to request
+microphone access; it still requires explicit user permission. Other pages
+reject microphone access. This does not substitute for physical-device or
+browser accessibility tests.
+
+The original VS Code conversation's **foundational requirements**, current
+implementation gaps and privacy-sensitive backup guidance are summarized in
+[`docs/chat-history-site-audit-2026-10.md`](docs/chat-history-site-audit-2026-10.md).
+
 ## Selected design direction · Recommendation A
 
 - **DDALKAK CORE** is the original homepage hero symbol, with interactive activation, selectable research concepts and animation pause.
