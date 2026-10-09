@@ -141,6 +141,8 @@ body {
 }
 .sl-evidence-grid__note a { color: #2259c4; text-decoration: underline; text-underline-offset: 3px; }
 
+.sl-activity-evidence-link { margin-top: 24px; }
+
 /* Source-backed public outputs are links as a whole, never empty cards. */
 .sl-output-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
 .sl-output-card {
