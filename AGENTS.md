@@ -32,6 +32,14 @@ Respect confidentiality, consent and personal-data rules.
 - Main platform styles live in src/app/student-platform.css (sl- namespace); older research UI uses existing styles.
 
 ## Engineering
+
+- The HAI Lab needs a per-route Permissions-Policy exception allowing `microphone=(self)` **only** on `/lab`. Preserve `microphone=()` elsewhere and never bypass explicit consent.
+- Microphone getUserMedia requests can resolve after stop/unmount; handle canceled promises, stop tracks and close Web Audio contexts.
+- All manual examples must identify themselves as simulation rather than recognized audio or autonomous AI.
+- Keep Research and Methods discoverable, use honest empty states and do not fabricate a team, contact email or official university affiliation.
+- After building, run `npm run smoke` in addition to lint and build, and verify the permissions header on /lab and /.
+- Follow `docs/chat-history-site-audit-2026-10.md` for original requirements and audit decisions.
+
 - Next.js 16 App Router, TypeScript, minimal dependencies.
 - Student project content: src/lib/student-content.ts.
 - Follow client/server boundaries. No secrets or AI API keys in client code.
