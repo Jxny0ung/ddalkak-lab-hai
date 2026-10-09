@@ -80,6 +80,35 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="sl-research-bridge" aria-labelledby="sl-research-bridge-title">
+          <div className="sl-container">
+            <div className="sl-research-bridge__top">
+              <div>
+                <span className="sl-kicker">RESEARCH BEHIND THE BUILD</span>
+                <h2 id="sl-research-bridge-title">무엇을 만들지보다,<br/>무엇을 검증할지 먼저 묻습니다.</h2>
+              </div>
+              <p>딸깍 연구소의 실습은 경영학과 미디어커뮤니케이션의 질문을 HAI 방법론으로 연결합니다. 실제 실험 결과와 구현 예시는 구분해 공개합니다.</p>
+            </div>
+            <div className="sl-research-bridge__grid">
+              <Link href="/research">
+                <span>01 / RESEARCH</span>
+                <h3>연구 질문 찾기 <span aria-hidden="true">↗</span></h3>
+                <p>인간–AI 협업, 정보 신뢰, 플랫폼과 의사결정의 연결을 탐색합니다.</p>
+              </Link>
+              <Link href="/methods">
+                <span>02 / METHODS</span>
+                <h3>검증 방법 설계하기 <span aria-hidden="true">↗</span></h3>
+                <p>실험, 설문, 콘텐츠 분석, 계산적 분석과 사용성 평가를 다룹니다.</p>
+              </Link>
+              <Link href="/registry">
+                <span>03 / REGISTRY</span>
+                <h3>계획과 결과 구분하기 <span aria-hidden="true">↗</span></h3>
+                <p>질문·변수·AI 사용·변경 이력과 공개 상태를 기록하는 원칙입니다.</p>
+              </Link>
+            </div>
+          </div>
+        </section>
+
         <section className="sl-section">
           <div className="sl-container">
             <div className="sl-section-head"><div><span className="sl-kicker">EXPLORE BY CATEGORY</span><h2>관심 분야에서 시작하세요.</h2></div></div>
