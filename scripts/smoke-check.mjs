@@ -81,6 +81,7 @@ try {
     if (route === "/projects/idea-map") {
       assert(html.includes("RESEARCH &amp; EVIDENCE") || html.includes("RESEARCH & EVIDENCE"), "Project evidence panel missing");
       assert(html.includes("learning-demo.tsx"), "Project should link to real implementation source");
+      assert(html.includes("사용자 대상 효과 검증 전"), "Learning demo must distinguish non-validated research outcomes");
     }
     if (route === "/lab") {
       assert(html.includes("Clap-to-Activate"), "Lab clap prototype was removed");
