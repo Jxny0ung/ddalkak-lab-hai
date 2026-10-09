@@ -30,6 +30,7 @@ export function HaiClapConsole() {
   const streamRef = useRef<MediaStream | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
   const frameRef = useRef<number | null>(null);
+  const requestIdRef = useRef(0);
   const lastTransientRef = useRef(0);
   const firstClapRef = useRef<number | null>(null);
   const noiseFloorRef = useRef(0.018);
@@ -43,6 +44,8 @@ export function HaiClapConsole() {
   }, [sensitivity]);
 
   const stopAudio = useCallback(() => {
+    // Invalidate a pending getUserMedia request, including route unmounts.
+    requestIdRef.current += 1;
     if (frameRef.current !== null) {
       cancelAnimationFrame(frameRef.current);
       frameRef.current = null;
@@ -92,15 +95,20 @@ export function HaiClapConsole() {
     oscillator.stop(context.currentTime + 0.2);
   }, []);
 
-  const activateCore = useCallback(() => {
+  const activateCore = useCallback((source: "clap" | "manual" = "clap") => {
     stateRef.current = "active";
     setState("active");
-    setClapCount(2);
-    setMessage("DDALKAK CORE online — 두 번의 박수를 하나의 의도 신호로 해석했습니다.");
+    setClapCount(source === "clap" ? 2 : 0);
+    setMessage(
+      source === "clap"
+        ? "DDALKAK CORE online — 두 번의 박수를 하나의 의도 신호로 감지했습니다."
+        : "수동 데모로 코어를 활성화했습니다. 실제 박수 인식이나 AI 도구 실행 결과는 아닙니다.",
+    );
     playActivationTone();
   }, [playActivationTone]);
 
   const startListening = useCallback(async () => {
+    const requestId = ++requestIdRef.current;
     if (!navigator.mediaDevices?.getUserMedia) {
       stateRef.current = "error";
       setState("error");
@@ -122,9 +130,22 @@ export function HaiClapConsole() {
         video: false,
       });
 
+      if (requestId !== requestIdRef.current) {
+        // Permission may have been granted after the user pressed Stop.
+        stream.getTracks().forEach((track) => track.stop());
+        return;
+      }
+
+      streamRef.current = stream;
       const context = new AudioContext();
+      contextRef.current = context;
       if (context.state === "suspended") {
         await context.resume();
+      }
+      if (requestId !== requestIdRef.current) {
+        stream.getTracks().forEach((track) => track.stop());
+        if (context.state !== "closed") void context.close();
+        return;
       }
 
       const source = context.createMediaStreamSource(stream);
@@ -133,8 +154,6 @@ export function HaiClapConsole() {
       analyser.smoothingTimeConstant = 0.08;
       source.connect(analyser);
 
-      streamRef.current = stream;
-      contextRef.current = context;
       analyserRef.current = analyser;
       noiseFloorRef.current = 0.018;
       firstClapRef.current = null;
@@ -269,6 +288,15 @@ export function HaiClapConsole() {
 
       frameRef.current = requestAnimationFrame(monitor);
     } catch (error) {
+      // Never leave the microphone on after initialization fails.
+      streamRef.current?.getTracks().forEach((track) => track.stop());
+      streamRef.current = null;
+      if (contextRef.current && contextRef.current.state !== "closed") {
+        void contextRef.current.close();
+      }
+      contextRef.current = null;
+      analyserRef.current = null;
+      if (requestId !== requestIdRef.current) return;
       stateRef.current = "error";
       setState("error");
       setMessage(
@@ -298,8 +326,10 @@ export function HaiClapConsole() {
   }, []);
 
   const manualDemo = useCallback(() => {
-    activateCore();
-  }, [activateCore]);
+    // Manual fallback must never imply microphone capture or recognition.
+    stopAudio();
+    activateCore("manual");
+  }, [activateCore, stopAudio]);
 
   const listening =
     state === "calibrating" || state === "listening" || state === "active";
@@ -342,30 +372,30 @@ export function HaiClapConsole() {
           </p>
 
           <div className="clap-console__actions">
-            {!listening ? (
+            {!listening && state !== "requesting" ? (
               <button
                 className="button-primary"
                 disabled={state === "requesting"}
                 onClick={startListening}
                 type="button"
               >
-                {state === "requesting" ? "Requesting…" : "Arm microphone"}
+                마이크 허용 후 시작
                 <span aria-hidden="true">◎</span>
               </button>
             ) : (
               <button className="button-ghost" onClick={stopAudio} type="button">
-                Stop listening
+                실험 종료
               </button>
             )}
 
             <button className="button-ghost" onClick={manualDemo} type="button">
-              Manual demo
+              마이크 없이 시각 데모
             </button>
           </div>
 
           {state === "active" ? (
             <button className="clap-reset" onClick={resetActivation} type="button">
-              Reset interaction ↻
+              다시 시도하기 ↻
             </button>
           ) : null}
         </div>
