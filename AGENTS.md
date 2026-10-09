@@ -25,6 +25,8 @@ Respect confidentiality, consent and personal-data rules.
 - Preserve visible student project interfaces; avoid gratuitous gradients, neon, glass effects, bouncing and excessive animations.
 - 1280px max content width, responsive 390px phones, accessible headings/navigation/forms and keyboard focus.
 - The more futuristic DDALKAK CORE identity belongs inside HAI Lab rather than dominating the homepage.
+- A single, contained CORE interactive teaser may appear on the homepage. It must stay secondary to Projects and Learn, distinguish simulated visual feedback from mic/agent execution, offer a pause control, and honor reduced motion.
+- Preserve the original ReactorCore component and the HAI Lab experience instead of copying third-party film props or importing heavy motion dependencies.
 - Main platform styles live in src/app/student-platform.css (sl- namespace); older research UI uses existing styles.
 
 ## Engineering
