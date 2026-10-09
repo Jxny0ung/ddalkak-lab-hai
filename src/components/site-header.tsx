@@ -1,38 +1,33 @@
 import Link from "next/link";
 
-const navigation = [
-  { href: "/research", label: "Research" },
+const links = [
   { href: "/projects", label: "Projects" },
-  { href: "/methods", label: "Methods" },
-  { href: "/lab", label: "HAI Lab" },
-  { href: "/system", label: "System" },
-];
+  { href: "/learn", label: "Learn" },
+  { href: "/lab", label: "Lab" },
+  { href: "/about", label: "About" },
+] as const;
 
 export function SiteHeader() {
   return (
-    <header className="site-header">
-      <div className="site-header__inner">
-        <Link className="brand-lockup" href="/" aria-label="DDALKAK LAB home">
-          <span className="brand-mark" aria-hidden="true">
-            <span />
-          </span>
-          <span className="brand-copy">
-            <strong>DDALKAK LAB</strong>
-            <small>Human × AI Research</small>
-          </span>
+    <header className="sl-header">
+      <div className="sl-container sl-header-inner">
+        <Link href="/" className="sl-brand" aria-label="모두의 딸깍 연구소 홈">
+          <span className="sl-brand-symbol" aria-hidden="true">◦</span>
+          <span>모두의 딸깍 연구소</span>
         </Link>
-
-        <nav className="primary-nav" aria-label="Primary navigation">
-          {navigation.map((item) => (
-            <Link href={item.href} key={item.href}>
-              {item.label}
-            </Link>
-          ))}
+        <nav className="sl-desktop-nav" aria-label="주 메뉴">
+          {links.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
         </nav>
-
-        <Link className="header-archive" href="/archive">
-          Archive <span aria-hidden="true">↗</span>
+        <Link className="sl-btn sl-btn-dark sl-header-cta" href="/projects">
+          프로젝트 보기 <span aria-hidden="true">↗</span>
         </Link>
+        <details className="sl-mobile-menu">
+          <summary aria-label="메뉴 열기">메뉴 <span aria-hidden="true">☰</span></summary>
+          <nav aria-label="모바일 메뉴">
+            {links.map((item) => <Link key={item.href} href={item.href}>{item.label}</Link>)}
+            <Link href="/projects">프로젝트 보기 ↗</Link>
+          </nav>
+        </details>
       </div>
     </header>
   );

@@ -1,30 +1,14 @@
 import type { MetadataRoute } from "next";
-
+import { studentProjects } from "@/lib/student-content";
 const baseUrl = "https://ddalkak-lab-hai.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const routes = [
-    "",
-    "/research",
-    "/methods",
-    "/projects",
-    "/lab",
-    "/system",
-    "/registry",
-    "/handbook",
-    "/archive",
-    "/about",
-  ];
-
+  const paths = ["", "/projects", "/learn", "/lab", "/about", "/research",
+    "/methods", "/archive", "/handbook", "/registry", "/system"];
+  const routes = [...paths, ...studentProjects.map(p => `/projects/${p.slug}`)];
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
     changeFrequency: route === "" ? "weekly" : "monthly",
-    priority:
-      route === ""
-        ? 1
-        : route === "/lab" || route === "/system"
-          ? 0.9
-          : 0.8,
+    priority: route === "" ? 1 : ["/projects", "/learn"].includes(route) ? .9 : .7,
   }));
 }

@@ -1,57 +1,27 @@
 import Link from "next/link";
 
-const footerNavigation = [
-  { href: "/research", label: "Research" },
-  { href: "/projects", label: "Projects" },
-  { href: "/methods", label: "Methods" },
-  { href: "/lab", label: "HAI Lab" },
-  { href: "/system", label: "System" },
-  { href: "/registry", label: "Registry" },
-  { href: "/handbook", label: "Handbook" },
-  { href: "/archive", label: "Archive" },
-];
-
 export function SiteFooter() {
   return (
-    <footer className="site-footer">
-      <div className="footer-topline">
-        <div>
-          <p className="footer-kicker">DDALKAK LAB / 2026 —</p>
-          <h2>
-            질문을 만들고,
-            <br />
-            검증 가능한 과정으로 남깁니다.
-          </h2>
+    <footer className="sl-footer">
+      <div className="sl-container">
+        <div className="sl-footer-top">
+          <div>
+            <Link href="/" className="sl-brand">모두의 딸깍 연구소</Link>
+            <p>보고, 만들고, 개선하고, 공유하는 학생 중심의 AI 실습·연구 플랫폼</p>
+          </div>
+          <nav aria-label="하단 메뉴">
+            <Link href="/projects">Projects</Link>
+            <Link href="/learn">Learn</Link>
+            <Link href="/lab">Lab</Link>
+            <Link href="/about">About</Link>
+            <Link href="/archive">Archive</Link>
+            <a href="https://github.com/Jxny0ung/ddalkak-lab-hai" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+          </nav>
         </div>
-        <p className="footer-summary">
-          Business × Media & Communication × Human–AI Interaction
-          <br />
-          계획과 실증 결과를 구분하고, 공개 가능한 연구 과정만 기록합니다.
-        </p>
-      </div>
-
-      <div className="footer-nav" aria-label="Footer navigation">
-        {footerNavigation.map((item) => (
-          <Link href={item.href} key={item.href}>
-            {item.label}
-          </Link>
-        ))}
-        <a
-          href="https://github.com/Jxny0ung/ddalkak-lab-hai"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub ↗
-        </a>
-      </div>
-
-      <div className="footer-wordmark" aria-hidden="true">
-        DDALKAK
-      </div>
-
-      <div className="footer-bottom">
-        <span>Undergraduate Research Project · Korea</span>
-        <span>© 2026 DDALKAK LAB</span>
+        <div className="sl-footer-bottom">
+          <span>Joongbu University · Business Administration × Media & Communication × HAI</span>
+          <span>© 2026 DDALKAK LAB · 교육용 예시는 실제 연구 성과와 구분합니다.</span>
+        </div>
       </div>
     </footer>
   );

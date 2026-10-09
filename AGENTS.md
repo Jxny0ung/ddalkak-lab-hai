@@ -1,48 +1,39 @@
-# DDALKAK LAB — Codex Project Instructions
+# 모두의 딸깍 연구소 — Codex / Contributor Instructions
 
-## Mission
+## Product mission
+A student-first platform to discover, rebuild, improve and share generative-AI use cases, with an interdisciplinary foundation in Business Administration × Media & Communication × Human–AI Interaction (HAI).
 
-This repository powers DDALKAK LAB, an undergraduate research project at the intersection of Business Administration, Media & Communication, and Human–AI Interaction (HAI).
+The primary visitor journey is **Home → Projects → Project detail → Try it yourself → Learn → Share**. Prioritize actual student work, transparent build notes and useful learning resources over technology spectacle.
 
-The site should make the research process visible: questions, methods, replication, iteration, limitations, and reusable outputs.
+## Public information architecture
+- Home: purpose, selected projects, Explore / Rebuild / Improve / Share
+- Projects: browse and filter real demos / accurately labeled planned concepts, with process and limits
+- Learn: tutorials, prompts, API safety, source and research records
+- Lab: existing HAI consent-based browser prototype and Agent Company architecture
+- About: independent student project, principles, participation guidance
+- Existing research/methodology/registry/archive/system pages remain accessible and must not be deleted casually.
 
-## Research framing
+## Content integrity
+Do not invent publications, experiments, memberships, dates, recruitment periods, partnerships, user counts, API integrations or project outcomes.
+Distinguish: functioning local demo, concept, research prototype and verified result.
+For troubleshooting, do not claim hypothetical examples are real historical incidents; label them educational scenarios.
+Do not present synthetic KPI values as actual business data.
+Respect confidentiality, consent and personal-data rules.
 
-Prioritize these themes when proposing content or features:
-
-- Human–AI interaction and decision-making
-- Misinformation, fact-checking, media trust, and information processing
-- Algorithmic curation and platform governance
-- Platform incentives and management
-- Computational communication, text analysis, and mixed methods
-
-Do not invent empirical findings, sample sizes, partnerships, publications, awards, or team members. Clearly distinguish plans, hypotheses, prototypes, and completed research.
-
-## Product principles
-
-- Research-first, not AI-demo-first.
-- Show the work: Explore → Rebuild → Improve → Share.
-- Keep methods reproducible and limitations visible.
-- Avoid hype, vague AI marketing language, and unsupported claims.
-- Never commit private research data, credentials, API keys, participant data, or personally identifying information.
-
-## Design system
-
-- Editorial / academic / modern, not startup-generic.
-- Warm off-white paper background, near-black typography, limited orange accent.
-- Strong typography, visible grid, thin rules, minimal decoration, no heavy shadows.
-- Korean-first copy with English research terminology where useful.
-- Responsive and accessible; semantic HTML and readable mobile layouts are required.
+## Design
+- Korean-first, quiet product-editorial identity: #fff, #f7f7f5, #111, gray, sparse #2563eb.
+- Preserve visible student project interfaces; avoid gratuitous gradients, neon, glass effects, bouncing and excessive animations.
+- 1280px max content width, responsive 390px phones, accessible headings/navigation/forms and keyboard focus.
+- The more futuristic DDALKAK CORE identity belongs inside HAI Lab rather than dominating the homepage.
+- Main platform styles live in src/app/student-platform.css (sl- namespace); older research UI uses existing styles.
 
 ## Engineering
+- Next.js 16 App Router, TypeScript, minimal dependencies.
+- Student project content: src/lib/student-content.ts.
+- Follow client/server boundaries. No secrets or AI API keys in client code.
+- Build confidence: npm run lint, npm run build, check primary routes and at least one mobile width, test functional browser demos.
+- New work should use feature branches and PRs. Avoid pushing accidental node_modules, generated outputs, unpublished notes or private records.
+- Existing HAI Lab prototype must continue to work with explicit user consent.
 
-- Next.js App Router + React + TypeScript.
-- Prefer server components unless client interactivity is required.
-- Keep dependencies minimal.
-- Run lint and a production build before considering a task complete.
-- Keep metadata and README aligned with the actual site.
-- Use small reusable components when a page begins to repeat patterns.
-
-## Content safety
-
-Public-facing code may be committed. Raw research notes, unpublished participant data, private emails, local datasets, and secrets must remain outside the repository.
+## Research provenance
+The main website is for learning by building; rigorous academic protocols are preserved in /research, /methods, /registry, /handbook, /archive and docs/. Label methods, hypotheses, prototypes, and evidence clearly.
