@@ -73,6 +73,7 @@ export default function AboutPage() {
               <div className="sl-actions">
                 <a className="sl-btn sl-btn-dark" href="https://github.com/Jxny0ung/ddalkak-lab-hai/issues" target="_blank" rel="noopener noreferrer">GitHub에서 제안하기 ↗</a>
                 <Link className="sl-btn sl-btn-outline" href="/registry">연구 기록 원칙 보기 ↗</Link>
+                <Link className="sl-btn sl-btn-outline" href="/outputs">성과 증빙 기준 보기 ↗</Link>
               </div>
               <p>별도의 공식 모집·개인 문의 이메일은 아직 확인되지 않았습니다.</p>
             </div>

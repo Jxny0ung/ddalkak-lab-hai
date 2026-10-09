@@ -31,6 +31,15 @@ Respect confidentiality, consent and personal-data rules.
 - Preserve the original ReactorCore component and the HAI Lab experience instead of copying third-party film props or importing heavy motion dependencies.
 - Main platform styles live in src/app/student-platform.css (sl- namespace); older research UI uses existing styles.
 
+## Interview feedback scope
+
+- The evaluated university undergraduate lab homepage is **not** the DDALKAK LAB project; apply generally useful UX practices but never transfer its roster, awards, certifications, publications or implied institutional approval.
+- Keep the DDALKAK CORE identity while avoiding oversized hero graphics, compulsory tall spacing, nonfunctional arrows, poor mobile line breaks or divergent typefaces.
+- Use the shared `src/components/project-card.tsx` for actual clickable cards; show method, status and evidence before making research claims.
+- `/outputs` is an evidence-index and disclosure policy, not a fabricated CV or credentials feed. Only add verified, consented records with real links.
+- Preserve `/research` explanation distinguishing AI as a method versus Human–AI Interaction as the object of study.
+- Source of truth: `docs/interview-feedback-adaptation-2026-10.md`.
+
 ## Engineering
 
 - The HAI Lab needs a per-route Permissions-Policy exception allowing `microphone=(self)` **only** on `/lab`. Preserve `microphone=()` elsewhere and never bypass explicit consent.

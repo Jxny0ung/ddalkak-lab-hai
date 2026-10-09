@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { ProjectVisual } from "@/components/project-visual";
+import { ProjectCard } from "@/components/project-card";
 import { projectCategories, studentProjects } from "@/lib/student-content";
 
 export const metadata: Metadata = {
@@ -21,7 +21,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
         <section className="sl-page-top"><div className="sl-container">
           <span className="sl-kicker">PROJECTS / BUILD & LEARN</span>
           <h1>우리가 만들고,<br/>다시 만들어볼 것들.</h1>
-          <p>작동하는 데모와 기획 예시를 구분하고, 각 프로젝트의 만들기 과정과 흔한 문제를 함께 기록합니다.</p>
+          <p>프로젝트마다 연구 질문, 접근 방법, 구현 상태를 구분합니다. 카드 전체를 눌러 상세 기록과 실제 데모를 확인하세요.</p>
         </div></section>
         <section className="sl-section">
           <div className="sl-container">
@@ -42,14 +42,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
               </div>
             ) : (
             <div className="sl-project-grid sl-all-projects">
-              {visible.map((p)=><Link className="sl-project-card" href={`/projects/${p.slug}`} key={p.slug}>
-                <ProjectVisual visual={p.visual} />
-                <div className="sl-project-card-body">
-                  <div className="sl-project-tags"><span>{p.category}</span><span>{p.status}</span></div>
-                  <h2>{p.title}</h2><p>{p.subtitle}</p>
-                  <div className="sl-project-tech">{p.technology}<span aria-hidden="true">↗</span></div>
-                </div>
-              </Link>)}
+              {visible.map((project) => <ProjectCard key={project.slug} project={project} />)}
             </div>
             )}
           </div>

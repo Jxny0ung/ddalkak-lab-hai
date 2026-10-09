@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { ProjectVisual } from "@/components/project-visual";
+import { ProjectCard } from "@/components/project-card";
 import { CoreMotionShowcase } from "@/components/core-motion-showcase";
 import { CoreHeroVisual } from "@/components/core-hero-visual";
 import { AgentCompanyOverview } from "@/components/agent-company-overview";
@@ -56,17 +56,7 @@ export default function Home() {
               <Link className="sl-text-link" href="/projects">모든 프로젝트 보기 <span aria-hidden="true">↗</span></Link>
             </div>
             <div className="sl-project-grid">
-              {featured.map((project) => (
-                <Link className="sl-project-card" key={project.slug} href={`/projects/${project.slug}`}>
-                  <ProjectVisual visual={project.visual} />
-                  <div className="sl-project-card-body">
-                    <div className="sl-project-tags"><span>{project.category}</span><span>{project.status}</span></div>
-                    <h3>{project.title}</h3>
-                    <p>{project.subtitle}</p>
-                    <div className="sl-project-tech">{project.technology}<span aria-hidden="true">↗</span></div>
-                  </div>
-                </Link>
-              ))}
+              {featured.map((project) => <ProjectCard featured key={project.slug} project={project} />)}
             </div>
           </div>
         </section>
@@ -104,6 +94,11 @@ export default function Home() {
                 <span>03 / REGISTRY</span>
                 <h3>계획과 결과 구분하기 <span aria-hidden="true">↗</span></h3>
                 <p>질문·변수·AI 사용·변경 이력과 공개 상태를 기록하는 원칙입니다.</p>
+              </Link>
+              <Link href="/outputs">
+                <span>04 / OUTPUTS</span>
+                <h3>근거와 산출물 확인하기 <span aria-hidden="true">↗</span></h3>
+                <p>공개된 코드와 연구 문서를 연결하고, 아직 없는 성과는 구분합니다.</p>
               </Link>
             </div>
           </div>

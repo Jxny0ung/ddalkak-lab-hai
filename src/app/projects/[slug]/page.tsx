@@ -30,10 +30,17 @@ export default async function ProjectDetail({params}:{params:Promise<{slug:strin
           <div className="sl-detail-meta"><span>{p.category}</span><span>{p.status}</span><span>{p.level} · 약 {p.minutes}분</span></div>
           <h1>{p.title}</h1><p>{p.subtitle}</p>
           <div className="sl-actions">
-            <a href="#try" className="sl-btn sl-btn-dark">직접 만들어보기 ↘</a>
-            <a href="https://github.com/Jxny0ung/ddalkak-lab-hai" className="sl-btn sl-btn-outline" target="_blank" rel="noopener noreferrer">연구소 GitHub ↗</a>
+            <a href="#try" className="sl-btn sl-btn-dark">{p.status === "기획 예시" ? "기획 내용 살펴보기" : "직접 체험하기"} ↘</a>
+            <Link href="/outputs" className="sl-btn sl-btn-outline">공개 산출물 확인하기 ↗</Link>
           </div>
         </div></section>
+        <section className="sl-project-record" aria-label="프로젝트 질문과 공개 상태">
+          <div className="sl-container sl-project-record__layout">
+            <div><span>RESEARCH QUESTION / 학습·연구 질문</span><strong>{p.researchQuestion}</strong></div>
+            <div><span>APPROACH / 접근 방법</span><strong>{p.method}</strong></div>
+            <div><span>DISCLOSURE / 공개 상태</span><strong>{p.status}</strong><small>학술 출판이나 검증된 효과를 뜻하지 않습니다.</small></div>
+          </div>
+        </section>
         <section className="sl-section sl-detail-visual"><div className="sl-container">
           <ProjectVisual visual={p.visual} />
           <p className="sl-caption">화면은 실습용 UI입니다. AI API 연동 여부와 실제 구현 상태는 아래 설명을 확인하세요.</p>
@@ -41,7 +48,7 @@ export default async function ProjectDetail({params}:{params:Promise<{slug:strin
         <section className="sl-section">
           <div className="sl-container sl-detail-columns">
             <aside><span className="sl-kicker">01 / OVERVIEW</span><h2>무엇을, 왜 만들까?</h2></aside>
-            <div className="sl-detail-copy"><h3>무엇을 만들었나</h3><p>{p.summary}</p><h3>왜 만들었나</h3><p>{p.motivation}</p><h3>사용한 기술</h3><p>{p.technology}</p></div>
+            <div className="sl-detail-copy"><h3>무엇을 만들었나</h3><p>{p.summary}</p><h3>왜 만들었나</h3><p>{p.motivation}</p><h3>사용한 기술</h3><p>{p.technology}</p><h3>담당자 및 산출물</h3><p>이 프로젝트의 공개 참여자 명단 및 개별 연구 성과는 현재 확인되지 않았습니다. 확인된 코드와 설계 기록은 <Link href="/outputs">공개 산출물 페이지</Link>에서 구분해 안내합니다.</p></div>
           </div>
         </section>
         <section className="sl-section sl-section-soft">
@@ -58,7 +65,7 @@ export default async function ProjectDetail({params}:{params:Promise<{slug:strin
         </section>
         <section className="sl-section sl-section-soft" id="try">
           <div className="sl-container">
-            <div className="sl-section-head"><div><span className="sl-kicker">04 / TRY IT YOURSELF</span><h2>이제 직접 실행해보세요.</h2><p>데모는 브라우저에서 작동합니다. 민감정보·API 키는 입력하지 마세요.</p></div></div>
+            <div className="sl-section-head"><div><span className="sl-kicker">04 / TRY IT YOURSELF</span><h2>{p.status === "기획 예시" ? "기획 예시를 살펴보세요." : "이제 직접 실행해보세요."}</h2><p>{p.status === "기획 예시" ? "이 화면은 실제 실행 가능한 대시보드가 아닌 기획 설명입니다." : "브라우저 안에서 사용하는 실습입니다. 민감정보와 API 키는 입력하지 마세요."}</p></div></div>
             <LearningDemo visual={p.visual} />
           </div>
         </section>

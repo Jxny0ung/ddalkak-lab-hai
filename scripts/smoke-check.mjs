@@ -59,7 +59,7 @@ try {
   const routes = [
     "/", "/projects", "/projects/idea-map", "/projects/prompt-builder",
     "/projects/business-dashboard", "/projects/clap-interface", "/learn",
-    "/lab", "/about", "/research", "/methods", "/archive", "/registry",
+    "/lab", "/about", "/research", "/methods", "/archive", "/registry", "/outputs",
     "/handbook", "/system", "/projects?category=Data",
     "/sitemap.xml", "/robots.txt",
   ];
@@ -73,6 +73,21 @@ try {
     if (route === "/") {
       assert(html.includes("RESEARCH BEHIND THE BUILD"), "Homepage research bridge missing");
       assert(html.includes("DDALKAK"), "Homepage signature CORE missing");
+    }
+    if (route === "/") {
+      assert(html.includes("04 / OUTPUTS"), "Homepage verified outputs link missing");
+      assert(html.includes("접근 방법"), "Project cards do not disclose their method");
+    }
+    if (route === "/outputs") {
+      assert(html.includes("공개 웹사이트 소스코드"), "Outputs: source verification missing");
+      assert(html.includes("공개 확인 자료 없음"), "Outputs: empty achievements not labeled");
+    }
+    if (route === "/projects/idea-map") {
+      assert(html.includes("RESEARCH QUESTION"), "Project detail missing research question");
+      assert(html.includes("접근 방법"), "Project detail missing method");
+    }
+    if (route === "/research") {
+      assert(html.includes("AI as a research tool"), "AI-as-tool / HAI distinction missing");
     }
     if (route === "/lab") {
       assert(html.includes("Clap-to-Activate"), "Lab clap prototype was removed");

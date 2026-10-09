@@ -36,7 +36,7 @@ export function AgentCompanyOverview() {
                   <span>{role.code}</span>
                   <small>PROPOSED MODULE</small>
                 </div>
-                <h3>{role.name}<span aria-hidden="true">↗</span></h3>
+                <h3>{role.name}</h3>
                 <strong>{role.korean}</strong>
                 <p>{role.description}</p>
               </article>

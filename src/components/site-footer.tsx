@@ -17,6 +17,7 @@ export function SiteFooter() {
             <Link href="/methods">Methods</Link>
             <Link href="/about">About</Link>
             <Link href="/archive">Archive</Link>
+            <Link href="/outputs">Outputs</Link>
             <a href="https://github.com/Jxny0ung/ddalkak-lab-hai" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
           </nav>
         </div>

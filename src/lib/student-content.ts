@@ -8,6 +8,8 @@ export interface LearningProject {
   category: ProjectCategory;
   technology: string;
   status: ProjectStatus;
+  researchQuestion: string;
+  method: string;
   level: string;
   minutes: number;
   visual: "map" | "prompt" | "dashboard" | "hai";
@@ -26,6 +28,8 @@ export const projectCategories: ProjectCategory[] = [
 export const studentProjects: LearningProject[] = [
   {
     slug: "idea-map",
+    researchQuestion: "아이디어를 질문과 검증 과제로 나누면 초기 기획을 더 명료하게 설명할 수 있을까?",
+    method: "React 상태 관리 · 규칙 기반 질문 템플릿",
     title: "AI Brain Map",
     subtitle: "하나의 아이디어를 질문과 실행 과제로 확장하는 브레인맵",
     category: "AI Tools",
@@ -50,6 +54,8 @@ export const studentProjects: LearningProject[] = [
   },
   {
     slug: "prompt-builder",
+    researchQuestion: "목표와 근거 기준을 명시한 프롬프트가 평가와 수정에 어떤 도움을 줄까?",
+    method: "프롬프트 구조화 · 브라우저 입력 실습",
     title: "Prompt Builder",
     subtitle: "목표·역할·제약을 조합해 재사용 가능한 프롬프트 구성",
     category: "Education",
@@ -73,6 +79,8 @@ export const studentProjects: LearningProject[] = [
   },
   {
     slug: "business-dashboard",
+    researchQuestion: "핵심 의사결정 질문을 먼저 제시하면 대시보드의 정보 구조가 어떻게 달라질까?",
+    method: "가상 KPI · 대시보드 정보 구조 설계",
     title: "Business Dashboard",
     subtitle: "예시 지표로 경영 의사결정 대시보드를 설계해보기",
     category: "Business Apps",
@@ -96,6 +104,8 @@ export const studentProjects: LearningProject[] = [
   },
   {
     slug: "clap-interface",
+    researchQuestion: "박수처럼 짧은 비언어적 입력을 의도 신호로 해석할 때 어떤 사용성 문제가 생길까?",
+    method: "Web Audio API · 로컬 신호 처리 실험",
     title: "Clap HAI Interface",
     subtitle: "두 번의 박수를 의도 신호로 사용하는 HAI 실험",
     category: "Automation",
