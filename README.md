@@ -28,6 +28,28 @@ npm run lint
 npm run build
 ```
 
+## Founder-interview UX review (October 2026)
+
+We used two conversations' summarized UI/UX feedback to improve **DDALKAK LAB**,
+but the original interview reviewed a **separate university undergraduate
+research-lab website**. We do not claim that this independent student platform
+is the university's official research-lab homepage.
+
+- Shorter hero and section whitespace; original CORE remains a bounded,
+  accessible interaction.
+- Consistent sans-serif typography, approximately 1.6 body line-height and
+  Korean word-break rules.
+- Truly linked project cards, no misleading simulated buttons in static
+  previews, explicit active-navigation indication.
+- Research question, proposed method, verification status and real source
+  URL for each published project page.
+- [Public Outputs](/outputs): real code and demos only; no invented team,
+  academic papers, certificates or awards.
+- Better `/research` explanation of AI as a tool versus AI interaction
+  as the object of study.
+
+Detailed review: [`docs/interview-feedback-implementation-2026-10.md`](docs/interview-feedback-implementation-2026-10.md).
+
 ## Verified development quality (October 2026)
 
 For local verification after the Next.js build:
