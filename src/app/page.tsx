@@ -3,6 +3,8 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ProjectVisual } from "@/components/project-visual";
 import { CoreMotionShowcase } from "@/components/core-motion-showcase";
+import { CoreHeroVisual } from "@/components/core-hero-visual";
+import { AgentCompanyOverview } from "@/components/agent-company-overview";
 import { studentProjects, projectCategories } from "@/lib/student-content";
 
 const workflow = [
@@ -29,28 +31,14 @@ export default function Home() {
             <div className="sl-hero-copy">
               <span className="sl-eyebrow">모두의 딸깍 연구소 · STUDENT LAB</span>
               <h1>AI를 배우는 가장 좋은 방법은 <em>직접 만들어보는 것</em>입니다.</h1>
-              <p>생성형 AI 사례를 탐색하고, 직접 구현하고, 나만의 경영·미디어 프로젝트로 발전시킵니다.</p>
+              <p>경영학과 미디어커뮤니케이션의 질문을 Human–AI Interaction으로 연결합니다. AI 사례를 직접 만들고, 실험하고, 그 과정을 기록합니다.</p>
               <div className="sl-actions">
                 <Link className="sl-btn sl-btn-dark" href="/projects">프로젝트 살펴보기 <span aria-hidden="true">↗</span></Link>
                 <Link className="sl-btn sl-btn-outline" href="/about">연구소 소개</Link>
               </div>
               <span className="sl-hero-annotation">작은 실습에서 시작하는 연구와 제작의 기록</span>
             </div>
-            <div className="sl-hero-visual">
-              <div className="sl-browser-chrome"><span className="sl-window-lights"><i/><i/><i/></span><span>lab / project-preview</span><span className="sl-window-tag">PRACTICE 01</span></div>
-              <div className="sl-hero-screen">
-                <div className="sl-hero-screen-heading"><span>IDEA WORKSPACE</span><strong>아이디어에서 첫 프로토타입까지</strong></div>
-                <div className="sl-hero-screen-grid">
-                  <div className="sl-hero-screen-node">문제 발견</div>
-                  <div className="sl-hero-screen-node active">핵심 아이디어</div>
-                  <div className="sl-hero-screen-node">대상 사용자</div>
-                  <div className="sl-hero-screen-node">실행 방법</div>
-                  <div className="sl-hero-screen-node">검증 기준</div>
-                </div>
-                <div className="sl-hero-screen-bottom"><span>Explore → Rebuild → Improve → Share</span><span>↗</span></div>
-              </div>
-              <p className="sl-visual-caption">프로젝트 인터페이스 예시 · 실제 AI API 연결 화면이 아닙니다.</p>
-            </div>
+            <CoreHeroVisual />
           </div>
         </section>
 
@@ -117,6 +105,8 @@ export default function Home() {
         </section>
 
         <CoreMotionShowcase />
+
+        <AgentCompanyOverview />
 
         <section className="sl-section">
           <div className="sl-container">
