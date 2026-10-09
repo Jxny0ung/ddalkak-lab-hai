@@ -10,6 +10,9 @@ export interface LearningProject {
   status: ProjectStatus;
   researchQuestion: string;
   method: string;
+  verification: string;
+  outputEvidence: string;
+  sourcePath: string;
   level: string;
   minutes: number;
   visual: "map" | "prompt" | "dashboard" | "hai";
@@ -30,6 +33,9 @@ export const studentProjects: LearningProject[] = [
     slug: "idea-map",
     researchQuestion: "아이디어를 질문과 검증 과제로 나누면 초기 기획을 더 명료하게 설명할 수 있을까?",
     method: "React 상태 관리 · 규칙 기반 질문 템플릿",
+    verification: "로컬 데모 공개 · 사용자 대상 효과 검증 전",
+    outputEvidence: "브라우저 데모와 공개된 구현 코드. AI API나 인간 대상 연구 결과가 연결된 것은 아닙니다.",
+    sourcePath: "src/components/learning-demo.tsx",
     title: "AI Brain Map",
     subtitle: "하나의 아이디어를 질문과 실행 과제로 확장하는 브레인맵",
     category: "AI Tools",
@@ -56,6 +62,9 @@ export const studentProjects: LearningProject[] = [
     slug: "prompt-builder",
     researchQuestion: "목표와 근거 기준을 명시한 프롬프트가 평가와 수정에 어떤 도움을 줄까?",
     method: "프롬프트 구조화 · 브라우저 입력 실습",
+    verification: "로컬 데모 공개 · 프롬프트 효과 검증 전",
+    outputEvidence: "프롬프트 구성 UI와 코드. 실제 모델 응답 품질에 관한 실증 결과는 아직 없습니다.",
+    sourcePath: "src/components/learning-demo.tsx",
     title: "Prompt Builder",
     subtitle: "목표·역할·제약을 조합해 재사용 가능한 프롬프트 구성",
     category: "Education",
@@ -81,6 +90,9 @@ export const studentProjects: LearningProject[] = [
     slug: "business-dashboard",
     researchQuestion: "핵심 의사결정 질문을 먼저 제시하면 대시보드의 정보 구조가 어떻게 달라질까?",
     method: "가상 KPI · 대시보드 정보 구조 설계",
+    verification: "기획 예시 · 실제 사업 데이터·사용자 연구 없음",
+    outputEvidence: "정적 디자인 예시와 프로젝트 기획 내용. 표시된 KPI는 모두 가상 수치입니다.",
+    sourcePath: "src/components/project-visual.tsx",
     title: "Business Dashboard",
     subtitle: "예시 지표로 경영 의사결정 대시보드를 설계해보기",
     category: "Business Apps",
@@ -106,6 +118,9 @@ export const studentProjects: LearningProject[] = [
     slug: "clap-interface",
     researchQuestion: "박수처럼 짧은 비언어적 입력을 의도 신호로 해석할 때 어떤 사용성 문제가 생길까?",
     method: "Web Audio API · 로컬 신호 처리 실험",
+    verification: "연구용 프로토타입 · 실제 사용성·정확도 실증 전",
+    outputEvidence: "동의 기반 브라우저 HAI 실험 코드. 인간 대상 평가 결과나 MCP 실행 기록은 포함되지 않습니다.",
+    sourcePath: "src/components/hai-clap-console.tsx",
     title: "Clap HAI Interface",
     subtitle: "두 번의 박수를 의도 신호로 사용하는 HAI 실험",
     category: "Automation",

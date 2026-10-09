@@ -72,9 +72,21 @@ export default function ArchivePage() {
           </div>
         </section>
 
+        <section className="content-section">
+          <div className="section-heading">
+            <span>02 / Public records</span>
+            <h2>실제로 확인할 수 있는 코드와 설계 기록</h2>
+          </div>
+          <div className="research-note">
+            <strong>Code · Prototype · Methodology</strong>
+            <p>공개된 결과물은 웹사이트 코드와 HAI 인터페이스, 재현 가능한 연구 설계 문서입니다. 개인 연구원의 논문·자격증·수상 실적은 확인된 증빙과 공개 동의가 있을 때만 등록합니다.</p>
+            <Link className="text-button" href="/outputs">공개 산출물과 증빙 기준 보기 ↗</Link>
+          </div>
+        </section>
+
         <section className="content-section tone-dark">
           <div className="section-heading">
-            <span>02 / Repository</span>
+            <span>03 / Repository</span>
             <h2>현재 공개된 소스</h2>
           </div>
           <div className="repo-callout">
