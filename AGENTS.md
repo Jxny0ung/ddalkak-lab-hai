@@ -31,6 +31,25 @@ Respect confidentiality, consent and personal-data rules.
 - Preserve the original ReactorCore component and the HAI Lab experience instead of copying third-party film props or importing heavy motion dependencies.
 - Main platform styles live in src/app/student-platform.css (sl- namespace); older research UI uses existing styles.
 
+## Interview-informed content and UX gates
+
+- The website directly reviewed by the external founder was **a separate
+  university undergraduate laboratory site**, not DDALKAK LAB. Transfer general
+  UX principles only; do not invent an institutional affiliation.
+- Keep hero graphics and section whitespace proportionate to actual content.
+  Use consistent sans-serif typography, body line-height about 1.6 and
+  `word-break: keep-all` for natural Korean text.
+- Every clickable-looking project card or CTA must be a functional link or
+  button. Static UI illustrations must be labeled `PREVIEW`, not appear
+  clickable without an action.
+- Project records require `researchQuestion`, `researchMethod`,
+  `verification`, `outputEvidence`, and `sourcePath`. Link to actual files.
+- Separate educational demos, planned ideas, human-participant HAI studies,
+  verified papers, credentials and awards. Do not publish people/credentials
+  without their factual proof and consent.
+- Read `docs/interview-feedback-implementation-2026-10.md` for the distinctions
+  between the two sites and acceptance criteria.
+
 ## Engineering
 
 - The HAI Lab needs a per-route Permissions-Policy exception allowing `microphone=(self)` **only** on `/lab`. Preserve `microphone=()` elsewhere and never bypass explicit consent.
