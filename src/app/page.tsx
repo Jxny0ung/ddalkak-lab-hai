@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { ProjectVisual } from "@/components/project-visual";
+import { CoreMotionShowcase } from "@/components/core-motion-showcase";
 import { studentProjects, projectCategories } from "@/lib/student-content";
 
 const workflow = [
@@ -114,6 +115,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <CoreMotionShowcase />
 
         <section className="sl-section">
           <div className="sl-container">

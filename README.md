@@ -43,6 +43,10 @@ npm run build
 
 블랙/화이트/그레이 중심의 학생 프로젝트 우선 UI. 블루 포인트는 CTA와 현재 선택 상태에 제한적으로 사용합니다. 새로운 페이지용 스타일은 `src/app/student-platform.css`에 있고, 기존 연구 페이지 스타일은 호환성을 위해 유지합니다.
 
+## Signature HAI interaction
+
+홈페이지의 **DDALKAK CORE 미리보기**는 기존 오리지널 회전 코어를 학생 중심 UI 안에 제한적으로 다시 활용한 **브라우저 시각 데모**입니다. 클릭으로 반응 상태를 전환하고 모션을 일시정지할 수 있습니다. 마이크 수집, 실제 AI API 및 MCP 호출은 일어나지 않습니다. 동의를 받은 박수 인식 실험과 AI Company **미구현 구조 시각화**는 별도 `/lab`에 유지합니다. 자세한 설계 원칙은 [`docs/signature-motion-design.md`](docs/signature-motion-design.md)를 참고하세요.
+
 ## Security & privacy
 
 - 실습용 목업 데이터와 실제 사업·연구 데이터는 명확하게 구분합니다.
