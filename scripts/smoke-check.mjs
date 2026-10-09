@@ -85,6 +85,8 @@ try {
     if (route === "/projects/idea-map") {
       assert(html.includes("RESEARCH QUESTION"), "Project detail missing research question");
       assert(html.includes("접근 방법"), "Project detail missing method");
+      assert(html.includes("src/components/learning-demo.tsx"), "Project detail must link directly to its real source");
+      assert(html.includes("사용자 대상 효과 검증 전"), "Project detail missing validation disclosure");
     }
     if (route === "/research") {
       assert(html.includes("AI as a research tool"), "AI-as-tool / HAI distinction missing");
