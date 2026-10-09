@@ -47,6 +47,7 @@ export default async function ProjectsPage({ searchParams }: { searchParams: Pro
                 <div className="sl-project-card-body">
                   <div className="sl-project-tags"><span>{p.category}</span><span>{p.status}</span></div>
                   <h2>{p.title}</h2><p>{p.subtitle}</p>
+                  <div className="sl-project-verification"><span>검증 상태</span><strong>{p.verification}</strong></div>
                   <div className="sl-project-tech">{p.technology}<span aria-hidden="true">↗</span></div>
                 </div>
               </Link>)}
