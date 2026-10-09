@@ -22,7 +22,7 @@ export function ProjectVisual({ visual }: { visual: LearningProject["visual"] })
         <div className="sl-fake-field"><span>GOAL</span><strong>학생 대상 서비스 아이디어 정리</strong></div>
         <div className="sl-fake-field"><span>ROLE</span><strong>시장 조사자</strong></div>
         <div className="sl-fake-field"><span>FORMAT</span><strong>5개 항목의 표</strong></div>
-        <div className="sl-fake-submit">프롬프트 구성하기 <span>↗</span></div>
+        <div className="sl-fake-submit" aria-hidden="true">화면 구성 예시 <span>PREVIEW</span></div>
       </div>
     );
   }
@@ -31,8 +31,8 @@ export function ProjectVisual({ visual }: { visual: LearningProject["visual"] })
       <div className="sl-art sl-art-dashboard" aria-label="가상 데이터 대시보드 미리보기" role="img">
         <div className="sl-art-top"><span className="sl-art-dot"/> Business snapshot <span>DEMO DATA</span></div>
         <div className="sl-dashboard-metrics">
-          <div><span>매출 (예시)</span><strong>₩ 24.8M</strong><small>+12.4% ↗</small></div>
-          <div><span>전환율 (예시)</span><strong>3.8%</strong><small>+0.6%p ↗</small></div>
+          <div><span>매출 (예시)</span><strong>₩ 24.8M</strong><small>가상 증감</small></div>
+          <div><span>전환율 (예시)</span><strong>3.8%</strong><small>가상 증감</small></div>
         </div>
         <div className="sl-chart-bars" aria-hidden="true">
           {[38, 55, 47, 72, 63, 85, 76, 95, 81, 100].map((v, i) => (
