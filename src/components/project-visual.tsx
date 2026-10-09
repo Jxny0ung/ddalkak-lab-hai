@@ -31,7 +31,7 @@ export function ProjectVisual({ visual }: { visual: LearningProject["visual"] })
       <div className="sl-art sl-art-dashboard" aria-label="가상 데이터 대시보드 미리보기" role="img">
         <div className="sl-art-top"><span className="sl-art-dot"/> Business snapshot <span>DEMO DATA</span></div>
         <div className="sl-dashboard-metrics">
-          <div><span>매출 (예시)</span><strong>₩ 24.8M</strong><small>+12.4% ↗</small></div>
+          <div><span>매출 (예시)</span><strong>₩ 24.8M</strong><small>가상 증감</small></div>
           <div><span>전환율 (예시)</span><strong>3.8%</strong><small>+0.6%p ↗</small></div>
         </div>
         <div className="sl-chart-bars" aria-hidden="true">
