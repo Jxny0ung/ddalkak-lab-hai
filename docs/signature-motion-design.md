@@ -3,9 +3,9 @@
 ## Design decision · 2026-10
 
 The main site stays a **student-first, editorial Projects → Learn experience**.
-Its white/gray palette, clear typography, evidence labels and small blue accent are
-the default. One contained HAI preview is the place for the research lab's original
-futuristic energy-core identity — not a full-site neon redesign.
+Its white/gray palette, clear typography, evidence labels and small blue accent
+remain the default; cinematic energy visuals are bounded to the A-track CORE hero,
+HAI Lab preview and modular Agent Company area, not applied across the entire site.
 
 ## Recommendation A update · 2026-10-10
 
