@@ -375,7 +375,6 @@ export function HaiClapConsole() {
             {!listening && state !== "requesting" ? (
               <button
                 className="button-primary"
-                disabled={state === "requesting"}
                 onClick={startListening}
                 type="button"
               >
