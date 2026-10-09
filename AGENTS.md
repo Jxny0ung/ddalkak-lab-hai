@@ -24,8 +24,10 @@ Respect confidentiality, consent and personal-data rules.
 - Korean-first, quiet product-editorial identity: #fff, #f7f7f5, #111, gray, sparse #2563eb.
 - Preserve visible student project interfaces; avoid gratuitous gradients, neon, glass effects, bouncing and excessive animations.
 - 1280px max content width, responsive 390px phones, accessible headings/navigation/forms and keyboard focus.
-- The more futuristic DDALKAK CORE identity belongs inside HAI Lab rather than dominating the homepage.
-- A single, contained CORE interactive teaser may appear on the homepage. It must stay secondary to Projects and Learn, distinguish simulated visual feedback from mic/agent execution, offer a pause control, and honor reduced motion.
+- Selected Recommendation A: DDALKAK CORE is the original signature visual in the homepage hero, with a separate HAI Lab interaction preview and a separate Agent Company architecture section. Projects and Learn remain the primary student mission.
+- Both CORE previews are bounded modules, not a full-site neon theme; explain simulated visual feedback vs real microphone/agent execution, offer pause controls, and honor reduced motion.
+- Agent Company homepage role modules (Research, Archive, Synthesis, Monitoring, Design) are proposed concepts, not autonomous MCP workers. Preserve the existing /lab scene without implying live execution.
+- Ground changes in docs/recommendation-a-master.md and the selected Option A.
 - Preserve the original ReactorCore component and the HAI Lab experience instead of copying third-party film props or importing heavy motion dependencies.
 - Main platform styles live in src/app/student-platform.css (sl- namespace); older research UI uses existing styles.
 

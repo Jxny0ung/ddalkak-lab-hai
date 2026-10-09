@@ -3,9 +3,15 @@
 ## Design decision · 2026-10
 
 The main site stays a **student-first, editorial Projects → Learn experience**.
-Its white/gray palette, clear typography, evidence labels and small blue accent are
-the default. One contained HAI preview is the place for the research lab's original
-futuristic energy-core identity — not a full-site neon redesign.
+Its white/gray palette, clear typography, evidence labels and small blue accent
+remain the default; cinematic energy visuals are bounded to the A-track CORE hero,
+HAI Lab preview and modular Agent Company area, not applied across the entire site.
+
+## Recommendation A update · 2026-10-10
+
+The user-supplied recommendation makes **DDALKAK CORE the homepage hero symbol**, alongside independent **HAI Lab** and **Agent Company** sections. This adds a second contained CORE interaction at the top without turning the entire student platform into an animated neon scene. The homepage agent module diagram is a research architecture concept, not running automation.
+
+Read [`recommendation-a-master.md`](recommendation-a-master.md) for the full decision record, the precise implementation matrix and what is still only proposed.
 
 ## What this version deliberately reuses
 
