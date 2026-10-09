@@ -22,7 +22,7 @@ export function ProjectVisual({ visual }: { visual: LearningProject["visual"] })
         <div className="sl-fake-field"><span>GOAL</span><strong>학생 대상 서비스 아이디어 정리</strong></div>
         <div className="sl-fake-field"><span>ROLE</span><strong>시장 조사자</strong></div>
         <div className="sl-fake-field"><span>FORMAT</span><strong>5개 항목의 표</strong></div>
-        <div className="sl-fake-submit">프롬프트 구성하기 <span>↗</span></div>
+        <div className="sl-fake-submit">프롬프트 화면 예시 <span>PREVIEW</span></div>
       </div>
     );
   }
