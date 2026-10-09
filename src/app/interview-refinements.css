@@ -1,0 +1,206 @@
+/* Founder interview-informed improvements (2026-10).
+   Applies common UX lessons to DDALKAK; does not rebrand it as the university
+   research-lab site reviewed in the interview. */
+:root {
+  --sl-reading-leading: 1.62;
+  --sl-section-space: 76px;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Pretendard Variable",
+    "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", Arial, sans-serif;
+}
+.sl-main, .sl-footer, .sl-header { font-family: inherit; }
+.sl-main p { line-height: var(--sl-reading-leading); word-break: keep-all; }
+.sl-main :where(h1,h2,h3), .sl-output-card :where(h3),
+.sl-main :where(.sl-project-card,.sl-evidence-grid) {
+  overflow-wrap: break-word;
+}
+.sl-main :where(h1,h2,h3,p), .sl-footer p { word-break: keep-all; }
+.sl-main .sl-kicker { letter-spacing: .095em; }
+.sl-main .sl-btn, .sl-main .sl-output-card, .sl-main .sl-project-card {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Preserve the CORE signature while reducing the amount of unused hero space. */
+.sl-main .sl-hero { min-height: 0; padding: clamp(47px,5.4vw,76px) 0 clamp(56px,6.2vw,88px); }
+.sl-main .sl-hero-layout {
+  gap: clamp(24px,3.8vw,50px);
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, .9fr);
+}
+.sl-main .sl-hero-copy h1 {
+  font-size: clamp(42px, 4.45vw, 64px);
+  margin: 20px 0 21px;
+  line-height: 1.2;
+}
+.sl-main .sl-hero-copy > p { font-size: clamp(16px,1.42vw,18px); margin-bottom: 25px; }
+.sl-main .sl-hero-annotation { margin-top: 25px; }
+.sl-main .sl-hero .sl-core-hero { max-width: 520px; justify-self: end; }
+.sl-main .sl-core-hero__stage { min-height: 244px; }
+.sl-main .sl-core-hero__stage .reactor-core--hq { --reactor-size: clamp(185px,17.5vw,228px); }
+.sl-main .sl-core-hero__halo { width: min(285px,93%); }
+.sl-main .sl-core-hero__detail { min-height: 74px; padding: 12px 1px 10px; }
+.sl-main .sl-core-hero__mark--top { top: 9px; }
+.sl-main .sl-core-hero__mark--bottom { bottom: 7px; }
+.sl-main .sl-core-hero__topics { margin-top: 13px; }
+.sl-main .sl-core-feature { padding: 0 0 75px; }
+.sl-main .sl-core-feature__reactor { min-height: 246px; }
+.sl-main .sl-core-feature__reactor .reactor-core--hq { --reactor-size: 218px; }
+.sl-main .sl-core-feature__reticle { width: 276px; }
+
+/* All content sections share a consistent vertical rhythm. */
+.sl-main .sl-section { padding: var(--sl-section-space) 0; }
+.sl-main .sl-section-head { margin-bottom: 28px; }
+.sl-main .sl-intro-grid, .sl-main .sl-split, .sl-main .sl-small-callout { gap: clamp(25px,4vw,62px); }
+.sl-main .sl-intro-grid > p { padding-top: 28px; }
+.sl-main .sl-steps { gap: clamp(16px,2.2vw,28px); padding-top: 23px; }
+.sl-main .sl-step > span { margin-bottom: 24px; font-size: 27px; }
+.sl-main .sl-research-bridge { padding: 75px 0; }
+.sl-main .sl-agent-section { padding: 79px 0 82px; }
+.sl-main .sl-agent-section__head { margin-bottom: 28px; }
+.sl-main .sl-page-top { padding: 68px 0 53px; }
+.sl-main .sl-page-top h1 { margin: 16px 0 18px; font-size: clamp(40px,4.5vw,62px); }
+.sl-main .sl-join { padding: 78px 0 85px; }
+.sl-main .sl-track { padding: 27px; }
+.sl-main .sl-track-number { margin-bottom: 25px; }
+.sl-main .sl-track > p { min-height: 0; }
+.sl-footer { padding-top: 42px; }
+.sl-footer-top { padding-bottom: 36px; }
+
+/* The whole project card is already a real link: keep one affordance. */
+.sl-main .sl-project-grid { gap: 18px; }
+.sl-main .sl-project-card { border-radius: 13px; }
+.sl-main .sl-project-card:focus-visible { outline: 3px solid var(--sl-blue); outline-offset: 3px; }
+.sl-main .sl-project-card:hover { border-color: #bfc6d1; box-shadow: 0 10px 24px rgba(19,34,52,.06); }
+.sl-main .sl-project-card-body { padding: 19px 20px 18px; }
+.sl-main .sl-project-tags { margin-bottom: 11px; }
+.sl-main .sl-project-card h3, .sl-main .sl-project-card h2 { font-size: 22px; margin-bottom: 8px; }
+.sl-main .sl-project-card p { margin-bottom: 0; font-size: 14px; }
+.sl-main .sl-project-card .sl-art { height: 190px; }
+.sl-main .sl-project-tech { margin-top: auto; }
+.sl-project-verification {
+  display: grid;
+  gap: 4px;
+  border-top: 1px solid #eceef0;
+  margin-top: 17px;
+  padding-top: 13px;
+  padding-bottom: 16px;
+}
+.sl-project-verification span {
+  color: #767b82;
+  font-size: 11px;
+  font-weight: 600;
+}
+.sl-project-verification strong {
+  color: #394a61;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.5;
+  word-break: keep-all;
+}
+.sl-main .sl-art-prompt .sl-fake-submit {
+  background: #eceff4 !important;
+  border: 1px solid #d9dfe8;
+  color: #495b72;
+  cursor: default;
+}
+.sl-art-prompt .sl-fake-submit span { font-size: 9px; color: #66758a; font-weight: 600; }
+
+/* Evidence is a clear record, not a made-up publication or testimonial. */
+.sl-research-evidence { background: #fbfaf8; border-top: 1px solid #eeede9; border-bottom: 1px solid #eeede9; }
+.sl-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+}
+.sl-evidence-grid article {
+  min-width: 0;
+  border: 1px solid #e1e1df;
+  border-radius: 12px;
+  padding: 22px;
+  background: white;
+}
+.sl-evidence-grid article > span {
+  font-size: 11px;
+  font-weight: 700;
+  color: #6a6f79;
+  letter-spacing: .03em;
+}
+.sl-evidence-grid h3 {
+  margin: 14px 0 0;
+  font-size: 16px;
+  line-height: 1.65;
+  letter-spacing: -.035em;
+  font-weight: 610;
+}
+.sl-evidence-grid article .sl-text-link { display: inline-flex; margin-top: 17px; font-size: 13px; }
+.sl-evidence-grid__note {
+  grid-column: 1/-1;
+  color: #72716d;
+  font-size: 13px;
+  margin: 7px 0 0 !important;
+}
+.sl-evidence-grid__note a { color: #2259c4; text-decoration: underline; text-underline-offset: 3px; }
+
+/* Source-backed public outputs are links as a whole, never empty cards. */
+.sl-output-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px; }
+.sl-output-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border: 1px solid #e5e5e5;
+  border-radius: 13px;
+  background: #fff;
+  padding: 25px;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.sl-output-card:hover { transform: translateY(-2px); border-color: #b7bfc9; box-shadow: 0 10px 24px rgba(24,30,40,.06); }
+.sl-output-card:focus-visible { outline: 3px solid var(--sl-blue); outline-offset: 3px; }
+.sl-output-card__meta { display: flex; justify-content: space-between; gap: 14px; align-items: start; font-size: 11px; font-weight: 650; color: #6b7380; }
+.sl-output-card__meta small { flex: 0 0 auto; border: 1px solid #d8e0e9; padding: 4px 8px; border-radius: 99px; font-size: 10px; color: #305574; }
+.sl-output-card h3 { font-size: 23px; letter-spacing: -.05em; margin: 24px 0 12px; }
+.sl-output-card p { font-size: 14px; color: #65696f; margin: 0 0 25px; }
+.sl-output-card__link { display: inline-flex; align-items: center; margin-top: auto; padding-top: 15px; border-top: 1px solid #ededed; font-size: 13px; font-weight: 700; color: #2257bc; }
+.sl-output-standards { border-top: 1px solid #d9d9d7; }
+.sl-output-standards article { display: grid; grid-template-columns: 55px 1fr; gap: 20px; border-bottom: 1px solid #d9d9d7; padding: 24px 0; }
+.sl-output-standards article > span { font-size: 13px; font-weight: 700; color: #777; }
+.sl-output-standards h3 { font-size: 19px; margin: 0 0 8px; }
+.sl-output-standards p { margin: 0; color: #65696f; font-size: 14px; max-width: 780px; }
+.sl-output-actions { margin-top: 28px; }
+
+@media (max-width: 920px) {
+  .sl-main .sl-hero-layout { grid-template-columns: 1fr; }
+  .sl-main .sl-hero .sl-core-hero { max-width: 600px; width: 100%; justify-self: start; }
+  .sl-main .sl-hero-copy h1 { font-size: clamp(41px,6vw,56px); }
+  .sl-main .sl-intro-grid > p { padding-top: 0; }
+  .sl-main .sl-section { padding: 64px 0; }
+}
+@media (max-width: 640px) {
+  :root { --sl-section-space: 55px; }
+  .sl-main .sl-hero { padding: 39px 0 55px; }
+  .sl-main .sl-hero-layout { gap: 28px; }
+  .sl-main .sl-hero-copy h1 { font-size: clamp(34px,9vw,45px); margin: 16px 0 18px; }
+  .sl-main .sl-hero-copy > p { font-size: 15px; }
+  .sl-main .sl-hero .sl-core-hero { max-width: 100%; }
+  .sl-main .sl-core-hero__stage { min-height: 231px; }
+  .sl-main .sl-core-hero__stage .reactor-core--hq { --reactor-size: 205px; }
+  .sl-main .sl-core-hero__halo { width: 249px; }
+  .sl-main .sl-section { padding: 55px 0; }
+  .sl-main .sl-steps { gap: 16px; }
+  .sl-main .sl-step > span { margin-bottom: 14px; }
+  .sl-main .sl-page-top { padding: 51px 0 45px; }
+  .sl-main .sl-page-top h1 { font-size: 39px; }
+  .sl-main .sl-track-grid { gap: 13px; }
+  .sl-main .sl-track { padding: 22px; }
+  .sl-main .sl-agent-section { padding: 62px 0; }
+  .sl-main .sl-core-feature { padding-bottom: 48px; }
+  .sl-main .sl-core-feature__reactor .reactor-core--hq { --reactor-size: 211px; }
+  .sl-main .sl-project-grid { gap: 13px; }
+  .sl-main .sl-project-card .sl-art { height: 180px; }
+  .sl-output-grid, .sl-evidence-grid { grid-template-columns: 1fr; }
+  .sl-output-card { padding: 21px; }
+  .sl-output-card h3 { margin-top: 19px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sl-output-card, .sl-main .sl-project-card { transition: none !important; }
+  .sl-output-card:hover, .sl-main .sl-project-card:hover { transform: none !important; }
+}
