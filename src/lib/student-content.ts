@@ -13,6 +13,11 @@ export interface LearningProject {
   visual: "map" | "prompt" | "dashboard" | "hai";
   summary: string;
   motivation: string;
+  researchQuestion: string;
+  researchMethod: string;
+  verification: string;
+  outputEvidence: string;
+  sourcePath: string;
   process: string[];
   learning: string[];
   pitfalls: { symptom: string; cause: string; solution: string }[];
@@ -36,6 +41,11 @@ export const studentProjects: LearningProject[] = [
     visual: "map",
     summary: "아이디어를 입력하면 브라우저에서 연관 질문을 정리하는 작은 실습 도구입니다. AI API를 사용하지 않는 로컬 데모이며, 향후 Gemini API를 연결하는 과정을 학습 대상으로 삼습니다.",
     motivation: "생성형 AI를 활용한 아이디어 발산 도구의 화면과 상호작용 구조를 먼저 이해하기 위해 만들었습니다.",
+    researchQuestion: "AI를 통한 아이디어 구체화를 설계할 때 어떤 질문과 사용자 입력이 필요한가?",
+    researchMethod: "브라우저 내부 상태 관리와 규칙 기반 질문 템플릿을 활용한 인터랙션 설계",
+    verification: "로컬 데모 공개 · 사용자 대상 효과 검증 전",
+    outputEvidence: "실행 가능한 브라우저 데모와 공개 소스코드. 논문·인간 대상 실험 결과는 없습니다.",
+    sourcePath: "src/components/learning-demo.tsx",
     process: [
       "하나의 핵심 아이디어와 사용자의 과업을 입력받도록 설계합니다.",
       "질문·시장·실행·측정 네 영역의 노드를 브라우저 안에서 생성합니다.",
@@ -60,6 +70,11 @@ export const studentProjects: LearningProject[] = [
     visual: "prompt",
     summary: "목표, AI 역할, 결과 형식, 검증 조건을 선택해 프롬프트를 조립하는 브라우저 실습입니다. 텍스트는 서버에 저장되지 않습니다.",
     motivation: "프롬프트를 막연한 문장이 아니라 과업·조건·출력·검증으로 나누어 설계하는 연습을 위해 만들었습니다.",
+    researchQuestion: "AI에 전달하는 과업과 검증 조건을 어떻게 구조화해야 할까?",
+    researchMethod: "역할·목표·출력 형식을 조합하는 클라이언트 측 프롬프트 설계",
+    verification: "로컬 데모 공개 · 프롬프트 효과 검증 전",
+    outputEvidence: "프롬프트 구성 인터페이스와 공개 소스코드. 생성 결과의 정확도 비교 실험은 수행했다고 주장하지 않습니다.",
+    sourcePath: "src/components/learning-demo.tsx",
     process: [
       "목표와 역할을 분리해 입력받습니다.",
       "출력 형식과 사실 확인 조건을 명시합니다.",
@@ -83,6 +98,11 @@ export const studentProjects: LearningProject[] = [
     visual: "dashboard",
     summary: "매출, 주문, 전환율 등 가상 지표를 바탕으로 경영용 데이터 화면의 정보 구조를 연습하는 예시입니다.",
     motivation: "숫자를 나열하는 것과 실제 의사결정에 도움이 되는 화면을 만드는 것의 차이를 배우기 위해 설계합니다.",
+    researchQuestion: "어떤 지표와 설명이 사용자에게 경영 의사결정을 돕는가?",
+    researchMethod: "가상 KPI를 바탕으로 한 대시보드 정보구조 기획",
+    verification: "기획 예시 · 실제 성과 데이터 및 사용자 연구 없음",
+    outputEvidence: "공개된 디자인 예시와 구현 계획만 확인할 수 있습니다. 가상 매출·전환율은 성과 증빙이 아닙니다.",
+    sourcePath: "src/components/project-visual.tsx",
     process: [
       "사용자가 내려야 할 의사결정을 먼저 정의합니다.",
       "가상 지표와 실제 데이터를 명확히 분리합니다.",
@@ -106,6 +126,11 @@ export const studentProjects: LearningProject[] = [
     visual: "hai",
     summary: "사용자가 명시적으로 마이크 사용을 허용할 때 브라우저에서 박수 신호를 분석하는 HAI 프로토타입입니다.",
     motivation: "인간의 비언어적 신호가 어떻게 AI 인터페이스의 명령으로 해석될 수 있는지 살펴보기 위해 설계했습니다.",
+    researchQuestion: "비언어적 입력인 박수 두 번을 사용자 의도 신호로 해석할 때 어떤 오류와 통제 문제가 생기는가?",
+    researchMethod: "동의 기반 Web Audio API 브라우저 실험: RMS·피크·시간 간격, 수동 조작 대안",
+    verification: "연구용 프로토타입 · 실제 사용성·정확도 실증 전",
+    outputEvidence: "브라우저용 HAI 프로토타입 및 공개 코드. 참여자 실험 결과나 에이전트 실행 기록은 없습니다.",
+    sourcePath: "src/components/hai-clap-console.tsx",
     process: [
       "마이크 접근 동의를 사용자에게 요청합니다.",
       "로컬 오디오 이벤트에서 박수 간 시간 간격을 감지합니다.",
