@@ -59,7 +59,7 @@ try {
   const routes = [
     "/", "/projects", "/projects/idea-map", "/projects/prompt-builder",
     "/projects/business-dashboard", "/projects/clap-interface", "/learn",
-    "/lab", "/about", "/research", "/methods", "/archive", "/registry", "/outputs",
+    "/lab", "/about", "/people", "/research", "/methods", "/archive", "/registry", "/outputs",
     "/handbook", "/system", "/projects?category=Data",
     "/sitemap.xml", "/robots.txt",
   ];
@@ -90,6 +90,14 @@ try {
     }
     if (route === "/research") {
       assert(html.includes("AI as a research tool"), "AI-as-tool / HAI distinction missing");
+    }
+    if (route === "/people") {
+      for (const name of ["김예빈", "엄태연", "김민아"]) {
+        assert(html.includes(name), `Missing researcher profile: ${name}`);
+      }
+      assert(html.includes("사용자 경험"), "People page missing field descriptions");
+      assert(html.includes("/researchers/kim-ye-bin.webp"), "Researcher portraits not linked");
+      assert(html.includes("개인 소개"), "People page lacks provenance disclosure");
     }
     if (route === "/lab") {
       assert(html.includes("Clap-to-Activate"), "Lab clap prototype was removed");
