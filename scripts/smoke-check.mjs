@@ -96,7 +96,7 @@ try {
         assert(html.includes(name), `Missing researcher profile: ${name}`);
       }
       assert(html.includes("사용자 경험"), "People page missing field descriptions");
-      assert(html.includes("/researchers/kim-ye-bin.webp"), "Researcher portraits not linked");
+      assert(html.includes("/researchers/kim-ye-bin.avif"), "Researcher portraits not linked");
       assert(html.includes("개인 소개"), "People page lacks provenance disclosure");
     }
     if (route === "/lab") {
