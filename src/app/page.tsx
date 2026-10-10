@@ -6,6 +6,7 @@ import { CoreMotionShowcase } from "@/components/core-motion-showcase";
 import { CoreHeroVisual } from "@/components/core-hero-visual";
 import { AgentCompanyOverview } from "@/components/agent-company-overview";
 import { studentProjects, projectCategories } from "@/lib/student-content";
+import { studentResearchers } from "@/lib/researchers";
 
 const workflow = [
   ["01", "Explore", "전 세계의 흥미로운 AI 활용 사례를 발견하고, 무엇이 유용한지 살펴봅니다."],
@@ -57,6 +58,27 @@ export default function Home() {
             </div>
             <div className="sl-project-grid">
               {featured.map((project) => <ProjectCard featured key={project.slug} project={project} />)}
+            </div>
+          </div>
+        </section>
+
+        <section className="sl-section sl-section-soft sl-team-home" aria-labelledby="sl-team-home-title">
+          <div className="sl-container sl-team-home__layout">
+            <div>
+              <span className="sl-kicker">PEOPLE / OUR RESEARCHERS</span>
+              <h2 id="sl-team-home-title">관심은 다르지만,<br />질문은 함께 만듭니다.</h2>
+              <p>재무·회계, 금융시장, AI 서비스와 사용자 경험. 각자의 관심을 바탕으로 배우고 기록하는 학부 연구생들을 소개합니다.</p>
+              <Link className="sl-text-link" href="/people">학부 연구생 세 명 만나기 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className="sl-team-home__names">
+              {studentResearchers.map((person, i) => (
+                <Link key={person.id} href={`/people#${person.id}`}>
+                  <span>{String(i + 1).padStart(2, "0")}</span>
+                  <strong>{person.name}</strong>
+                  <span>{person.focus.join(" · ")}</span>
+                  <span aria-hidden="true">↗</span>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
