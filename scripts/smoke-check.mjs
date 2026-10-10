@@ -111,6 +111,17 @@ try {
     }
     console.log(`PASS ${response.status} ${route}`);
   }
+  for (const portrait of [
+    "/researchers/kim-ye-bin.avif",
+    "/researchers/eom-tae-yeon.avif",
+    "/researchers/kim-min-a.avif",
+  ]) {
+    const response = await fetch(origin + portrait, { signal: AbortSignal.timeout(7000) });
+    assert(response.status === 200, `Missing illustration ${portrait} (HTTP ${response.status})`);
+    assert((response.headers.get("content-type") ?? "").includes("image/avif"), `Unexpected illustration type ${portrait}`);
+    assert((await response.arrayBuffer()).byteLength > 2000, `Empty/corrupt portrait ${portrait}`);
+    console.log(`PASS image ${portrait}`);
+  }
   const { response: notFound } = await request("/projects/unknown-sample-route");
   assert(notFound.status === 404, `Unknown project should 404, got ${notFound.status}`);
   console.log("PASS 404 /projects/unknown-sample-route");
