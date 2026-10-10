@@ -15,6 +15,7 @@ export function SiteFooter() {
             <Link href="/lab">HAI Lab</Link>
             <Link href="/research">Research</Link>
             <Link href="/methods">Methods</Link>
+            <Link href="/people">People</Link>
             <Link href="/about">About</Link>
             <Link href="/archive">Archive</Link>
             <Link href="/outputs">Outputs</Link>
