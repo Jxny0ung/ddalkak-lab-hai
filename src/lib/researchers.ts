@@ -34,7 +34,7 @@ export const studentResearchers: readonly StudentResearcher[] = [
     interests: ["음악", "자기관리", "자기계발"],
     hobbies: ["운동", "바이올린", "방탈출"],
     focus: ["재무", "회계"],
-    illustration: "/researchers/kim-ye-bin.webp",
+    illustration: "/researchers/kim-ye-bin.avif",
     illustrationAlt: "연못과 꽃이 가득한 인상주의 풍경 속 인물을 표현한 회화풍 이미지",
     links: [
       { kind: "instagram", label: "Instagram · @nx3.sv", href: "https://www.instagram.com/nx3.sv/" },
@@ -52,7 +52,7 @@ export const studentResearchers: readonly StudentResearcher[] = [
     interests: ["금융시장", "프랍 트레이딩", "나스닥·원자재"],
     hobbies: ["경제기사 읽기", "도시 탐방"],
     focus: ["금융", "트레이딩"],
-    illustration: "/researchers/eom-tae-yeon.webp",
+    illustration: "/researchers/eom-tae-yeon.avif",
     illustrationAlt: "별이 빛나는 밤의 세계지도와 금융시장 자료를 바라보는 인물을 묘사한 회화풍 이미지",
     links: [
       { kind: "blog", label: "Blog · 독서와 트레이딩", href: "https://m.blog.naver.com/taeyeon_unn" },
@@ -70,7 +70,7 @@ export const studentResearchers: readonly StudentResearcher[] = [
     interests: ["AI 서비스", "서비스 기획", "UX·사용자 경험"],
     hobbies: ["생각 정리", "해외여행", "드라이브"],
     focus: ["AI 서비스", "UX", "서비스 기획"],
-    illustration: "/researchers/kim-min-a.webp",
+    illustration: "/researchers/kim-min-a.avif",
     illustrationAlt: "노을 진 지중해 해안과 여행·UX 노트가 함께 그려진 회화풍 이미지",
     links: [
       { kind: "instagram", label: "Instagram · @min._.naaa", href: "https://www.instagram.com/min._.naaa/" },
