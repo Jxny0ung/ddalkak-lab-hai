@@ -119,7 +119,9 @@ try {
     const response = await fetch(origin + portrait, { signal: AbortSignal.timeout(7000) });
     assert(response.status === 200, `Missing illustration ${portrait} (HTTP ${response.status})`);
     assert((response.headers.get("content-type") ?? "").includes("image/avif"), `Unexpected illustration type ${portrait}`);
-    assert((await response.arrayBuffer()).byteLength > 2000, `Empty/corrupt portrait ${portrait}`);
+    const bytes = (await response.arrayBuffer()).byteLength;
+    // Three original paintings are 1122×1402. Reject accidental 256×320 thumbnails.
+    assert(bytes >= 100_000, `Portrait quality regression (undersized upload): ${portrait}, ${bytes} bytes`);
     console.log(`PASS image ${portrait}`);
   }
   const { response: notFound } = await request("/projects/unknown-sample-route");
