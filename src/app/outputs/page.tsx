@@ -38,7 +38,7 @@ const evidence = [
 
 const futureTypes = [
   { title: "논문·학술 발표", status: "공개 확인 자료 없음", description: "저널 논문, 학술대회 발표, 포스터는 종류와 심사·발표 상태를 구분하고 공식 링크가 확인될 때 등록합니다." },
-  { title: "연구원 포트폴리오", status: "공개 준비 전", description: "구성원별 관심 분야와 담당 역할, 참여 프로젝트는 본인의 동의 및 실제 참여 확인 후 연결합니다." },
+  { title: "연구원 포트폴리오", status: "기초 소개 공개", description: "학부 연구생 세 명의 관심 분야와 취미, 개인 프로필을 소개합니다. 프로젝트별 역할과 연구 성과는 확인 후 별도로 연결합니다." },
   { title: "자격증·수료증·수상", status: "공개 확인 자료 없음", description: "자격증, 교육 수료, 수상은 서로 다른 항목입니다. 발급기관, 취득일, 증빙 원본과 공개 동의가 확인된 뒤 등록합니다." },
 ] as const;
 
@@ -99,6 +99,7 @@ export default function OutputsPage() {
             <div className="sl-actions">
               <Link className="sl-btn sl-btn-dark" href="/projects">프로젝트 보드 보기 ↗</Link>
               <Link className="sl-btn sl-btn-outline" href="/registry">연구 기록 기준 살펴보기</Link>
+              <Link className="sl-btn sl-btn-outline" href="/people">학부 연구생 소개 보기</Link>
             </div>
           </div>
         </section>

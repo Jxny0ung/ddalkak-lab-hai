@@ -33,7 +33,7 @@ export default function AboutPage() {
               <p>AI로 만든 앱, 도구, 대시보드, 인터페이스를 그대로 소비하지 않고 작은 단위로 다시 구현합니다. 만드는 과정에서 실무 문제 해결과 학문적 탐구를 함께 배우는 학부 연구생 중심의 공간입니다.</p>
               <h3>어떤 질문을 다루나요?</h3>
               <p>경영학의 의사결정·조직·플랫폼과 미디어커뮤니케이션의 정보 처리·신뢰·표현을 Human–AI Interaction(HAI)과 연결합니다.</p>
-              <div className="sl-actions"><Link className="sl-btn sl-btn-outline" href="/research">연구 주제 ↗</Link><Link className="sl-btn sl-btn-outline" href="/methods">연구 방법 ↗</Link></div>
+              <div className="sl-actions"><Link className="sl-btn sl-btn-outline" href="/research">연구 주제 ↗</Link><Link className="sl-btn sl-btn-outline" href="/methods">연구 방법 ↗</Link><Link className="sl-btn sl-btn-outline" href="/people">학부 연구생 소개 ↗</Link></div>
             </div>
           </div>
         </section>
@@ -67,7 +67,7 @@ export default function AboutPage() {
             </aside>
             <div className="sl-detail-copy">
               <h3>연구팀</h3>
-              <p>학부 연구생 중심의 독립 프로젝트이며, 구성원 명단이나 지도 관계는 각자의 공개 동의와 사실 확인을 거친 뒤 안내합니다. 공식 대학 기관으로 오해될 표현은 사용하지 않습니다.</p>
+              <p>연구소의 학부 연구생 세 명을 소개합니다. 제공받은 관심 분야와 개인 소개를 중심으로 정리했으며, 프로젝트별 실제 담당 업무와 연구 실적은 확인된 뒤에만 연결합니다. 공식 대학 기관으로 오해될 표현은 사용하지 않습니다.</p><Link className="sl-text-link" href="/people">연구생 세 명의 프로필 확인하기 ↗</Link>
               <h3>공개된 피드백 채널</h3>
               <p>오탈자, 접근성 문제, 작동 오류, 연구 기록 개선 제안은 GitHub Issues로 전달할 수 있습니다. 이 채널은 공개되므로 개인정보, 참여자 자료, 비공개 연구 내용은 올리지 마세요.</p>
               <div className="sl-actions">
