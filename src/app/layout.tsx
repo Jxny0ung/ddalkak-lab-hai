@@ -6,6 +6,7 @@ import "./core-showcase.css";
 import "./recommendation-a.css";
 import "./site-refinement.css";
 import "./interview-polish.css";
+import "./people.css";
 
 const siteUrl = "https://ddalkak-lab-hai.vercel.app";
 
