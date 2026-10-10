@@ -20,9 +20,15 @@ not included in public copy.
 
 ## Publication boundaries
 
-- Portraits are derived from the three user-provided artwork files, resized to
-  256 × 320 pixels and encoded as optimized AVIF in `public/researchers/`.
-  Original high-resolution files remain outside the public source repository.
+- Portraits are derived from the three user-provided artwork files, retaining
+  the original **1122 × 1402 pixel resolution** and encoded as quality-optimized
+  AVIF in `public/researchers/`. The initial 256 × 320, highly compressed
+  thumbnails were replaced after a reported pixelation problem.
+  The original uncompressed PNG sources remain outside the public repository.
+- Regression gate: `npm run smoke` checks that all 3 image routes return a
+  sufficiently large AVIF response; never optimize gallery originals down to
+  thumbnail resolution again. Next.js provides responsive image variants
+  from these full-resolution source files.
 - User-provided social handles and profile URLs are displayed; tracking
   parameters were removed. External destinations should be checked by profile
   owners, as ownership/content was not independently verified.
