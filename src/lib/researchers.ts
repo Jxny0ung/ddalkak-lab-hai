@@ -34,7 +34,7 @@ export const studentResearchers: readonly StudentResearcher[] = [
     interests: ["독서", "기록"],
     hobbies: ["식물 키우기", "다도", "운동"],
     focus: ["정치커뮤니케이션", "Human–AI Interaction"],
-    illustration: "/researchers/lee-junyoung.avif",
+    illustration: "/researchers/lee-junyoung.jpg",
     illustrationAlt: "모네의 지베르니 정원에서 영감을 받은 수련 연못과 다리 앞, 흰 셔츠를 입고 사색하는 이준영의 인상주의 회화풍 초상",
     links: [
       { kind: "instagram", label: "Instagram · @jxny0un9_", href: "https://www.instagram.com/jxny0un9_/" },
