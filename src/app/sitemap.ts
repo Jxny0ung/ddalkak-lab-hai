@@ -4,7 +4,7 @@ const baseUrl = "https://ddalkak-lab-hai.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const paths = ["", "/projects", "/learn", "/lab", "/about", "/people", "/research",
-    "/methods", "/archive", "/handbook", "/registry", "/system", "/outputs"];
+    "/methods", "/archive", "/handbook", "/registry", "/system", "/outputs", "/work", "/work/eth", "/reading", "/games", "/prompts"];
   const routes = [...paths, ...studentProjects.map(p => `/projects/${p.slug}`)];
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
