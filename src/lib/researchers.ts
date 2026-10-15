@@ -61,24 +61,6 @@ export const studentResearchers: readonly StudentResearcher[] = [
     ],
   },
   {
-    id: "eom-tae-yeon",
-    name: "엄태연",
-    englishName: "Eom TaeYeon",
-    mbti: "ENFP",
-    heading: "시장의 움직임을 직접 관찰하고 배웁니다.",
-    introduction:
-      "금융시장과 트레이딩의 원리를 이해하는 데 관심을 두고 있습니다. 경제 기사를 읽고 관심 있는 도시를 직접 방문하며, 책에서 접한 생각을 현실의 경험과 비교해봅니다. 반복해서 관찰하고 확인하는 과정을 통해 독립적인 판단 역량을 기르고자 합니다.",
-    interests: ["금융시장", "프랍 트레이딩", "나스닥·원자재"],
-    hobbies: ["경제기사 읽기", "도시 탐방"],
-    focus: ["금융", "트레이딩"],
-    illustration: "/researchers/eom-tae-yeon.avif",
-    illustrationAlt: "별이 빛나는 밤의 세계지도와 금융시장 자료를 바라보는 인물을 묘사한 회화풍 이미지",
-    links: [
-      { kind: "blog", label: "Blog · 독서와 트레이딩", href: "https://m.blog.naver.com/taeyeon_unn" },
-      { kind: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/태연-엄-017005442" },
-    ],
-  },
-  {
     id: "kim-min-a",
     name: "김민아",
     englishName: "Kim Min A",
@@ -94,6 +76,24 @@ export const studentResearchers: readonly StudentResearcher[] = [
     links: [
       { kind: "instagram", label: "Instagram · @min._.naaa", href: "https://www.instagram.com/min._.naaa/" },
       { kind: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/min-a-kim-a85a71441" },
+    ],
+  },
+  {
+    id: "eom-tae-yeon",
+    name: "엄태연",
+    englishName: "Eom TaeYeon",
+    mbti: "ENFP",
+    heading: "시장의 움직임을 직접 관찰하고 배웁니다.",
+    introduction:
+      "금융시장과 트레이딩의 원리를 이해하는 데 관심을 두고 있습니다. 경제 기사를 읽고 관심 있는 도시를 직접 방문하며, 책에서 접한 생각을 현실의 경험과 비교해봅니다. 반복해서 관찰하고 확인하는 과정을 통해 독립적인 판단 역량을 기르고자 합니다.",
+    interests: ["금융시장", "프랍 트레이딩", "나스닥·원자재"],
+    hobbies: ["경제기사 읽기", "도시 탐방"],
+    focus: ["금융", "트레이딩"],
+    illustration: "/researchers/eom-tae-yeon.avif",
+    illustrationAlt: "별이 빛나는 밤의 세계지도와 금융시장 자료를 바라보는 인물을 묘사한 회화풍 이미지",
+    links: [
+      { kind: "blog", label: "Blog · 독서와 트레이딩", href: "https://m.blog.naver.com/taeyeon_unn" },
+      { kind: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/태연-엄-017005442" },
     ],
   },
 ];
