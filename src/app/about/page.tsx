@@ -67,7 +67,7 @@ export default function AboutPage() {
             </aside>
             <div className="sl-detail-copy">
               <h3>연구팀</h3>
-              <p>연구소의 학부 연구생 세 명을 소개합니다. 제공받은 관심 분야와 개인 소개를 중심으로 정리했으며, 프로젝트별 실제 담당 업무와 연구 실적은 확인된 뒤에만 연결합니다. 공식 대학 기관으로 오해될 표현은 사용하지 않습니다.</p><Link className="sl-text-link" href="/people">연구생 세 명의 프로필 확인하기 ↗</Link>
+              <p>연구소의 학부 연구생 네 명을 소개합니다. 제공받은 관심 분야와 개인 소개를 중심으로 정리했으며, 프로젝트별 실제 담당 업무와 연구 실적은 확인된 뒤에만 연결합니다. 공식 대학 기관으로 오해될 표현은 사용하지 않습니다.</p><Link className="sl-text-link" href="/people">연구생 네 명의 프로필 확인하기 ↗</Link>
               <h3>공개된 피드백 채널</h3>
               <p>오탈자, 접근성 문제, 작동 오류, 연구 기록 개선 제안은 GitHub Issues로 전달할 수 있습니다. 이 채널은 공개되므로 개인정보, 참여자 자료, 비공개 연구 내용은 올리지 마세요.</p>
               <div className="sl-actions">

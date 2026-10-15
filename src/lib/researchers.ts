@@ -24,6 +24,25 @@ export interface StudentResearcher {
  */
 export const studentResearchers: readonly StudentResearcher[] = [
   {
+    id: "lee-junyoung",
+    name: "이준영",
+    englishName: "Junyoung Lee",
+    mbti: "INFJ",
+    heading: "사람과 정보 사이에서 새로운 질문을 찾습니다.",
+    introduction:
+      "사람들이 정보를 어떻게 이해하고 신뢰하며 판단하는지 궁금합니다. 정치커뮤니케이션과 인간–AI 상호작용(HAI)을 중심으로, 기술이 우리의 인식과 선택에 미치는 영향을 탐구합니다. 책과 논문에서 시작한 질문을 직접 만드는 작은 실험으로 옮기고, 그 과정에서 배운 것을 기록합니다.",
+    interests: ["독서", "기록"],
+    hobbies: ["식물 키우기", "다도", "운동"],
+    focus: ["정치커뮤니케이션", "Human–AI Interaction"],
+    illustration: "/researchers/lee-junyoung.jpg",
+    illustrationAlt: "모네의 지베르니 정원에서 영감을 받은 수련 연못과 다리 앞, 흰 셔츠를 입고 사색하는 이준영의 인상주의 회화풍 초상",
+    links: [
+      { kind: "instagram", label: "Instagram · @jxny0un9_", href: "https://www.instagram.com/jxny0un9_/" },
+      { kind: "linkedin", label: "LinkedIn", href: "https://www.linkedin.com/in/junyoung-lee-004606420" },
+      { kind: "blog", label: "Blog · 슬기로운 준영생활", href: "https://m.blog.naver.com/jy_lee9200" },
+    ],
+  },
+  {
     id: "kim-ye-bin",
     name: "김예빈",
     englishName: "Kim Ye Bin",

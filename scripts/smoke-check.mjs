@@ -89,11 +89,13 @@ try {
       assert(html.includes("AI as a research tool"), "AI-as-tool / HAI distinction missing");
     }
     if (route === "/people") {
-      for (const name of ["김예빈", "엄태연", "김민아"]) {
+      for (const name of ["이준영", "김예빈", "엄태연", "김민아"]) {
         assert(html.includes(name), `Missing researcher profile: ${name}`);
       }
       assert(html.includes("사용자 경험"), "People page missing field descriptions");
       assert(html.includes("/researchers/kim-ye-bin.avif"), "Researcher portraits not linked");
+      assert(html.indexOf("이준영") < html.indexOf("김예빈"), "Junyoung should appear first");
+      assert(html.includes("/researchers/lee-junyoung.jpg"), "Junyoung portrait not linked");
       assert(html.includes("개인 소개"), "People page lacks provenance disclosure");
     }
     if (route === "/") {
@@ -134,16 +136,17 @@ try {
     console.log(`PASS ${response.status} ${route}`);
   }
   for (const portrait of [
+    "/researchers/lee-junyoung.jpg",
     "/researchers/kim-ye-bin.avif",
     "/researchers/eom-tae-yeon.avif",
     "/researchers/kim-min-a.avif",
   ]) {
     const response = await fetch(origin + portrait, { signal: AbortSignal.timeout(7000) });
     assert(response.status === 200, `Missing illustration ${portrait} (HTTP ${response.status})`);
-    assert((response.headers.get("content-type") ?? "").includes("image/avif"), `Unexpected illustration type ${portrait}`);
+    assert((response.headers.get("content-type") ?? "").includes(portrait.endsWith(".jpg") ? "image/jpeg" : "image/avif"), `Unexpected illustration type ${portrait}`);
     const bytes = (await response.arrayBuffer()).byteLength;
     // Three original paintings are 1122×1402. Reject accidental 256×320 thumbnails.
-    assert(bytes >= 100_000, `Portrait quality regression (undersized upload): ${portrait}, ${bytes} bytes`);
+    assert(bytes >= (100_000), `Portrait quality regression (undersized upload): ${portrait}, ${bytes} bytes`);
     console.log(`PASS image ${portrait}`);
   }
   for (const asset of ["/brand/ddalkak-wordmark.webp", "/brand/ddalkak-symbol.webp"]) {
