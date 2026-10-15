@@ -45,8 +45,9 @@ export default function PeoplePage() {
               <span className="sl-faculty-index">01 / FACULTY</span>
             </div>
             <article className="sl-faculty-card" id="min-hyunku">
-              <div className="sl-faculty-portrait">
-                <Image src="/researchers/min-hyunku.webp" alt="카스파르 다비트 프리드리히의 낭만주의 풍경에서 영감을 받아 표현한 민현구 교수의 AI 회화풍 초상" width={420} height={420} sizes="(max-width: 820px) calc(100vw - 40px), 36vw" priority />
+              <div className="sl-faculty-hero">
+                <div className="sl-faculty-portrait">
+                <Image src="/researchers/min-hyunku-hq.webp" alt="카스파르 다비트 프리드리히의 낭만주의 풍경에서 영감을 받아 표현한 민현구 교수의 AI 회화풍 초상" width={860} height={860} sizes="(max-width: 820px) calc(100vw - 84px), 360px" priority />
                 <span>ARTISTIC PORTRAIT · AI-ASSISTED</span>
                 <p>사진이 아닌 AI 기반 회화풍 이미지입니다.</p>
               </div>
@@ -57,6 +58,9 @@ export default function PeoplePage() {
                 <p className="sl-faculty-tagline">사람과 조직의 변화를, 데이터와 연구의 언어로 살핍니다.</p>
                 <p className="sl-faculty-bio">민현구 교수는 경영전략, 생산·서비스운영, 데이터마이닝과 기술경영을 바탕으로 조직과 연구개발의 성과를 분석해 온 경영학 연구자입니다. 기업과 공공 R&amp;D의 효율성, 연구과제 평가체계, 대학 교육성과와 학생의 진로개발 등 서로 다른 현장을 실증적 연구로 연결해 왔습니다.</p>
                 <p className="sl-faculty-bio">학술연구와 더불어 학생지원 및 지역협력 활동에 참여해 왔으며, 모두의 딸깍 연구소에서는 학생들이 인간–AI 상호작용에 관한 질문을 구체적인 연구와 실험으로 발전시키는 과정을 지도하는 역할로 소개합니다.</p>
+                </div>
+              </div>
+              <div className="sl-faculty-extra">
                 <div className="sl-faculty-detail-grid">
                   <div>
                     <h4>RESEARCH INTERESTS / 연구 분야</h4>
