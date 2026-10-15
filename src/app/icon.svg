@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="모두의 딸깍 연구소">
+<rect width="64" height="64" rx="14" fill="#f7f9fc"/>
+<path d="M18 27a15 15 0 0 1 23-11" fill="none" stroke="#1d78ed" stroke-width="4.8" stroke-linecap="round"/>
+<path d="M24 30a8.5 8.5 0 0 1 13-6" fill="none" stroke="#37b7ff" stroke-width="4.3" stroke-linecap="round"/>
+<path d="M18 23 18 47 25 42 30 52 36 49 31 39 39 38Z" fill="#0a1724" stroke="#0a1724" stroke-width="2.5" stroke-linejoin="round"/>
+<path d="M39 14c7-1 14 5 14 13v16c0 7-6 12-14 12" fill="none" stroke="#0a1724" stroke-width="4" stroke-linecap="round"/>
+<path d="M39 23h6l4-4M41 35h10M39 45h6l4 4" fill="none" stroke="#0a1724" stroke-width="3" stroke-linecap="round"/>
+<circle cx="48" cy="19" r="3.2" fill="#45adff"/><circle cx="52" cy="35" r="3.2" fill="#45adff"/><circle cx="49" cy="49" r="3.2" fill="#45adff"/>
+</svg>
