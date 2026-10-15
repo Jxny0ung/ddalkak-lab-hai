@@ -7,8 +7,8 @@ export function SiteFooter() {
       <div className="sl-container">
         <div className="sl-footer-top">
           <div>
-            <Link href="/" className="sl-brand"><Image src="/brand/ddalkak-symbol.webp" alt="" width={36} height={30} className="sl-brand-icon" /><span className="sl-brand-name">모두의 딸깍 연구소</span></Link>
-            <p>AI와 인간의 상호작용을 연구하고, 읽고, 만들고, 기록하는 학부 HAI 플랫폼</p>
+            <Link href="/" className="sl-brand"><Image src="/brand/ddalkak-symbol.webp" alt="" width={36} height={30} className="sl-brand-icon" /><span className="sl-brand-name">모두의 <strong className="sl-brand-highlight">딸깍</strong> 연구소</span></Link>
+            <p>사람과 AI의 상호작용을 직접 탐구하는 HAI 연구소</p>
           </div>
           <nav aria-label="하단 메뉴">
             <Link href="/work">Work</Link>
@@ -28,7 +28,7 @@ export function SiteFooter() {
           </nav>
         </div>
         <div className="sl-footer-bottom">
-          <span>경영학과 미디어커뮤니케이션을 가로지르는 HAI 연구·제작 · 독립 학생 프로젝트</span>
+          <span>Human–AI Interaction Lab · 독립 학생 연구 프로젝트</span>
           <span>© 2026 DDALKAK LAB · 교육용 예시는 실제 연구 성과와 구분합니다.</span>
         </div>
       </div>

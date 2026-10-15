@@ -18,7 +18,7 @@ export const researchAreas = [
     slug: "platforms-management",
     title: "Platforms, Incentives & Management",
     description:
-      "플랫폼의 인센티브 구조, AI 협업, 조직 의사결정과 시장 반응을 경영학의 질문과 연결해 연구합니다.",
+      "사람과 AI의 협업이 조직의 판단, 플랫폼의 선택, 서비스 사용 경험에 미치는 영향을 탐색합니다.",
   },
   {
     code: "04",

@@ -60,23 +60,20 @@ try {
     "/", "/projects", "/projects/idea-map", "/projects/prompt-builder",
     "/projects/business-dashboard", "/projects/clap-interface", "/learn",
     "/lab", "/about", "/people", "/research", "/methods", "/archive", "/registry", "/outputs",
-    "/handbook", "/system", "/work", "/work/eth", "/reading", "/games", "/prompts", "/projects?category=Data",
+    "/handbook", "/system", "/work", "/work/eth", "/reading", "/games", "/prompts",
     "/sitemap.xml", "/robots.txt",
   ];
   for (const route of routes) {
     const { response, html } = await request(route);
     assert(response.status === 200, `${route}: expected 200, got ${response.status}`);
     assert(html.length > 40, `${route}: empty response`);
-    if (route === "/projects?category=Data") {
-      assert(html.includes("공개된 프로젝트가 아직 없습니다"), "Empty Data category lacks an explanation");
-    }
     if (route === "/") {
       assert(html.includes("RESEARCH BEHIND THE BUILD"), "Homepage research bridge missing");
-      assert(html.includes("DDALKAK"), "Homepage signature CORE missing");
+      assert(html.includes("HUMAN–AI INTERACTION"), "Homepage HAI identity missing");
     }
     if (route === "/") {
       assert(html.includes("04 / OUTPUTS"), "Homepage verified outputs link missing");
-      assert(html.includes("접근 방법"), "Project cards do not disclose their method");
+      assert(html.includes("TOYOTA: PRIORITY"), "Current featured game project missing");
     }
     if (route === "/outputs") {
       assert(html.includes("공개 웹사이트 소스코드"), "Outputs: source verification missing");
@@ -100,7 +97,7 @@ try {
       assert(html.includes("개인 소개"), "People page lacks provenance disclosure");
     }
     if (route === "/") {
-      assert(html.includes("네 가지 활동으로 만드는 HAI 연구소"), "Homepage program showcase missing");
+      assert(html.includes("지금 진행 중인 탐구와 실험"), "Homepage current-activity showcase missing");
       assert(html.includes("/brand/ddalkak-symbol.webp"), "Approved logo missing from site header");
     }
     if (route === "/work") {
@@ -156,6 +153,10 @@ try {
     assert((await response.arrayBuffer()).byteLength > 10_000, `Low-quality logo asset ${asset}`);
     console.log(`PASS brand ${asset}`);
   }
+  const art = await fetch(origin + "/visuals/hai-interaction.svg", { signal: AbortSignal.timeout(7000) });
+  assert(art.status === 200, "HAI neural interaction artwork missing");
+  assert((await art.text()).includes("neural flow"), "HAI neural visual content incorrect");
+  console.log("PASS HAI volumetric visual");
   const gameResponse = await fetch(origin + "/games/toyota-priority-v06.html", { signal: AbortSignal.timeout(12000) });
   const gameSource = await gameResponse.text();
   assert(gameResponse.status === 200, "Game source did not deploy");

@@ -23,17 +23,17 @@ export default function AboutPage() {
         <section className="sl-page-top"><div className="sl-container">
           <span className="sl-kicker">ABOUT / EVERYONE CAN BUILD</span>
           <h1>호기심에서 시작해<br/>작동하는 결과로.</h1>
-          <p>모두의 딸깍 연구소는 학생들이 학부 연구생이 AI로 논문 연구를 준비하고, 책을 읽고, 게임을 직접 구현하며, 인간–AI 상호작용을 탐색하는 융합 연구·제작 프로젝트입니다.</p>
+          <p>모두의 딸깍 연구소는 사람과 AI의 상호작용을 직접 탐구하는 학생 중심 HAI 연구소입니다. 질문을 만들고, 실험하고, 검증하는 과정을 공개합니다.</p>
         </div></section>
         <section className="sl-section">
           <div className="sl-container sl-detail-columns">
             <aside><span className="sl-kicker">01 / PURPOSE</span><h2>보는 것에서 만드는 것으로</h2></aside>
             <div className="sl-detail-copy">
               <h3>어떤 곳인가요?</h3>
-              <p>AI로 연구 문제를 탐색하고 책을 비판적으로 읽으며 웹 게임을 구현합니다. 제작 과정과 근거를 기록하고, 결과를 검증하는 학부 연구생 중심의 공간입니다.</p>
+              <p>HAI를 중심으로 다양한 연구 질문을 탐색합니다. 필요에 따라 실험을 설계하고 인터페이스를 만들며, 판단과 근거를 검증 가능한 기록으로 남깁니다.</p>
               <h3>어떤 질문을 다루나요?</h3>
-              <p>경영학의 의사결정·조직·플랫폼과 미디어커뮤니케이션의 정보·신뢰·표현을 Human–AI Interaction(HAI)이라는 교차점에서 연결합니다. 학과 간 경계가 없어졌다고 단정하기보다 전공의 방법론을 결합합니다.</p>
-              <div className="sl-actions"><Link className="sl-btn sl-btn-outline" href="/research">연구 주제 ↗</Link><Link className="sl-btn sl-btn-outline" href="/methods">연구 방법 ↗</Link><Link className="sl-btn sl-btn-outline" href="/people">학부 연구생 소개 ↗</Link><Link className="sl-btn sl-btn-outline" href="/work">네 가지 활동 보기 ↗</Link></div>
+              <p>사람이 AI를 이해하고 신뢰하며 협력하는 방식, 그리고 상호작용을 바꾸는 조건을 살펴봅니다. 연구 주제와 방법은 특정 학문이나 활동 목록으로 한정하지 않습니다.</p>
+              <div className="sl-actions"><Link className="sl-btn sl-btn-outline" href="/research">연구 주제 ↗</Link><Link className="sl-btn sl-btn-outline" href="/methods">연구 방법 ↗</Link><Link className="sl-btn sl-btn-outline" href="/people">학부 연구생 소개 ↗</Link><Link className="sl-btn sl-btn-outline" href="/work">현재 활동 보기 ↗</Link></div>
             </div>
           </div>
         </section>
@@ -82,7 +82,7 @@ export default function AboutPage() {
         <section className="sl-section sl-section-soft">
           <div className="sl-container sl-small-callout">
             <div><span className="sl-kicker">AFFILIATION & TRANSPARENCY</span><h2>학생 중심의 독립적인 실습·연구 프로젝트</h2></div>
-            <p>중부대학교 경영학전공과 미디어커뮤니케이션 분야의 학습·연구 맥락을 반영합니다. 공식 대학 기관이나 학과의 입장을 대표하는 사이트는 아니며, 지도 관계·소속 구성원·연구 실적은 확인된 사실과 공개 동의가 있을 때만 명시합니다.</p>
+            <p>HAI에 관심 있는 학부 연구생들이 자발적으로 탐구하는 연구·제작 프로젝트입니다. 공식 대학 기관이나 학과의 입장을 대표하는 사이트는 아니며, 지도 관계·소속 구성원·연구 실적은 확인된 사실과 공개 동의가 있을 때만 명시합니다.</p>
           </div>
         </section>
       </main>

@@ -7,7 +7,7 @@ export function LearningDemo({ visual }: { visual: LearningProject["visual"] }) 
   const [idea, setIdea] = useState("대학생을 위한 AI 학습 서비스");
   const [mapped, setMapped] = useState<string | null>(null);
   const [goal, setGoal] = useState("대학생 대상 학습 서비스의 문제와 기회를 분석한다");
-  const [role, setRole] = useState("경영학 관점의 시장 조사자");
+  const [role, setRole] = useState("시장 조사자");
   const [format, setFormat] = useState("표");
   const [prompt, setPrompt] = useState("");
   const [copied, setCopied] = useState(false);

@@ -8,6 +8,7 @@ import "./site-refinement.css";
 import "./interview-polish.css";
 import "./people.css";
 import "./programs.css";
+import "./hai-identity.css";
 
 const siteUrl = "https://ddalkak-lab-hai.vercel.app";
 
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     default: "모두의 딸깍 연구소 | HAI 연구·제작 플랫폼",
     template: "%s | 모두의 딸깍 연구소",
   },
-  description: "전공의 경계를 넘어 HAI 관점에서 AI 연구, 책과 서평, 웹 게임, 제작 과정을 공유하는 학부 연구·제작 플랫폼",
+  description: "사람과 AI의 상호작용을 직접 탐구하는 모두의 딸깍 연구소 · Human–AI Interaction Lab",
   applicationName: "모두의 딸깍 연구소",
   openGraph: {
     type: "website",
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "모두의 딸깍 연구소",
     title: "모두의 딸깍 연구소",
-    description: "AI를 연구하고, 읽고, 만들고, 그 과정을 기록합니다.",
+    description: "사람과 AI의 상호작용을 직접 탐구합니다.",
   },
   robots: { index: true, follow: true },
 };

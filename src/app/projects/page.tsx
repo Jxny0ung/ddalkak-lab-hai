@@ -2,53 +2,61 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { ProjectCard } from "@/components/project-card";
-import { projectCategories, studentProjects } from "@/lib/student-content";
+import { featuredWork } from "@/lib/featured-work";
 
 export const metadata: Metadata = {
   title: "Projects",
-  description: "직접 따라할 수 있는 AI 실습 예시, 제작 과정, 시행착오와 연구 실험 목록",
+  description: "모두의 딸깍 연구소가 현재 탐구하고 제작하는 HAI 프로젝트의 공개 상태와 기록",
 };
 
-export default async function ProjectsPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {
-  const { category } = await searchParams;
-  const activeCategory = projectCategories.find((c)=>c === category);
-  const visible = activeCategory ? studentProjects.filter((p)=>p.category===activeCategory) : studentProjects;
+export default function ProjectsPage() {
   return (
     <>
       <SiteHeader />
       <main id="main-content" className="sl-main sl-interior">
-        <section className="sl-page-top"><div className="sl-container">
-          <span className="sl-kicker">PROJECTS / BUILD & LEARN</span>
-          <h1>우리가 만들고,<br/>다시 만들어볼 것들.</h1>
-          <p>프로젝트마다 연구 질문, 접근 방법, 구현 상태를 구분합니다. 카드 전체를 눌러 상세 기록과 실제 데모를 확인하세요.</p>
-        </div></section>
-        <section className="sl-section">
+        <section className="sl-page-top">
           <div className="sl-container">
-            <nav className="sl-filter" aria-label="프로젝트 카테고리">
-              <Link className={!activeCategory ? "selected":""} href="/projects">전체 ({studentProjects.length})</Link>
-              {projectCategories.map((c)=><Link className={activeCategory===c?"selected":""} key={c} href={`/projects?category=${encodeURIComponent(c)}`}>{c} ({studentProjects.filter(p=>p.category===c).length})</Link>)}
-            </nav>
-            <p className="sl-results">{visible.length}개의 항목 · 제공 상태를 확인하고 시작하세요.</p>
-            {visible.length === 0 ? (
-              <div className="sl-empty-state" role="status">
-                <span className="sl-kicker">NOT YET PUBLISHED</span>
-                <h2>{activeCategory} 분야의 공개된 프로젝트가 아직 없습니다.</h2>
-                <p>실제로 준비된 프로젝트를 확인한 뒤 공개합니다. 다른 분야의 작동하는 데모와 연구 실험을 먼저 살펴보세요.</p>
-                <div className="sl-actions">
-                  <Link className="sl-btn sl-btn-dark" href="/projects">전체 프로젝트 보기 ↗</Link>
-                  <Link className="sl-btn sl-btn-outline" href="/learn">실습 가이드 보기</Link>
-                </div>
+            <span className="sl-kicker">PROJECTS / HUMAN–AI INTERACTION</span>
+            <h1>질문을 만들고,<br />직접 실험합니다.</h1>
+            <p>HAI 연구소에서 현재 공개할 수 있는 프로젝트입니다. 목록은 활동 범위를 한정하지 않으며, 실제 성과·프로토타입·계획을 구분합니다.</p>
+          </div>
+        </section>
+        <section className="sl-section hai-feature-section">
+          <div className="sl-container">
+            <div className="sl-section-head">
+              <div>
+                <span className="sl-kicker">CURRENT PROJECTS</span>
+                <h2>현재의 연구와 제작 기록</h2>
+                <p>진행 상태를 확인한 뒤 각 프로젝트의 기록과 구현 화면을 살펴보세요.</p>
               </div>
-            ) : (
-            <div className="sl-project-grid sl-all-projects">
-              {visible.map((project) => <ProjectCard key={project.slug} project={project} />)}
             </div>
-            )}
+            <div className="hai-feature-grid">
+              {featuredWork.map((project) => (
+                <Link className={`hai-feature-card hai-feature-card--${project.art}`} href={project.href} key={project.index}>
+                  <div className="hai-feature-card__graphic" aria-hidden="true">
+                    <span className="hai-feature-card__number">{project.index} / HAI</span>
+                    <span className="hai-feature-card__shape" />
+                    <span className="hai-feature-card__artlabel">{project.eyebrow}</span>
+                  </div>
+                  <div className="hai-feature-card__body">
+                    <div className="hai-feature-card__meta"><span>{project.status}</span><span aria-hidden="true">↗</span></div>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <strong>기록 확인하기 <span aria-hidden="true">↗</span></strong>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
         <section className="sl-section sl-section-soft">
-          <div className="sl-container sl-small-callout"><div><span className="sl-kicker">BUILD NOTES</span><h2>프로젝트는 완성 화면보다 과정이 중요합니다.</h2></div><p>학습용 실패 사례는 실제로 겪은 문제와 혼동하지 않도록 예시로 표시합니다. 새로운 결과물을 등록할 때는 구현 상태, 소스, 검증 조건을 함께 남깁니다.</p></div>
+          <div className="sl-container sl-small-callout">
+            <div><span className="sl-kicker">OPEN RESEARCH</span><h2>연구 프로젝트는 계속 확장됩니다.</h2></div>
+            <div>
+              <p>진행 중인 연구 질문, 새로운 인터페이스와 제작 결과를 검증 가능한 정보가 갖춰지는 순서대로 공개합니다. 학습용 데모를 실제 연구 성과로 소개하지 않습니다.</p>
+              <Link className="sl-text-link" href="/research">연구 방향 살펴보기 ↗</Link>
+            </div>
+          </div>
         </section>
       </main>
       <SiteFooter />

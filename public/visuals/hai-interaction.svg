@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 760">
+<title>Human–AI Interaction neural flow</title>
+<defs>
+  <radialGradient id="bg"><stop stop-color="#253f77"/><stop offset=".45" stop-color="#12203e"/><stop offset="1" stop-color="#080e20"/></radialGradient>
+  <radialGradient id="haze"><stop stop-color="#6799ff" stop-opacity=".42"/><stop offset="1" stop-color="#3461bc" stop-opacity="0"/></radialGradient>
+  <linearGradient id="glass"><stop stop-color="#f9feff"/><stop offset=".22" stop-color="#b0d4ff"/><stop offset=".5" stop-color="#2f62c1"/><stop offset=".78" stop-color="#98caff"/><stop offset="1" stop-color="#ffffff"/></linearGradient>
+  <linearGradient id="pearl"><stop stop-color="#f1cb98"/><stop offset=".22" stop-color="#fff9ea"/><stop offset=".49" stop-color="#a5b7d7"/><stop offset=".79" stop-color="#ffe0ae"/><stop offset="1" stop-color="#fdfbf8"/></linearGradient>
+  <radialGradient id="orbA"><stop stop-color="#fff"/><stop offset=".26" stop-color="#97deff"/><stop offset=".67" stop-color="#326bd5"/><stop offset="1" stop-color="#142955"/></radialGradient>
+  <radialGradient id="orbB"><stop stop-color="#fff"/><stop offset=".32" stop-color="#ffe8b5"/><stop offset=".7" stop-color="#bc986e"/><stop offset="1" stop-color="#584633"/></radialGradient>
+  <filter id="shadow"><feDropShadow dx="3" dy="22" stdDeviation="20" flood-color="#020714" flood-opacity=".75"/></filter>
+  <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+  <pattern id="stars" width="42" height="42" patternUnits="userSpaceOnUse"><circle r="1" cx="3" cy="3" fill="#a7cdfd" opacity=".2"/></pattern>
+</defs>
+<rect x="0" y="0" width="1000" height="760" rx="30" fill="url(#bg)"/>
+<rect x="0" y="0" width="1000" height="760" rx="30" fill="url(#stars)"/>
+<ellipse cx="635" cy="300" rx="400" ry="390" fill="url(#haze)"/>
+<ellipse cx="290" cy="515" rx="345" ry="300" fill="url(#haze)" opacity=".7"/>
+<g stroke="#9dc7ff" stroke-width="1" opacity=".2" fill="none">
+ <path d="M40 635Q503 475 964 636M40 688Q501 521 966 686M46 734Q498 581 963 731"/>
+ <path d="M145 736Q447 392 550 170M320 750Q489 457 540 155M770 743Q569 412 558 147"/>
+</g>
+<g stroke-linecap="round" fill="none" filter="url(#shadow)">
+ <path d="M76 470C265 124 390 179 513 388S782 701 946 309" stroke="#3e74d4" stroke-opacity=".16" stroke-width="111"/>
+ <path d="M76 459C265 113 390 169 513 377S782 690 946 299" stroke="url(#glass)" stroke-width="67" stroke-opacity=".88"/>
+ <path d="M76 442C265 97 390 154 513 361S782 673 946 281" stroke="#ebfaff" stroke-width="4.5" opacity=".9"/>
+ <path d="M76 479C265 134 390 192 513 396S782 714 946 317" stroke="#091a40" stroke-width="8" opacity=".5"/>
+ <path d="M84 268C305 610 415 615 552 422S776 83 942 238" stroke="#f1d2a4" stroke-opacity=".15" stroke-width="110"/>
+ <path d="M84 272C305 605 415 618 552 420S776 81 942 235" stroke="url(#pearl)" stroke-width="56" opacity=".96"/>
+ <path d="M84 252C305 588 415 599 552 399S776 63 942 217" stroke="#fff9e8" stroke-width="5" opacity=".93"/>
+ <path d="M84 292C305 627 415 636 552 440S776 103 942 255" stroke="#473b40" stroke-width="7" opacity=".43"/>
+</g>
+<g stroke-width="1.5" fill="none" opacity=".58">
+ <path d="M124 252Q350 65 510 358T932 432" stroke="#b3d8ff"/>
+ <path d="M128 550Q376 716 543 385T935 187" stroke="#ffe5b2"/>
+ <path d="M202 172Q520 705 796 270" stroke="#8cc9ff"/>
+ <path d="M202 618Q488 103 846 548" stroke="#ffe9cf"/>
+ <ellipse cx="510" cy="380" rx="368" ry="125" transform="rotate(-30 510 380)" stroke="#d3edff"/>
+ <ellipse cx="510" cy="380" rx="329" ry="143" transform="rotate(38 510 380)" stroke="#ffebc9"/>
+</g>
+<g filter="url(#glow)" opacity=".48"><circle cx="281" cy="211" r="39" fill="#f0c596"/><circle cx="736" cy="543" r="46" fill="#6b9cf8"/><circle cx="577" cy="337" r="31" fill="#b7eaff"/></g>
+<g>
+ <circle cx="123" cy="256" r="11" fill="url(#orbB)"/><circle cx="216" cy="468" r="13" fill="url(#orbA)"/>
+ <circle cx="281" cy="211" r="19" fill="url(#orbB)"/><circle cx="347" cy="563" r="12" fill="url(#orbB)"/>
+ <circle cx="450" cy="264" r="16" fill="url(#orbA)"/><circle cx="505" cy="433" r="18" fill="url(#orbB)"/>
+ <circle cx="577" cy="337" r="24" fill="url(#orbA)"/><circle cx="629" cy="502" r="11" fill="url(#orbA)"/>
+ <circle cx="736" cy="543" r="18" fill="url(#orbA)"/><circle cx="769" cy="216" r="15" fill="url(#orbB)"/>
+ <circle cx="847" cy="300" r="16" fill="url(#orbA)"/><circle cx="926" cy="380" r="12" fill="url(#orbB)"/>
+</g>
+<g font-family="Arial,sans-serif" fill="#e4ebff" font-weight="700" font-size="12" letter-spacing="3" opacity=".8"><text x="43" y="58">HUMAN / AI</text><text x="955" y="713" text-anchor="end">INTERACTION · 01</text></g>
+<rect x="1" y="1" width="998" height="758" rx="29" fill="none" stroke="#b3d5ff" stroke-opacity=".25"/>
+</svg>

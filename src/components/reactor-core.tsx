@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 type ReactorCoreProps = {
   size?: "mini" | "panel" | "hq";
   active?: boolean;
@@ -7,46 +9,28 @@ type ReactorCoreProps = {
   ariaLabel?: string;
 };
 
+/** Compatibility wrapper for the former circular core artwork.
+ * All HAI views now use the non-circular neural flow illustration.
+ */
 export function ReactorCore({
   size = "panel",
   active = false,
-  eyebrow = "DDALKAK",
-  label = "CORE",
   className = "",
-  ariaLabel = "DDALKAK rotating energy core",
+  ariaLabel = "Human–AI Interaction neural flow",
 }: ReactorCoreProps) {
   return (
     <div
-      aria-label={ariaLabel}
-      className={[
-        "reactor-core",
-        `reactor-core--${size}`,
-        active ? "reactor-core--active" : "",
-        className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
+      className={["hai-neural-embed", `hai-neural-embed--${size}`, active ? "hai-neural-embed--active" : "", className].filter(Boolean).join(" ")}
       role="img"
+      aria-label={ariaLabel}
     >
-      <span className="reactor-core__aura" aria-hidden="true" />
-      <span className="reactor-core__orbit reactor-core__orbit--a" aria-hidden="true" />
-      <span className="reactor-core__orbit reactor-core__orbit--b" aria-hidden="true" />
-
-      <div className="reactor-core__shell" aria-hidden="true">
-        <span className="reactor-core__rail reactor-core__rail--outer" />
-        <span className="reactor-core__rail reactor-core__rail--middle" />
-        <span className="reactor-core__rail reactor-core__rail--inner" />
-        <span className="reactor-core__segments" />
-        <span className="reactor-core__spokes" />
-        <span className="reactor-core__iris" />
-        <span className="reactor-core__energy" />
-        <span className="reactor-core__scan" />
-      </div>
-
-      <div className="reactor-core__label" aria-hidden="true">
-        <small>{eyebrow}</small>
-        <strong>{label}</strong>
-      </div>
+      <Image
+        src="/visuals/hai-interaction.svg"
+        alt=""
+        width={1000}
+        height={760}
+        sizes="(max-width: 768px) 88vw, 40vw"
+      />
     </div>
   );
 }

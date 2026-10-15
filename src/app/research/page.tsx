@@ -5,7 +5,7 @@ import { SiteHeader } from "@/components/site-header";
 import { agenda, researchAreas } from "@/lib/content";
 
 const description =
-  "DDALKAK LAB의 Human–AI Interaction, 미디어커뮤니케이션, 플랫폼·경영 연구 질문을 소개합니다.";
+  "DDALKAK LAB의 Human–AI Interaction 연구 질문과 검증 방법을 소개합니다.";
 
 export const metadata: Metadata = {
   title: "Research",
@@ -40,15 +40,15 @@ export default function ResearchPage() {
       <main id="main-content">
         <PageHero
           eyebrow="Research"
-          title="사람, AI, 미디어와 조직이 만나는 지점에서 질문을 만듭니다."
-          description="딸깍 연구소는 HAI를 중심에 두고 미디어커뮤니케이션과 경영학의 질문을 연결합니다. 아래 내용은 현재의 연구 방향이며, 완료된 실증 결과를 의미하지 않습니다."
+          title="사람과 AI가 상호작용하는 순간을 연구합니다."
+          description="딸깍 연구소는 HAI를 연구합니다. 아래 주제는 현재 탐구 중인 질문이며, 완료된 실증 결과를 의미하지 않습니다."
           meta="Research framing · 2026 —"
         />
 
         <section className="content-section">
           <div className="section-heading">
             <span>01 / Areas</span>
-            <h2>네 개의 연구 축</h2>
+            <h2>현재 탐색 중인 연구 주제</h2>
           </div>
           <div className="detail-grid">
             {researchAreas.map((area) => (

@@ -22,7 +22,7 @@ export function SiteHeader() {
       <div className="sl-container sl-header-inner">
         <Link href="/" className="sl-brand" aria-label="모두의 딸깍 연구소 홈">
           <Image src="/brand/ddalkak-symbol.webp" alt="" width={36} height={30} className="sl-brand-icon" priority />
-          <span className="sl-brand-name">모두의 딸깍 연구소</span>
+          <span className="sl-brand-name">모두의 <strong className="sl-brand-highlight">딸깍</strong> 연구소</span>
         </Link>
         <nav className="sl-desktop-nav" aria-label="주 메뉴">
           {links.map((item) => (

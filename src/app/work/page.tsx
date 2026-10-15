@@ -7,7 +7,7 @@ import { labPrograms } from "@/lib/lab-programs";
 
 export const metadata: Metadata = {
   title: "연구와 제작 | HAI Lab Programs",
-  description: "모두의 딸깍 연구소의 네 가지 활동: ETH 연구, AI 독서와 서평, AI 웹 게임, 제작 프롬프트 아카이브",
+  description: "모두의 딸깍 연구소에서 현재 공개 중인 HAI 연구와 프로젝트",
   alternates: { canonical: "/work" },
 };
 
@@ -38,9 +38,9 @@ export default function WorkPage() {
           <div className="sl-container">
             <div className="sl-section-head">
               <div>
-                <span className="sl-kicker">FOUR PROGRAMS</span>
-                <h2 id="pg-programs-heading">네 가지 활동, 하나의 연구 태도.</h2>
-                <p>공개된 결과가 있는 일과 앞으로 진행할 일은 명확히 구분합니다.</p>
+                <span className="sl-kicker">CURRENT WORK</span>
+                <h2 id="pg-programs-heading">지금 기록하고 있는 프로젝트</h2>
+                <p>현재 공개된 활동 목록입니다. 연구소의 범위는 여기에 한정되지 않습니다.</p>
               </div>
             </div>
             <div className="pg-programs">
@@ -57,9 +57,9 @@ export default function WorkPage() {
         </section>
         <section className="pg-principle" aria-labelledby="pg-principle-heading">
           <div className="sl-container pg-principle__layout">
-            <div><span className="sl-kicker">OUR RESEARCH FRAME</span><h2 id="pg-principle-heading">전공의 경계보다<br />질문과 검증을 중심으로.</h2></div>
+            <div><span className="sl-kicker">OUR RESEARCH FRAME</span><h2 id="pg-principle-heading">HAI 연구는<br />질문에서 시작됩니다.</h2></div>
             <div>
-              <p>AI가 여러 분야의 연구 도구로 활용되면서, 경영학과 미디어커뮤니케이션 사이에도 함께 탐구할 수 있는 질문이 늘어나고 있습니다. 우리는 기존 학문을 없애기보다 서로 다른 방법을 연결하는 융합 연구를 지향합니다.</p>
+              <p>우리는 사람과 AI가 함께 판단하고 배우며 만들어가는 과정을 연구합니다. 새로운 질문이 생기면 그에 맞는 방법을 선택하고 탐구 범위를 넓힙니다.</p>
               <p>HAI는 AI를 활용해 무언가를 만드는 데 그치지 않고, 사람이 AI의 정보와 판단을 어떻게 이해·신뢰·수정하는지도 살펴보는 연구 관점입니다.</p>
               <Link className="sl-text-link" href="/methods">연구 방법과 검증 원칙 보기 ↗</Link>
             </div>

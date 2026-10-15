@@ -1,11 +1,9 @@
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { ProjectCard } from "@/components/project-card";
-import { CoreMotionShowcase } from "@/components/core-motion-showcase";
 import { CoreHeroVisual } from "@/components/core-hero-visual";
 import { AgentCompanyOverview } from "@/components/agent-company-overview";
-import { studentProjects, projectCategories } from "@/lib/student-content";
+import { featuredWork } from "@/lib/featured-work";
 import { studentResearchers } from "@/lib/researchers";
 import { labPrograms } from "@/lib/lab-programs";
 
@@ -23,7 +21,6 @@ const activity = [
 ] as const;
 
 export default function Home() {
-  const featured = studentProjects.slice(0, 3);
   return (
     <>
       <SiteHeader />
@@ -33,12 +30,11 @@ export default function Home() {
             <div className="sl-hero-copy">
               <span className="sl-eyebrow">모두의 딸깍 연구소 · HUMAN–AI INTERACTION LAB</span>
               <h1>AI를 연구하고, 읽고,<br /><em>직접 만들어봅니다.</em></h1>
-              <p>경영학과 미디어커뮤니케이션의 경계를 넘어, 사람과 AI의 상호작용을 탐구합니다. 논문 연구부터 AI 독서와 서평, 웹 게임 제작과 과정 기록까지 직접 시도합니다.</p>
+              <p>사람과 AI의 상호작용을 직접 탐구합니다.</p>
               <div className="sl-actions">
                 <Link className="sl-btn sl-btn-dark" href="/work">연구소 활동 살펴보기 <span aria-hidden="true">↗</span></Link>
                 <Link className="sl-btn sl-btn-outline" href="/about">연구소 소개</Link>
               </div>
-              <span className="sl-hero-annotation">Human–AI Interaction · 연구 × 독서 × 게임 × 제작 과정</span>
             </div>
             <CoreHeroVisual />
           </div>
@@ -47,7 +43,7 @@ export default function Home() {
         <section className="sl-section sl-section-soft" id="what-we-do">
           <div className="sl-container sl-intro-grid">
             <div><span className="sl-kicker">WHAT WE DO</span><h2>보고 끝내지 않고,<br/>직접 만들어봅니다.</h2></div>
-            <p>AI를 연구 도구로 사용하는 법과 AI를 대하는 사람의 판단·경험을 함께 탐구합니다. 기존 전공의 전문성을 존중하면서도 문제에 따라 경영학, 미디어커뮤니케이션, HAI의 접근법을 자유롭게 연결합니다.</p>
+            <p>우리는 인간과 AI가 만나고 협력하는 방식을 관찰하고, 질문을 만들고, 직접 실험합니다. 연구 주제와 방법은 질문에 따라 계속 확장됩니다.</p>
           </div>
         </section>
 
@@ -55,9 +51,9 @@ export default function Home() {
           <div className="sl-container">
             <div className="sl-section-head">
               <div>
-                <span className="sl-kicker">FOUR WAYS TO EXPLORE AI</span>
-                <h2 id="pg-home-programs-title">네 가지 활동으로 만드는 HAI 연구소</h2>
-                <p>ETH 논문 연구, AI 책 서평, 직접 플레이하는 게임, 프롬프트 기록. 공개 준비 중인 활동과 실제 이용 가능한 결과를 구분합니다.</p>
+                <span className="sl-kicker">CURRENT LAB ACTIVITIES</span>
+                <h2 id="pg-home-programs-title">지금 진행 중인 탐구와 실험</h2>
+                <p>현재 기록 중인 활동을 소개합니다. 이 목록은 연구소의 범위를 제한하지 않으며, 새로운 질문과 프로젝트를 계속 추가합니다.</p>
               </div>
               <Link className="sl-text-link" href="/work">전체 활동 보기 <span aria-hidden="true">↗</span></Link>
             </div>
@@ -74,14 +70,32 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="sl-section" id="featured">
+        <section className="sl-section hai-feature-section" id="featured">
           <div className="sl-container">
             <div className="sl-section-head">
-              <div><span className="sl-kicker">FEATURED PROJECTS</span><h2>직접 열어보고 배우는 프로젝트</h2><p>과장된 성공 사례 대신 현재 작동하는 데모와 기획 중인 예시를 정확히 구분합니다.</p></div>
+              <div>
+                <span className="sl-kicker">FEATURED PROJECTS</span>
+                <h2>우리가 지금 탐구하고 만드는 것들</h2>
+                <p>실제로 공개된 결과물과 진행 중인 연구를 구분합니다. 새로운 프로젝트도 계속 추가됩니다.</p>
+              </div>
               <Link className="sl-text-link" href="/projects">모든 프로젝트 보기 <span aria-hidden="true">↗</span></Link>
             </div>
-            <div className="sl-project-grid">
-              {featured.map((project) => <ProjectCard featured key={project.slug} project={project} />)}
+            <div className="hai-feature-grid">
+              {featuredWork.map((project) => (
+                <Link className={`hai-feature-card hai-feature-card--${project.art}`} href={project.href} key={project.index}>
+                  <div className="hai-feature-card__graphic" aria-hidden="true">
+                    <span className="hai-feature-card__number">{project.index} / HAI</span>
+                    <span className="hai-feature-card__shape" />
+                    <span className="hai-feature-card__artlabel">{project.eyebrow}</span>
+                  </div>
+                  <div className="hai-feature-card__body">
+                    <div className="hai-feature-card__meta"><span>{project.status}</span><span aria-hidden="true">↗</span></div>
+                    <h3>{project.title}</h3>
+                    <p>{project.description}</p>
+                    <strong>프로젝트 살펴보기 <span aria-hidden="true">↗</span></strong>
+                  </div>
+                </Link>
+              ))}
             </div>
           </div>
         </section>
@@ -123,7 +137,7 @@ export default function Home() {
                 <span className="sl-kicker">RESEARCH BEHIND THE BUILD</span>
                 <h2 id="sl-research-bridge-title">무엇을 만들지보다,<br/>무엇을 검증할지 먼저 묻습니다.</h2>
               </div>
-              <p>딸깍 연구소의 실습은 경영학과 미디어커뮤니케이션의 질문을 HAI 방법론으로 연결합니다. 실제 실험 결과와 구현 예시는 구분해 공개합니다.</p>
+              <p>모든 프로젝트는 사람과 AI의 상호작용이라는 연구 질문에서 출발합니다. 확인된 결과와 실험·설계 단계의 기록은 구분해 공개합니다.</p>
             </div>
             <div className="sl-research-bridge__grid">
               <Link href="/research">
@@ -150,31 +164,16 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="sl-section">
-          <div className="sl-container">
-            <div className="sl-section-head"><div><span className="sl-kicker">EXPLORE BY CATEGORY</span><h2>관심 분야에서 시작하세요.</h2></div></div>
-            <div className="sl-category-list">
-              {projectCategories.map((category) => (
-                <Link href={`/projects?category=${encodeURIComponent(category)}`} key={category}>
-                  <strong>{category}</strong><span>{studentProjects.filter(x=>x.category===category).length}개 항목</span><span aria-hidden="true">↗</span>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
         <section className="sl-section sl-section-soft">
           <div className="sl-container sl-split">
-            <div><span className="sl-kicker">START LEARNING</span><h2>첫 프로젝트,<br/>혼자서도 시작할 수 있게.</h2><p>실습 목표, 구성 순서, 흔한 오류와 개선 방법을 한 화면에 정리합니다.</p><Link className="sl-btn sl-btn-dark" href="/learn">학습 자료 살펴보기 ↗</Link></div>
+            <div><span className="sl-kicker">START LEARNING</span><h2>HAI 연구를 시작할 때,<br/>질문에서 실험까지.</h2><p>연구 질문, 검증 방법, 실제 인터랙션을 차례로 살펴보세요.</p><Link className="sl-btn sl-btn-dark" href="/learn">학습 자료 살펴보기 ↗</Link></div>
             <div className="sl-learning-list">
-              <Link href="/projects/idea-map"><span>01</span><strong>아이디어 맵 만들기</strong><span>15분 ↗</span></Link>
-              <Link href="/projects/prompt-builder"><span>02</span><strong>프롬프트 구조화하기</strong><span>10분 ↗</span></Link>
-              <Link href="/learn#api"><span>03</span><strong>API 키 안전하게 다루기</strong><span>가이드 ↗</span></Link>
+              <Link href="/research"><span>01</span><strong>HAI 연구 질문 살펴보기</strong><span>Research ↗</span></Link>
+              <Link href="/methods"><span>02</span><strong>실험과 검증 방법 익히기</strong><span>Methods ↗</span></Link>
+              <Link href="/lab"><span>03</span><strong>상호작용 프로토타입 체험</strong><span>HAI Lab ↗</span></Link>
             </div>
           </div>
         </section>
-
-        <CoreMotionShowcase />
 
         <AgentCompanyOverview />
 
