@@ -103,12 +103,15 @@ export default function Home() {
         <section className="sl-section sl-section-soft sl-team-home" aria-labelledby="sl-team-home-title">
           <div className="sl-container sl-team-home__layout">
             <div>
-              <span className="sl-kicker">PEOPLE / OUR RESEARCHERS</span>
+              <span className="sl-kicker">PEOPLE / FACULTY & RESEARCHERS</span>
               <h2 id="sl-team-home-title">관심은 다르지만,<br />질문은 함께 만듭니다.</h2>
-              <p>정보와 사회, 인간과 AI의 상호작용, 금융과 사용자 경험. 서로 다른 시선으로 질문을 나누는 학부 연구생들을 소개합니다.</p>
-              <Link className="sl-text-link" href="/people">학부 연구생 만나기 <span aria-hidden="true">↗</span></Link>
+              <p>정보와 사회, 인간과 AI의 상호작용, 금융과 사용자 경험. 지도교수 민현구 교수와 함께, 서로 다른 시선으로 질문을 나누는 학부 연구생들을 소개합니다.</p>
+              <Link className="sl-text-link" href="/people">지도교수·연구생 만나기 <span aria-hidden="true">↗</span></Link>
             </div>
             <div className="sl-team-home__names">
+              <Link className="sl-team-home__faculty" href="/people#min-hyunku">
+                <span>PROF.</span><strong>민현구</strong><span>지도교수 · 경영전략 · 기술경영 · 데이터 분석</span><span aria-hidden="true">↗</span>
+              </Link>
               {studentResearchers.map((person, i) => (
                 <Link key={person.id} href={`/people#${person.id}`}>
                   <span>{String(i + 1).padStart(2, "0")}</span>
