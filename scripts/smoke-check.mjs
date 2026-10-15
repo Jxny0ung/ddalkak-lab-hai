@@ -118,7 +118,7 @@ try {
     }
     if (route === "/prompts") {
       assert(html.includes("0 PUBLIC PROMPTS"), "Prompts must not be published yet");
-      assert(html.includes("프롬프트 원문은 게시하지 않습니다"), "Prompt embargo explanation missing");
+      assert(html.includes("프롬프트 본문은 게시하지 않습니다"), "Prompt embargo explanation missing");
     }
     if (route === "/games") {
       assert(html.includes("/games/toyota-priority-v06.html"), "Playable game link missing");
