@@ -105,8 +105,8 @@ export default function Home() {
             <div>
               <span className="sl-kicker">PEOPLE / OUR RESEARCHERS</span>
               <h2 id="sl-team-home-title">관심은 다르지만,<br />질문은 함께 만듭니다.</h2>
-              <p>재무·회계, 금융시장, AI 서비스와 사용자 경험. 각자의 관심을 바탕으로 배우고 기록하는 학부 연구생들을 소개합니다.</p>
-              <Link className="sl-text-link" href="/people">학부 연구생 세 명 만나기 <span aria-hidden="true">↗</span></Link>
+              <p>정보와 사회, 인간과 AI의 상호작용, 금융과 사용자 경험. 서로 다른 시선으로 질문을 나누는 학부 연구생들을 소개합니다.</p>
+              <Link className="sl-text-link" href="/people">학부 연구생 만나기 <span aria-hidden="true">↗</span></Link>
             </div>
             <div className="sl-team-home__names">
               {studentResearchers.map((person, i) => (
