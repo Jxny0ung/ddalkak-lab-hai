@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const links = [
+  { href: "/work", label: "Work" },
   { href: "/projects", label: "Projects" },
-  { href: "/learn", label: "Learn" },
-  { href: "/research", label: "Research" },
-  { href: "/methods", label: "Methods" },
+  { href: "/games", label: "Games" },
+  { href: "/reading", label: "Reading" },
   { href: "/lab", label: "HAI Lab" },
   { href: "/people", label: "People" },
   { href: "/about", label: "About" },
@@ -20,8 +21,8 @@ export function SiteHeader() {
     <header className="sl-header">
       <div className="sl-container sl-header-inner">
         <Link href="/" className="sl-brand" aria-label="모두의 딸깍 연구소 홈">
-          <span className="sl-brand-symbol" aria-hidden="true">◦</span>
-          <span>모두의 딸깍 연구소</span>
+          <Image src="/brand/ddalkak-symbol.webp" alt="" width={36} height={30} className="sl-brand-icon" priority />
+          <span className="sl-brand-name">모두의 딸깍 연구소</span>
         </Link>
         <nav className="sl-desktop-nav" aria-label="주 메뉴">
           {links.map((item) => (
@@ -34,8 +35,8 @@ export function SiteHeader() {
             </Link>
           ))}
         </nav>
-        <Link className="sl-btn sl-btn-dark sl-header-cta" href="/projects">
-          프로젝트 보기 <span aria-hidden="true">↗</span>
+        <Link className="sl-btn sl-btn-dark sl-header-cta" href="/work">
+          연구소 활동 <span aria-hidden="true">↗</span>
         </Link>
         <details className="sl-mobile-menu">
           <summary>메뉴 <span aria-hidden="true">☰</span></summary>
@@ -49,6 +50,10 @@ export function SiteHeader() {
                 {item.label}
               </Link>
             ))}
+            <Link href="/learn">Learn ↗</Link>
+            <Link href="/research">Research ↗</Link>
+            <Link href="/methods">Methods ↗</Link>
+            <Link href="/prompts">Prompt Archive ↗</Link>
             <Link href="/archive">Archive ↗</Link>
           </nav>
         </details>
