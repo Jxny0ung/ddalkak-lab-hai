@@ -21,9 +21,7 @@ not included in public copy.
 
 ## Publication boundaries
 
-- Portraits are derived from the four user-provided artwork files, retaining
-  the original **1122 × 1402 pixel resolution** and encoded as quality-optimized
-  AVIF in `public/researchers/`. The initial 256 × 320, highly compressed
+- The original three profiles use **1122 × 1402**-pixel optimized AVIF illustrations in `public/researchers/`. The newly added Junyoung image is his explicitly selected **1536 × 1536**-pixel JPEG painting (kept as provided), and is cropped responsively by the profile card. The initial 256 × 320, highly compressed
   thumbnails were replaced after a reported pixelation problem.
   The original uncompressed PNG sources remain outside the public repository. The Junyoung portrait was additionally selected in this chat as the preferred unretouched Monet-style version.
 - Regression gate: `npm run smoke` checks that all 4 image routes return a
