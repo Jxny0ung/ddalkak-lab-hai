@@ -2,6 +2,19 @@
 
 학생이 생성형 AI 활용 사례를 **탐색 → 직접 구현 → 개선 → 공유**하는 경영학 × 미디어커뮤니케이션 × Human–AI Interaction(HAI) 실습·연구 플랫폼입니다.
 
+## Current HAI lab program (October 2026)
+
+The umbrella is interdisciplinary **Human–AI Interaction** across Business Administration and Media & Communication. This does **not** mean traditional disciplines have disappeared.
+
+- `/work`: four program tracks and their **actual disclosure states**.
+- `/work/eth`: AI-assisted ETH paper project record **scaffold**; ETH definition, methodology and findings not published without the research source.
+- `/reading`: AI books and original critical reviews; **0 reviews currently published**.
+- `/games`: **playable** browser game `public/games/toyota-priority-v06.html`. Factory Command v0.6 preserved with smaller optimized inline illustration; unofficial simulation unaffiliated with Toyota.
+- `/prompts`: archive **infrastructure only**; 0 published prompt texts, as explicitly requested.
+- Approved click-pointer + AI brain logo: `public/brand/ddalkak-wordmark.webp` and `public/brand/ddalkak-symbol.webp` from the selected third icon and bright blue wordmark.
+
+See [`docs/hai-lab-programs-2026-10.md`](docs/hai-lab-programs-2026-10.md) for verification states and publication safeguards.
+
 ## Information architecture
 
 - **Home:** 연구소 소개, 실제로 열어볼 수 있는 프로젝트, 활동 방식

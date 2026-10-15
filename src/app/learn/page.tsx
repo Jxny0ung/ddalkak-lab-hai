@@ -31,6 +31,12 @@ export default function LearnPage() {
             </div>
           </div>
         </section>
+        <section className="sl-section sl-section-soft">
+          <div className="sl-container pg-next">
+            <div><span className="sl-kicker">READING & PROMPT RECORDS</span><h2>책으로 읽고, 과정으로 검증합니다.</h2><p>AI 관련 서평 아카이브와 앞으로의 제작 프롬프트 기록 공간을 별도로 마련했습니다. 현재 공개된 서평이나 실제 프롬프트 원문은 없습니다.</p></div>
+            <div className="sl-actions"><Link className="sl-btn sl-btn-dark" href="/reading">AI 독서 아카이브 ↗</Link><Link className="sl-btn sl-btn-outline" href="/prompts">프롬프트 아카이브</Link></div>
+          </div>
+        </section>
         <section className="sl-join"><div className="sl-container">
           <span className="sl-kicker">REBUILD & SHARE</span><h2>만든 다음에는<br/>과정까지 남겨보세요.</h2>
           <p>무엇이 작동했는지, 무엇이 실패했는지, 어떤 AI와 도구를 사용했는지 기록할 때 학습이 축적됩니다.</p>

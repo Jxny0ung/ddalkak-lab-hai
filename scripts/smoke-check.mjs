@@ -60,7 +60,7 @@ try {
     "/", "/projects", "/projects/idea-map", "/projects/prompt-builder",
     "/projects/business-dashboard", "/projects/clap-interface", "/learn",
     "/lab", "/about", "/people", "/research", "/methods", "/archive", "/registry", "/outputs",
-    "/handbook", "/system", "/projects?category=Data",
+    "/handbook", "/system", "/work", "/work/eth", "/reading", "/games", "/prompts", "/projects?category=Data",
     "/sitemap.xml", "/robots.txt",
   ];
   for (const route of routes) {
@@ -99,6 +99,31 @@ try {
       assert(html.includes("/researchers/kim-ye-bin.avif"), "Researcher portraits not linked");
       assert(html.includes("개인 소개"), "People page lacks provenance disclosure");
     }
+    if (route === "/") {
+      assert(html.includes("네 가지 활동으로 만드는 HAI 연구소"), "Homepage program showcase missing");
+      assert(html.includes("/brand/ddalkak-symbol.webp"), "Approved logo missing from site header");
+    }
+    if (route === "/work") {
+      for (const keyword of ["AI 기반 ETH 논문 프로젝트", "AI 책 읽기와 서평", "AI로 만드는 웹 게임", "제작 프롬프트 기록"]) {
+        assert(html.includes(keyword), `Missing research program: ${keyword}`);
+      }
+      assert(html.includes("/brand/ddalkak-wordmark.webp"), "Approved full wordmark missing");
+    }
+    if (route === "/work/eth") {
+      assert(html.includes("연구 상세 자료 확인 대기"), "ETH research uncertainty not disclosed");
+      assert(html.includes("연구 질문"), "ETH research scaffold missing");
+    }
+    if (route === "/reading") {
+      assert(html.includes("0 PUBLISHED REVIEWS"), "Reading archive should stay empty");
+    }
+    if (route === "/prompts") {
+      assert(html.includes("0 PUBLIC PROMPTS"), "Prompts must not be published yet");
+      assert(html.includes("프롬프트 본문은 게시하지 않습니다"), "Prompt embargo explanation missing");
+    }
+    if (route === "/games") {
+      assert(html.includes("/games/toyota-priority-v06.html"), "Playable game link missing");
+      assert(html.includes("공식 승인을 받은 게임이 아닙니다"), "Unofficial simulation notice missing");
+    }
     if (route === "/lab") {
       assert(html.includes("Clap-to-Activate"), "Lab clap prototype was removed");
       const policy = response.headers.get("permissions-policy") ?? "";
@@ -124,6 +149,20 @@ try {
     assert(bytes >= 100_000, `Portrait quality regression (undersized upload): ${portrait}, ${bytes} bytes`);
     console.log(`PASS image ${portrait}`);
   }
+  for (const asset of ["/brand/ddalkak-wordmark.webp", "/brand/ddalkak-symbol.webp"]) {
+    const response = await fetch(origin + asset, { signal: AbortSignal.timeout(7000) });
+    assert(response.status === 200, `Missing logo asset: ${asset}`);
+    assert((response.headers.get("content-type") ?? "").includes("image/webp"), `Wrong logo type ${asset}`);
+    assert((await response.arrayBuffer()).byteLength > 10_000, `Low-quality logo asset ${asset}`);
+    console.log(`PASS brand ${asset}`);
+  }
+  const gameResponse = await fetch(origin + "/games/toyota-priority-v06.html", { signal: AbortSignal.timeout(12000) });
+  const gameSource = await gameResponse.text();
+  assert(gameResponse.status === 200, "Game source did not deploy");
+  assert(gameSource.includes("TOYOTA: PRIORITY"), "Incorrect game build");
+  assert(gameSource.includes("data:image/webp;base64,"), "Optimized game scene missing");
+  assert(gameSource.includes("function newRound"), "Playable game scripts missing");
+  console.log("PASS playable factory-command game");
   const { response: notFound } = await request("/projects/unknown-sample-route");
   assert(notFound.status === 404, `Unknown project should 404, got ${notFound.status}`);
   console.log("PASS 404 /projects/unknown-sample-route");

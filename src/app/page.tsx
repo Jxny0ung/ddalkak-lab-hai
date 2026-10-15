@@ -7,6 +7,7 @@ import { CoreHeroVisual } from "@/components/core-hero-visual";
 import { AgentCompanyOverview } from "@/components/agent-company-overview";
 import { studentProjects, projectCategories } from "@/lib/student-content";
 import { studentResearchers } from "@/lib/researchers";
+import { labPrograms } from "@/lib/lab-programs";
 
 const workflow = [
   ["01", "Explore", "전 세계의 흥미로운 AI 활용 사례를 발견하고, 무엇이 유용한지 살펴봅니다."],
@@ -30,14 +31,14 @@ export default function Home() {
         <section className="sl-hero">
           <div className="sl-container sl-hero-layout">
             <div className="sl-hero-copy">
-              <span className="sl-eyebrow">모두의 딸깍 연구소 · STUDENT LAB</span>
-              <h1>AI를 배우는 가장 좋은 방법은 <em>직접 만들어보는 것</em>입니다.</h1>
-              <p>경영학과 미디어커뮤니케이션의 질문을 Human–AI Interaction으로 연결합니다. AI 사례를 직접 만들고, 실험하고, 그 과정을 기록합니다.</p>
+              <span className="sl-eyebrow">모두의 딸깍 연구소 · HUMAN–AI INTERACTION LAB</span>
+              <h1>AI를 연구하고, 읽고,<br /><em>직접 만들어봅니다.</em></h1>
+              <p>경영학과 미디어커뮤니케이션의 경계를 넘어, 사람과 AI의 상호작용을 탐구합니다. 논문 연구부터 AI 독서와 서평, 웹 게임 제작과 과정 기록까지 직접 시도합니다.</p>
               <div className="sl-actions">
-                <Link className="sl-btn sl-btn-dark" href="/projects">프로젝트 살펴보기 <span aria-hidden="true">↗</span></Link>
+                <Link className="sl-btn sl-btn-dark" href="/work">연구소 활동 살펴보기 <span aria-hidden="true">↗</span></Link>
                 <Link className="sl-btn sl-btn-outline" href="/about">연구소 소개</Link>
               </div>
-              <span className="sl-hero-annotation">작은 실습에서 시작하는 연구와 제작의 기록</span>
+              <span className="sl-hero-annotation">Human–AI Interaction · 연구 × 독서 × 게임 × 제작 과정</span>
             </div>
             <CoreHeroVisual />
           </div>
@@ -46,7 +47,30 @@ export default function Home() {
         <section className="sl-section sl-section-soft" id="what-we-do">
           <div className="sl-container sl-intro-grid">
             <div><span className="sl-kicker">WHAT WE DO</span><h2>보고 끝내지 않고,<br/>직접 만들어봅니다.</h2></div>
-            <p>좋은 아이디어를 발견하는 것에서 그치지 않습니다. 작동 원리를 이해하고, 화면과 기능을 재구성하고, 학생의 문제의식에 맞게 다시 설계합니다. 경영학의 문제 해결과 미디어커뮤니케이션의 질문을 함께 가져갑니다.</p>
+            <p>AI를 연구 도구로 사용하는 법과 AI를 대하는 사람의 판단·경험을 함께 탐구합니다. 기존 전공의 전문성을 존중하면서도 문제에 따라 경영학, 미디어커뮤니케이션, HAI의 접근법을 자유롭게 연결합니다.</p>
+          </div>
+        </section>
+
+        <section className="sl-section pg-home-programs" id="programs" aria-labelledby="pg-home-programs-title">
+          <div className="sl-container">
+            <div className="sl-section-head">
+              <div>
+                <span className="sl-kicker">FOUR WAYS TO EXPLORE AI</span>
+                <h2 id="pg-home-programs-title">네 가지 활동으로 만드는 HAI 연구소</h2>
+                <p>ETH 논문 연구, AI 책 서평, 직접 플레이하는 게임, 프롬프트 기록. 공개 준비 중인 활동과 실제 이용 가능한 결과를 구분합니다.</p>
+              </div>
+              <Link className="sl-text-link" href="/work">전체 활동 보기 <span aria-hidden="true">↗</span></Link>
+            </div>
+            <div className="pg-home-grid">
+              {labPrograms.map((program) => (
+                <Link className="pg-home-track" href={program.href} key={program.id}>
+                  <span className="pg-home-track__top"><span>{program.index} / {program.eyebrow}</span><span aria-hidden="true">↗</span></span>
+                  <h3>{program.title}</h3>
+                  <p>{program.description}</p>
+                  <span className={program.id === "games" ? "pg-pill pg-pill--active" : "pg-pill"}>{program.status}</span>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
 

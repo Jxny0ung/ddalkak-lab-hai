@@ -23,17 +23,17 @@ export default function AboutPage() {
         <section className="sl-page-top"><div className="sl-container">
           <span className="sl-kicker">ABOUT / EVERYONE CAN BUILD</span>
           <h1>호기심에서 시작해<br/>작동하는 결과로.</h1>
-          <p>모두의 딸깍 연구소는 학생들이 생성형 AI 사례를 탐색하고, 직접 구현하며, 경영·미디어 분야의 질문으로 확장하는 실습·연구 프로젝트입니다.</p>
+          <p>모두의 딸깍 연구소는 학생들이 학부 연구생이 AI로 논문 연구를 준비하고, 책을 읽고, 게임을 직접 구현하며, 인간–AI 상호작용을 탐색하는 융합 연구·제작 프로젝트입니다.</p>
         </div></section>
         <section className="sl-section">
           <div className="sl-container sl-detail-columns">
             <aside><span className="sl-kicker">01 / PURPOSE</span><h2>보는 것에서 만드는 것으로</h2></aside>
             <div className="sl-detail-copy">
               <h3>어떤 곳인가요?</h3>
-              <p>AI로 만든 앱, 도구, 대시보드, 인터페이스를 그대로 소비하지 않고 작은 단위로 다시 구현합니다. 만드는 과정에서 실무 문제 해결과 학문적 탐구를 함께 배우는 학부 연구생 중심의 공간입니다.</p>
+              <p>AI로 연구 문제를 탐색하고 책을 비판적으로 읽으며 웹 게임을 구현합니다. 제작 과정과 근거를 기록하고, 결과를 검증하는 학부 연구생 중심의 공간입니다.</p>
               <h3>어떤 질문을 다루나요?</h3>
-              <p>경영학의 의사결정·조직·플랫폼과 미디어커뮤니케이션의 정보 처리·신뢰·표현을 Human–AI Interaction(HAI)과 연결합니다.</p>
-              <div className="sl-actions"><Link className="sl-btn sl-btn-outline" href="/research">연구 주제 ↗</Link><Link className="sl-btn sl-btn-outline" href="/methods">연구 방법 ↗</Link><Link className="sl-btn sl-btn-outline" href="/people">학부 연구생 소개 ↗</Link></div>
+              <p>경영학의 의사결정·조직·플랫폼과 미디어커뮤니케이션의 정보·신뢰·표현을 Human–AI Interaction(HAI)이라는 교차점에서 연결합니다. 학과 간 경계가 없어졌다고 단정하기보다 전공의 방법론을 결합합니다.</p>
+              <div className="sl-actions"><Link className="sl-btn sl-btn-outline" href="/research">연구 주제 ↗</Link><Link className="sl-btn sl-btn-outline" href="/methods">연구 방법 ↗</Link><Link className="sl-btn sl-btn-outline" href="/people">학부 연구생 소개 ↗</Link><Link className="sl-btn sl-btn-outline" href="/work">네 가지 활동 보기 ↗</Link></div>
             </div>
           </div>
         </section>

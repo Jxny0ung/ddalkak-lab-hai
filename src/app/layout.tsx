@@ -7,16 +7,17 @@ import "./recommendation-a.css";
 import "./site-refinement.css";
 import "./interview-polish.css";
 import "./people.css";
+import "./programs.css";
 
 const siteUrl = "https://ddalkak-lab-hai.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "모두의 딸깍 연구소 | 직접 만들며 배우는 AI",
+    default: "모두의 딸깍 연구소 | HAI 연구·제작 플랫폼",
     template: "%s | 모두의 딸깍 연구소",
   },
-  description: "생성형 AI 사례를 탐색하고, 직접 구현하고, 나만의 경영·미디어 프로젝트로 발전시키는 학생 중심 실습·연구 플랫폼",
+  description: "전공의 경계를 넘어 HAI 관점에서 AI 연구, 책과 서평, 웹 게임, 제작 과정을 공유하는 학부 연구·제작 플랫폼",
   applicationName: "모두의 딸깍 연구소",
   openGraph: {
     type: "website",
@@ -24,7 +25,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     siteName: "모두의 딸깍 연구소",
     title: "모두의 딸깍 연구소",
-    description: "AI를 배우는 가장 좋은 방법은 직접 만들어보는 것입니다.",
+    description: "AI를 연구하고, 읽고, 만들고, 그 과정을 기록합니다.",
   },
   robots: { index: true, follow: true },
 };
