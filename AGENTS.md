@@ -5,6 +5,14 @@ A student-first platform to discover, rebuild, improve and share generative-AI u
 
 The primary visitor journey is **Home → Projects → Project detail → Try it yourself → Learn → Share**. Prioritize actual student work, transparent build notes and useful learning resources over technology spectacle.
 
+## User-approved broadened HAI mission (2026-10-16)
+
+- Primary brand is **모두의 딸깍 연구소**, a student HAI umbrella linking media studies, management and human–AI interaction. Keep the real disciplinary distinctions while crossing boundaries where useful; do not claim all social-science majors have disappeared.
+- Preserve the selected logo source with blue wordmark: `public/brand/ddalkak-wordmark.webp`, `public/brand/ddalkak-symbol.webp`, browser icon `src/app/icon.svg`. Header live text stays readable.
+- Four public areas: `/work/eth` AI-assisted ETH paper (**no unsupported detail**), `/reading` AI book reviews (**0 posts until actually written**), `/games` playable 2.5D Factory Command v0.6, `/prompts` prompt archive (**implementation only; do NOT publish real prompts**).
+- No fabricated paper results, review content, prompt texts, gameplay claims or official Toyota affiliation.
+- See `docs/hai-lab-programs-2026-10.md`; keep existing student Projects/Learn and HAI CORE without regression.
+
 ## Public information architecture
 - Home: purpose, selected projects, Explore / Rebuild / Improve / Share
 - Projects: browse and filter real demos / accurately labeled planned concepts, with process and limits
