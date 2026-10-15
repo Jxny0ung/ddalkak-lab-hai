@@ -7,7 +7,7 @@ import { studentResearchers } from "@/lib/researchers";
 
 export const metadata: Metadata = {
   title: "People | 학부 연구생",
-  description: "모두의 딸깍 연구소 학부 연구생 세 명의 소개, 관심 분야, 취미와 개인 활동 링크를 살펴보세요.",
+  description: "모두의 딸깍 연구소 학부 연구생 네 명의 소개, 관심 분야, 취미와 개인 활동 링크를 살펴보세요.",
   alternates: { canonical: "/people" },
   openGraph: {
     title: "학부 연구생 | 모두의 딸깍 연구소",
@@ -28,7 +28,7 @@ export default function PeoplePage() {
               <h1>서로 다른 관심에서<br />함께 질문을 만듭니다.</h1>
             </div>
             <div className="sl-people-intro__lead">
-              <p>경영, 금융, 회계, 음악, AI 서비스와 사용자 경험까지. 배경도 관심도 다르지만, 궁금한 것을 스스로 탐색하고 더 나은 결과를 고민한다는 점에서 만납니다.</p>
+              <p>정치커뮤니케이션과 HAI, 금융, AI 서비스와 사용자 경험까지. 서로 다른 관심에서 출발해 사람과 기술을 바라보는 시선을 나눕니다.</p>
               <p className="sl-people-intro__notice">아래 내용은 연구생들이 제공한 개인 소개를 바탕으로 정리했습니다. 관심 분야는 실제 프로젝트 담당 업무나 발표·논문 실적을 뜻하지 않습니다.</p>
             </div>
           </div>
@@ -42,7 +42,7 @@ export default function PeoplePage() {
                 <h2 id="sl-people-title">학부 연구생 소개</h2>
                 <p>사람마다 다른 시선이 연구소의 가능성을 넓힙니다.</p>
               </div>
-              <span className="sl-people-count" aria-label="공개 프로필 세 명">03 / PROFILES</span>
+              <span className="sl-people-count" aria-label={`공개 프로필 ${studentResearchers.length}명`}>{String(studentResearchers.length).padStart(2, "0")} / PROFILES</span>
             </div>
 
             <div className="sl-people-grid">
