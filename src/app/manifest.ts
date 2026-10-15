@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "DDALKAK LAB",
     short_name: "DDALKAK",
     description:
-      "경영학 × 미디어커뮤니케이션 × HAI 학부 연구·실습 프로젝트",
+      "전공의 경계를 넘어 AI와 인간의 상호작용을 연구하는 학부 연구·제작 플랫폼",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
