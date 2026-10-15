@@ -33,7 +33,7 @@ export default function AboutPage() {
               <p>HAI를 중심으로 다양한 연구 질문을 탐색합니다. 필요에 따라 실험을 설계하고 인터페이스를 만들며, 판단과 근거를 검증 가능한 기록으로 남깁니다.</p>
               <h3>어떤 질문을 다루나요?</h3>
               <p>사람이 AI를 이해하고 신뢰하며 협력하는 방식, 그리고 상호작용을 바꾸는 조건을 살펴봅니다. 연구 주제와 방법은 특정 학문이나 활동 목록으로 한정하지 않습니다.</p>
-              <div className="sl-actions"><Link className="sl-btn sl-btn-outline" href="/research">연구 주제 ↗</Link><Link className="sl-btn sl-btn-outline" href="/methods">연구 방법 ↗</Link><Link className="sl-btn sl-btn-outline" href="/people">학부 연구생 소개 ↗</Link><Link className="sl-btn sl-btn-outline" href="/work">현재 활동 보기 ↗</Link></div>
+              <div className="sl-actions"><Link className="sl-btn sl-btn-outline" href="/research">연구 주제 ↗</Link><Link className="sl-btn sl-btn-outline" href="/methods">연구 방법 ↗</Link><Link className="sl-btn sl-btn-outline" href="/people">지도교수·연구생 소개 ↗</Link><Link className="sl-btn sl-btn-outline" href="/work">현재 활동 보기 ↗</Link></div>
             </div>
           </div>
         </section>
@@ -67,7 +67,7 @@ export default function AboutPage() {
             </aside>
             <div className="sl-detail-copy">
               <h3>연구팀</h3>
-              <p>연구소의 학부 연구생 네 명을 소개합니다. 제공받은 관심 분야와 개인 소개를 중심으로 정리했으며, 프로젝트별 실제 담당 업무와 연구 실적은 확인된 뒤에만 연결합니다. 공식 대학 기관으로 오해될 표현은 사용하지 않습니다.</p><Link className="sl-text-link" href="/people">연구생 네 명의 프로필 확인하기 ↗</Link>
+              <p>지도교수 민현구 교수와 학부 연구생 네 명을 소개합니다. 교수님의 연구 경력은 공개된 자료를, 연구생 프로필은 제공받은 소개를 바탕으로 정리했습니다. 프로젝트별 담당 업무와 연구 성과는 확인된 뒤에만 연결하며, 이 사이트가 대학의 공식 기관을 대표한다는 의미는 아닙니다.</p><Link className="sl-text-link" href="/people">지도교수·연구생 프로필 확인하기 ↗</Link>
               <h3>공개된 피드백 채널</h3>
               <p>오탈자, 접근성 문제, 작동 오류, 연구 기록 개선 제안은 GitHub Issues로 전달할 수 있습니다. 이 채널은 공개되므로 개인정보, 참여자 자료, 비공개 연구 내용은 올리지 마세요.</p>
               <div className="sl-actions">
@@ -82,7 +82,7 @@ export default function AboutPage() {
         <section className="sl-section sl-section-soft">
           <div className="sl-container sl-small-callout">
             <div><span className="sl-kicker">AFFILIATION & TRANSPARENCY</span><h2>학생 중심의 독립적인 실습·연구 프로젝트</h2></div>
-            <p>HAI에 관심 있는 학부 연구생들이 자발적으로 탐구하는 연구·제작 프로젝트입니다. 공식 대학 기관이나 학과의 입장을 대표하는 사이트는 아니며, 지도 관계·소속 구성원·연구 실적은 확인된 사실과 공개 동의가 있을 때만 명시합니다.</p>
+            <p>HAI에 관심 있는 학부 연구생들이 자발적으로 탐구하는 연구·제작 프로젝트입니다. 공식 대학 기관이나 학과의 입장을 대표하는 사이트는 아니며, 교수님의 연구소 지도 관계와 구성원의 소개는 확인된 범위에서만 명시하며, 개별 연구 실적을 연구소의 성과로 혼동하지 않습니다.</p>
           </div>
         </section>
       </main>
