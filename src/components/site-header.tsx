@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useRef } from "react";
 
 const links = [
   { href: "/work", label: "Work" },
@@ -16,6 +17,7 @@ const links = [
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const mobileMenu = useRef<HTMLDetailsElement>(null);
 
   return (
     <header className="sl-header">
@@ -38,9 +40,9 @@ export function SiteHeader() {
         <Link className="sl-btn sl-btn-dark sl-header-cta" href="/work">
           연구소 활동 <span aria-hidden="true">↗</span>
         </Link>
-        <details className="sl-mobile-menu">
+        <details className="sl-mobile-menu" ref={mobileMenu} onKeyDown={e=>{if(e.key==="Escape" && mobileMenu.current){mobileMenu.current.open=false;mobileMenu.current.querySelector("summary")?.focus();}}}>
           <summary>메뉴 <span aria-hidden="true">☰</span></summary>
-          <nav aria-label="모바일 메뉴">
+          <nav aria-label="모바일 메뉴" onClick={e=>{if((e.target as HTMLElement).closest("a") && mobileMenu.current)mobileMenu.current.open=false;}}>
             {links.map((item) => (
               <Link
                 aria-current={pathname === item.href || pathname.startsWith(item.href + "/") ? "page" : undefined}

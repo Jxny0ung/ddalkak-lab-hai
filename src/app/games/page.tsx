@@ -1,55 +1,7 @@
-import type { Metadata } from "next";
+import type {Metadata} from "next";
 import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
-import { SiteFooter } from "@/components/site-footer";
-
-export const metadata: Metadata = {
-  title: "AI Games | 직접 플레이하는 실험",
-  description: "학부 연구생이 AI와 협업해 만든 TOYOTA: PRIORITY Factory Command v0.6 웹 게임을 플레이하세요.",
-  alternates: { canonical: "/games" },
-};
-
-export default function GamesPage() {
-  return (
-    <>
-      <SiteHeader />
-      <main className="sl-main sl-interior" id="main-content">
-        <section className="sl-page-top pg-heading pg-heading--compact">
-          <div className="sl-container">
-            <span className="sl-kicker">03 / BUILD / PLAY / IMPROVE</span>
-            <h1>AI와 함께 만들고,<br />브라우저에서 직접 플레이합니다.</h1>
-            <p>아이디어를 게임의 규칙과 화면으로 구현하고 실제로 동작하는지 확인합니다. 공개 게임은 누구나 실행해볼 수 있도록 별도 브라우저 화면으로 제공합니다.</p>
-          </div>
-        </section>
-        <section className="sl-section">
-          <div className="sl-container pg-game-layout">
-            <div className="pg-game-poster" aria-label="TOYOTA PRIORITY 공장 운영 시뮬레이션 미리보기 그래픽">
-              <span className="pg-game-poster__code">INTERACTIVE / FACTORY COMMAND</span>
-              <div className="pg-game-poster__visual" aria-hidden="true">
-                <span>01 · 자원 배치</span><span>02 · 공정 관리</span><span>03 · 성과 점검</span>
-              </div>
-              <strong>TOYOTA:<br /><em>PRIORITY</em></strong>
-              <small>FACTORY COMMAND · v0.6 · BROWSER GAME</small>
-            </div>
-            <div className="pg-game-info">
-              <div className="pg-game-info__status"><span className="pg-pill pg-pill--active">실행 가능한 브라우저 게임</span><span>v0.6</span></div>
-              <h2>TOYOTA: PRIORITY</h2>
-              <p className="pg-game-info__subtitle">한정된 작업자와 설비, 투자 선택이 공장 생산 흐름에 어떤 영향을 주는지 게임으로 실험하는 시뮬레이션입니다.</p>
-              <div className="pg-game-spec"><div><span>형태</span><strong>2.5D 브라우저 전략 시뮬레이션</strong></div><div><span>핵심 요소</span><strong>공정 · 작업자 · 설비 · 투자</strong></div><div><span>제공 버전</span><strong>Factory Command v0.6</strong></div></div>
-              <p>확대·이동, 진행 속도 조절, 일시정지와 라운드별 의사결정 기능을 제공합니다. 완전한 자유 회전 3D 게임은 아닙니다.</p>
-              <a className="sl-btn sl-btn-dark pg-play-link" href="/games/toyota-priority-v06.html" target="_blank" rel="noopener noreferrer">게임 새 창에서 플레이하기 <span aria-hidden="true">↗</span></a>
-              <p className="pg-game-info__disclaimer">비공식 교육·연구용 창작 게임입니다. Toyota 자동차 기업과 제휴하거나 공식 승인을 받은 게임이 아닙니다. 게임 지표와 결과는 현실 생산성과 무관합니다.</p>
-            </div>
-          </div>
-        </section>
-        <section className="sl-section sl-section-soft">
-          <div className="sl-container pg-next">
-            <div><span className="sl-kicker">BEHIND THE GAME</span><h2>플레이 이후엔 제작 과정을 검토합니다.</h2><p>게임에 사용한 프롬프트와 반복 수정 과정은 정리하되 현재 원문은 공개하지 않습니다. 인터랙션과 의사결정 과정을 연구 문제로 연결하는 것이 다음 단계입니다.</p></div>
-            <div className="sl-actions"><Link className="sl-btn sl-btn-outline" href="/prompts">프롬프트 아카이브 준비 상태 ↗</Link><Link className="sl-btn sl-btn-outline" href="/work">다른 활동 둘러보기</Link></div>
-          </div>
-        </section>
-      </main>
-      <SiteFooter />
-    </>
-  );
-}
+import {SiteHeader} from "@/components/site-header";
+import {SiteFooter} from "@/components/site-footer";
+import {FactoryIllustration} from "@/components/factory-illustration";
+export const metadata:Metadata={title:"TOYOTA: PRIORITY | Factory Command 3D",description:"직접 공장을 설계하고, 생산 흐름을 관찰하고, 세 번의 라운드에서 판단을 개선하는 3D 브라우저 시뮬레이션.",alternates:{canonical:"/games"}};
+export default function GamesPage(){return <><SiteHeader/><main className="sl-main sl-interior" id="main-content"><section className="dx-game-landing sl-container"><div className="dx-game-landing-copy"><span className="dx-eyebrow">PLAYABLE EXPERIMENT / 3D EDITION</span><h1>같은 자원.<br/><em>다른 우선순위.</em></h1><p>움직이는 공장을 보며, 결정의 결과를 배웁니다.<br/>TOYOTA: PRIORITY는 설계와 관찰, 개선을 반복하는 공장 운영 시뮬레이션입니다.</p><div className="dx-actions"><Link className="sl-btn sl-btn-dark" href="/games/toyota-priority.html">지금 플레이하기 <span aria-hidden="true">↗</span></Link><a className="dx-simple-link" href="#how-to-play">어떻게 플레이하나요? ↓</a></div><div className="dx-game-facts"><div><strong>3D</strong><span>자유 회전·확대</span></div><div><strong>3 rounds</strong><span>라운드당 5분</span></div><div><strong>8 people</strong><span>초기 작업자</span></div></div></div><div className="dx-game-landing-art"><span>TOYOTA: PRIORITY</span><FactoryIllustration/><div><span>FACTORY COMMAND / 01</span><span>DESIGN. OBSERVE. IMPROVE.</span></div></div></section><section className="dx-section sl-container" id="how-to-play"><div className="dx-section-heading"><div><span className="dx-eyebrow">YOUR NEXT DECISION</span><h2>버튼을 많이 누르는 대신,<br/>무엇을 바꿀지 결정하세요.</h2></div><p>생산은 자동으로.<br/>우선순위는 직접.</p></div><div className="dx-play-steps">{[["01","설계","4×4 공장에 공정을 배치하고, 8명의 작업자와 투자금을 나눕니다."],["02","관찰","차량의 변화, 공정별 대기열과 가동률, 현금과 재고를 확인합니다."],["03","개선","라운드 리포트로 선택과 성과를 비교한 뒤 다음 라운드를 설계합니다."]].map(([n,title,desc])=><article key={n}><span>{n}</span><h3>{title}</h3><p>{desc}</p></article>)}</div><div className="dx-game-detail-grid"><article><h3>결과가 보이는 공장</h3><p>강판에서 완성차까지 공정별로 외형이 변합니다. 기계 위치에 따른 운반시간, 실제 인력과 설비 가동이 화면에 반영됩니다.</p></article><article><h3>판단을 남기는 리포트</h3><p>매출과 비용, 출하와 재고, 라운드별 변화와 투자 내역을 확인합니다. 결과 CSV와 진행 파일을 내려받을 수 있습니다.</p></article><article><h3>중간에 멈춰도 이어서</h3><p>현재 브라우저에 자동 저장합니다. 새로고침 후 일시정지 상태로 이어가며, ×5·×20 빠른 연습도 가능합니다.</p></article></div><div className="dx-game-disclosure"><p><b>현재 제공 범위</b> · 개인 연습용입니다. 참가자 서버 저장과 상대 순위는 아직 제공하지 않습니다. 운영 지수와 주문량 보너스는 테스트용이며 연구 결과가 아닙니다.</p><p>비공식 교육용 가상 시뮬레이션입니다. Toyota와 제휴하거나 공식 승인을 받은 게임이 아닙니다.</p><Link href="/games/toyota-priority-v06.html">이전 2.5D 버전 플레이 ↗</Link></div></section><section className="dx-closing"><div className="sl-container"><div><span className="dx-eyebrow">BEHIND THE GAME</span><h2>플레이가 끝나면,<br/>새로운 질문이 시작됩니다.</h2></div><Link className="sl-btn sl-btn-dark" href="/projects">다른 프로젝트 탐색 ↗</Link></div></section></main><SiteFooter/></>;}

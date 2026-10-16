@@ -10,6 +10,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    "public/games/factory/vendor/**",
+    "public/games/factory/OrbitControls.mjs",
   ]),
 ]);
 

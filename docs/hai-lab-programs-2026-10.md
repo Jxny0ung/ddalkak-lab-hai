@@ -1,5 +1,7 @@
 # 모두의 딸깍 연구소 · HAI Umbrella / Four Programs (2026-10-16)
 
+> Historical record of the earlier four-program release. The subsequent user-approved direction centers on **Human–AI Interaction** without a degree-subject tagline or fixed activity limits; the introduction is “사람과 AI의 상호작용을 직접 탐구합니다.” The homepage reactor has been replaced, and the primary game is now `/games/toyota-priority.html` (3D). The v0.6 file remains an archive. See [the current implementation record](hai-factory-3d-upgrade-2026-10.md). Publication restrictions and asset provenance below remain applicable.
+
 ## Product decision
 
 **Name:** 모두의 딸깍 연구소 / DDALKAK LAB  

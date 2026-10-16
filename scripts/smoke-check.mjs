@@ -96,10 +96,16 @@ try {
       assert(html.includes("/researchers/kim-ye-bin.avif"), "Researcher portraits not linked");
       assert(html.indexOf("이준영") < html.indexOf("김예빈"), "Junyoung should appear first");
       assert(html.includes("/researchers/lee-junyoung.jpg"), "Junyoung portrait not linked");
-      assert(html.includes("개인 소개"), "People page lacks provenance disclosure");
+      assert(html.includes("각 연구생이 제공한 회화풍 이미지") && html.includes("성과 기록은 확인 후"), "People page lacks portrait provenance and achievement disclosure");
+    }
+    if (route === "/" || route === "/people") {
+      const peopleOrder = ["min-hyunku", "lee-junyoung", "kim-ye-bin", "kim-min-a", "eom-tae-yeon"];
+      const positions = peopleOrder.map((id) => html.indexOf(route === "/" ? `/people#${id}` : `id="${id}"`));
+      assert(positions.every((position, index) => position >= 0 && (index === 0 || position > positions[index - 1])), `${route}: faculty and undergraduate ordering changed`);
+      assert(html.includes("민현구"), `${route}: faculty introduction missing`);
     }
     if (route === "/") {
-      assert(html.includes("지금 진행 중인 탐구와 실험"), "Homepage current-activity showcase missing");
+      assert(html.includes("SELECTED WORK"), "Homepage current-activity showcase missing");
       assert(html.includes("/brand/ddalkak-symbol.webp"), "Approved logo missing from site header");
     }
     if (route === "/work") {
@@ -120,7 +126,8 @@ try {
       assert(html.includes("프롬프트 본문은 게시하지 않습니다"), "Prompt embargo explanation missing");
     }
     if (route === "/games") {
-      assert(html.includes("/games/toyota-priority-v06.html"), "Playable game link missing");
+      assert(html.includes("/games/toyota-priority.html"), "3D playable game link missing");
+      assert(html.includes("서버 저장"), "Solo practice limitation missing");
       assert(html.includes("공식 승인을 받은 게임이 아닙니다"), "Unofficial simulation notice missing");
     }
     if (route === "/lab") {
@@ -160,6 +167,14 @@ try {
   assert(art.status === 200, "HAI neural interaction artwork missing");
   assert((await art.text()).includes("neural flow"), "HAI neural visual content incorrect");
   console.log("PASS HAI volumetric visual");
+  for (const asset of ["/games/toyota-priority.html", "/games/factory/app.mjs", "/games/factory/engine.mjs", "/games/factory/scene.mjs", "/games/factory/game.css", "/games/factory/OrbitControls.mjs", "/games/factory/vendor/three.module.js", "/games/factory/vendor/three.core.js"]) {
+    const response = await fetch(origin + asset, { signal: AbortSignal.timeout(12000) });
+    assert(response.status === 200, `3D game asset missing: ${asset}`);
+    const text = await response.text();
+    assert(text.length > 100, `Empty game asset: ${asset}`);
+    if (asset.endsWith('.mjs') || asset.endsWith('.js')) assert((response.headers.get('content-type') ?? '').includes('javascript'), `Wrong module MIME: ${asset}`);
+    console.log(`PASS game asset ${asset}`);
+  }
   const gameResponse = await fetch(origin + "/games/toyota-priority-v06.html", { signal: AbortSignal.timeout(12000) });
   const gameSource = await gameResponse.text();
   assert(gameResponse.status === 200, "Game source did not deploy");
