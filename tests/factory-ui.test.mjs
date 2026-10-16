@@ -5,7 +5,8 @@ import {readFile} from 'node:fs/promises';
 import vm from 'node:vm';
 import {JSDOM} from 'jsdom';
 import * as THREE from 'three';
-const files={app:await readFile('public/games/factory/app.mjs','utf8'),engine:await readFile('public/games/factory/engine.mjs','utf8'),scene:await readFile('public/games/factory/scene.mjs','utf8'),orbit:await readFile('public/games/factory/OrbitControls.mjs','utf8')};
+// Read the pinned source copied by prepare-game-assets, so tests also run before a build.
+const files={app:await readFile('public/games/factory/app.mjs','utf8'),engine:await readFile('public/games/factory/engine.mjs','utf8'),scene:await readFile('public/games/factory/scene.mjs','utf8'),orbit:await readFile('node_modules/three/examples/jsm/controls/OrbitControls.js','utf8')};
 async function boot(saved=null,{brokenWebGL=false}={}){
   const dom=new JSDOM(await readFile('public/games/toyota-priority.html','utf8'),{url:'https://ddalkak-lab-hai.vercel.app/games/toyota-priority.html',runScripts:'outside-only',pretendToBeVisual:true});
   const {window:w}=dom,context=dom.getInternalVMContext(),raf=[],errors=[];let inspectedScene=null,inspectedCamera=null;
