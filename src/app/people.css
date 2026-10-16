@@ -236,3 +236,29 @@
   .sl-faculty-extra .sl-faculty-detail-grid { grid-template-columns: 1fr; gap: 23px; }
   .sl-faculty-extra { padding-top: 24px; }
 }
+
+/* The personal website is available by clicking Junyoung Lee's name. */
+.sl-person-card__name-link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 5px;
+  color: inherit;
+  text-decoration: none;
+  transition: color .2s ease;
+}
+.sl-person-card__name-link span {
+  color: #46725c;
+  font-size: .55em;
+  font-weight: 600;
+  vertical-align: baseline;
+}
+.sl-person-card__name-link:hover { color: #276248; }
+.sl-person-card__name-link:hover span { text-decoration: underline; }
+.sl-person-card__name-link:focus-visible {
+  outline: 2px solid #276248;
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .sl-person-card__name-link { transition: none; }
+}
