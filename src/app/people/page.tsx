@@ -119,7 +119,21 @@ export default function PeoplePage() {
                   <div className="sl-person-card__body">
                     <div className="sl-person-card__name-row">
                       <div>
-                        <h3>{person.name}</h3>
+                        <h3>
+                          {person.id === "lee-junyoung" ? (
+                            <a
+                              className="sl-person-card__name-link"
+                              href="https://junyoung-lee.vercel.app/"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              aria-label="이준영 개인 홈페이지 새 창에서 열기"
+                            >
+                              {person.name} <span aria-hidden="true">↗</span>
+                            </a>
+                          ) : (
+                            person.name
+                          )}
+                        </h3>
                         <p>{person.englishName}</p>
                       </div>
                       <span className="sl-person-card__mbti">{person.mbti}</span>
