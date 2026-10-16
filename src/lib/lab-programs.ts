@@ -26,7 +26,7 @@ export const labPrograms = [
     index: "03",
     eyebrow: "MAKE / PLAY / REVIEW",
     title: "AI로 만드는 웹 게임",
-    description: "게임 기획, 제작, 시연을 통해 AI 협업과 상호작용을 탐색합니다. TOYOTA: PRIORITY Factory Command v0.6 브라우저 플레이 버전을 공개했습니다.",
+    description: "게임 기획, 제작, 시연을 통해 AI 협업과 상호작용을 탐색합니다. TOYOTA: PRIORITY Factory Command 3D 브라우저 플레이 버전을 공개했습니다.",
     status: "플레이 가능",
     href: "/games",
     action: "게임 실행하러 가기",

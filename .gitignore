@@ -37,3 +37,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Reproducible, pinned browser game dependencies (prepared before dev/build)
+/public/games/factory/vendor/
+/public/games/factory/OrbitControls.mjs
