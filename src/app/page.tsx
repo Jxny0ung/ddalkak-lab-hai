@@ -47,8 +47,8 @@ export default function Home() {
           <Link className="dx-simple-link" href="/people">지도교수·연구생 만나기 <span aria-hidden="true">↗</span></Link>
         </div>
         <div className="dx-people-list">
-          <Link className="dx-people-faculty" href="/people#min-hyunku"><span>교수</span><strong>민현구</strong><small>지도교수 · 경영전략 · 기술경영 · 데이터 분석</small><b aria-hidden="true">↗</b></Link>
-          {studentResearchers.map((person,i)=><Link href={`/people#${person.id}`} key={person.id}><span>{String(i+1).padStart(2,"0")}</span><strong>{person.name}</strong><small>{person.focus.join(" · ")}</small><b aria-hidden="true">↗</b></Link>)}
+          <Link className="dx-people-faculty" href="/people#min-hyunku"><Image src="/researchers/min-hyunku-hq.webp" alt="" width={44} height={44}/><strong>민현구</strong><small>지도교수 · 경영전략 · 기술경영 · 데이터 분석</small><b aria-hidden="true">↗</b></Link>
+          {studentResearchers.map((person)=><Link href={`/people#${person.id}`} key={person.id}><Image src={person.illustration} alt="" width={44} height={44}/><strong>{person.name}</strong><small>{person.focus.join(" · ")}</small><b aria-hidden="true">↗</b></Link>)}
         </div>
       </section>
       <section className="dx-closing"><div className="sl-container"><div><Image src="/brand/ddalkak-symbol.webp" alt="" width={55} height={45}/><h2>다음 질문은,<br />어디에서 시작될까요?</h2></div><Link className="sl-btn sl-btn-dark" href="/learn">작은 실험 시작하기 <span aria-hidden="true">↗</span></Link></div></section>
