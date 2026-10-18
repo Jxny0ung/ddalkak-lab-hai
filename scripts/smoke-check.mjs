@@ -127,7 +127,7 @@ try {
     }
     if (route === "/games") {
       assert(html.includes("/games/toyota-priority.html"), "3D playable game link missing");
-      assert(html.includes("서버 저장"), "Solo practice limitation missing");
+      assert(html.includes("현재 브라우저에 저장") && html.includes("서버 동기화와 참가자 상대 순위는 제공하지 않습니다"), "Browser-only record limitation missing");
       assert(html.includes("공식 승인을 받은 게임이 아닙니다"), "Unofficial simulation notice missing");
     }
     if (route === "/lab") {
@@ -167,7 +167,7 @@ try {
   assert(art.status === 200, "HAI neural interaction artwork missing");
   assert((await art.text()).includes("neural flow"), "HAI neural visual content incorrect");
   console.log("PASS HAI volumetric visual");
-  for (const asset of ["/games/toyota-priority.html", "/games/factory/app.mjs", "/games/factory/engine.mjs", "/games/factory/scene.mjs", "/games/factory/game.css", "/games/factory/OrbitControls.mjs", "/games/factory/vendor/three.module.js", "/games/factory/vendor/three.core.js"]) {
+  for (const asset of ["/games/toyota-priority.html", "/games/factory/app.mjs", "/games/factory/engine.mjs", "/games/factory/scene.mjs", "/games/factory/records.mjs", "/games/factory/industrial.css", "/games/factory/game.css", "/games/factory/OrbitControls.mjs", "/games/factory/vendor/three.module.js", "/games/factory/vendor/three.core.js"]) {
     const response = await fetch(origin + asset, { signal: AbortSignal.timeout(12000) });
     assert(response.status === 200, `3D game asset missing: ${asset}`);
     const text = await response.text();

@@ -3,14 +3,14 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "node scripts/dev.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
     "smoke": "node scripts/smoke-check.mjs",
     "predev": "node scripts/prepare-game-assets.mjs",
     "prebuild": "node scripts/prepare-game-assets.mjs",
-    "test:game": "node --test tests/factory-engine.test.mjs",
+    "test:game": "node --test tests/factory-engine.test.mjs tests/factory-records.test.mjs",
     "test:ui": "node --experimental-vm-modules --test tests/factory-ui.test.mjs"
   },
   "dependencies": {

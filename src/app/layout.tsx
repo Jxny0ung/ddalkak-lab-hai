@@ -10,6 +10,7 @@ import "./people.css";
 import "./programs.css";
 import "./hai-identity.css";
 import "./lab-upgrade.css";
+import "./editorial-finish.css";
 
 const siteUrl = "https://ddalkak-lab-hai.vercel.app";
 
