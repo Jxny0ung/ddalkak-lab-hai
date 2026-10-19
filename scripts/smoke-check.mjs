@@ -167,7 +167,7 @@ try {
   assert(art.status === 200, "HAI neural interaction artwork missing");
   assert((await art.text()).includes("neural flow"), "HAI neural visual content incorrect");
   console.log("PASS HAI volumetric visual");
-  for (const asset of ["/games/toyota-priority.html", "/games/factory/app.mjs", "/games/factory/engine.mjs", "/games/factory/scene.mjs", "/games/factory/records.mjs", "/games/factory/industrial.css", "/games/factory/game.css", "/games/factory/OrbitControls.mjs", "/games/factory/vendor/three.module.js", "/games/factory/vendor/three.core.js"]) {
+  for (const asset of ["/games/toyota-priority.html", "/games/factory/app.mjs", "/games/factory/engine.mjs", "/games/factory/scene.mjs", "/games/factory/records.mjs", "/games/factory/industrial.css", "/games/factory/immersive.css", "/games/factory/campaign.mjs", "/games/factory/game.css", "/games/factory/OrbitControls.mjs", "/games/factory/vendor/three.module.js", "/games/factory/vendor/three.core.js"]) {
     const response = await fetch(origin + asset, { signal: AbortSignal.timeout(12000) });
     assert(response.status === 200, `3D game asset missing: ${asset}`);
     const text = await response.text();
