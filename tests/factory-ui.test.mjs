@@ -6,7 +6,7 @@ import vm from 'node:vm';
 import {JSDOM} from 'jsdom';
 import * as THREE from 'three';
 // Read the pinned source copied by prepare-game-assets, so tests also run before a build.
-const files={records:await readFile('public/games/factory/records.mjs','utf8'),app:await readFile('public/games/factory/app.mjs','utf8'),engine:await readFile('public/games/factory/engine.mjs','utf8'),scene:await readFile('public/games/factory/scene.mjs','utf8'),orbit:await readFile('node_modules/three/examples/jsm/controls/OrbitControls.js','utf8')};
+const files={campaign:await readFile('public/games/factory/campaign.mjs','utf8'),records:await readFile('public/games/factory/records.mjs','utf8'),app:await readFile('public/games/factory/app.mjs','utf8'),engine:await readFile('public/games/factory/engine.mjs','utf8'),scene:await readFile('public/games/factory/scene.mjs','utf8'),orbit:await readFile('node_modules/three/examples/jsm/controls/OrbitControls.js','utf8')};
 async function boot(saved=null,{brokenWebGL=false,quota=false}={}){
   const dom=new JSDOM(await readFile('public/games/toyota-priority.html','utf8'),{url:'https://ddalkak-lab-hai.vercel.app/games/toyota-priority.html',runScripts:'outside-only',pretendToBeVisual:true});
   const {window:w}=dom,context=dom.getInternalVMContext(),raf=[],errors=[];let inspectedScene=null,inspectedCamera=null;
@@ -24,11 +24,11 @@ async function boot(saved=null,{brokenWebGL=false,quota=false}={}){
   const three=new vm.SyntheticModule(Object.keys(THREE),function(){for(const k of Object.keys(THREE))this.setExport(k,k==='WebGLRenderer'?Renderer:THREE[k]);},{context});
   const modules={three};
   const make=(name)=>new vm.SourceTextModule(files[name],{context,identifier:name,importModuleDynamically:async spec=>{const mod=modules[spec==='./scene.mjs'?'scene':spec];if(mod.status==='unlinked')await mod.link(linker);if(mod.status==='linked')await mod.evaluate();return mod;}});
-  for(const n of ['engine','records','scene','orbit','app'])modules[n]=make(n);
-  async function linker(spec){if(spec==='three')return three;if(spec.endsWith('records.mjs'))return modules.records;if(spec.endsWith('engine.mjs'))return modules.engine;if(spec.endsWith('OrbitControls.mjs'))return modules.orbit;throw Error('Unexpected module '+spec);}
+  for(const n of ['engine','records','campaign','scene','orbit','app'])modules[n]=make(n);
+  async function linker(spec){if(spec==='three')return three;if(spec.endsWith('campaign.mjs'))return modules.campaign;if(spec.endsWith('records.mjs'))return modules.records;if(spec.endsWith('engine.mjs'))return modules.engine;if(spec.endsWith('OrbitControls.mjs'))return modules.orbit;throw Error('Unexpected module '+spec);}
   await modules.app.link(linker);await modules.app.evaluate();
   const doc=w.document;
-  const register=(name='테스트 참가자',department='테스트학과')=>{doc.getElementById('participantName').value=name;doc.getElementById('participantDepartment').value=department;doc.getElementById('participantForm').dispatchEvent(new w.Event('submit',{cancelable:true}));};
+  const register=(name='테스트 참가자',department='테스트학과')=>{doc.getElementById('participantName').value=name;doc.getElementById('participantDepartment').value=department;doc.getElementById('participantForm').dispatchEvent(new w.Event('submit',{cancelable:true}));if(doc.getElementById('campaignDialog').open)doc.getElementById('campaignDialog').close();};
   return {w,doc,errors,modules,register,click:id=>doc.getElementById(id).click(),get saved(){return JSON.parse(w.localStorage.getItem('ddalkak-factory-3d-v1'));},frame(t){const fn=raf.shift();assert.ok(fn,'animation frame registered');fn(t);},get scene(){return inspectedScene;},get camera(){return inspectedCamera;},close:()=>w.close()};
 }
 
@@ -58,7 +58,7 @@ test('corrupt report storage recovers to a new game, and WebGL failure keeps 2D 
   const app=await boot({engine:snap},{brokenWebGL:true});try{assert.ok(app.doc.getElementById('scene').classList.contains('failed'));assert.equal(app.doc.querySelectorAll('#grid button').length,16);app.click('beginBtn');app.register();app.click('startBtn');app.frame(100);app.frame(250);app.click('saveBtn');assert.equal(app.saved.engine.round,1);assert.equal(app.saved.engine.phase,'running');assert.deepEqual(app.errors,[]);}finally{app.close();}
 });
 test('full keyboard route keeps stage-control focus after staffing changes',async()=>{
-  const app=await boot();try{app.click('beginBtn');app.register();const minus=app.doc.querySelector('[data-staff="0"][data-delta="-1"]');minus.focus();minus.click();assert.equal(app.doc.activeElement.dataset.select,'0');const plus=app.doc.querySelector('[data-staff="1"][data-delta="1"]');plus.focus();plus.click();assert.equal(app.doc.activeElement.dataset.select,'1');}finally{app.close();}
+  const app=await boot();try{app.click('beginBtn');app.register();app.click('facilityBtn');const minus=app.doc.querySelector('[data-staff="0"][data-delta="-1"]');minus.focus();minus.click();assert.equal(app.doc.activeElement.dataset.select,'0');app.doc.querySelector('#stageRail [data-stage="1"]').click();const plus=app.doc.querySelector('[data-staff="1"][data-delta="1"]');plus.focus();plus.click();assert.equal(app.doc.activeElement.dataset.select,'1');}finally{app.close();}
 });
 
  test('new participants keep independent archived records and clean input fields',async()=>{
@@ -76,4 +76,37 @@ test('older imported design cannot overwrite an upgraded current run',async()=>{
 });
 test('storage quota permits a new run after progress export is explicitly requested',async()=>{
  const app=await boot(null,{quota:true});try{app.click('beginBtn');app.register('용량 테스트','검증학과');app.click('resetBtn');app.click('confirmReset');assert.ok(app.doc.getElementById('resetDialog').open);app.click('cancelReset');app.click('exportSave');app.click('resetBtn');app.click('confirmReset');assert.equal(app.doc.getElementById('resetDialog').open,false);assert.ok(app.doc.getElementById('playerDialog').open);assert.equal(app.doc.getElementById('participantName').value,'');assert.match(app.doc.getElementById('saveStatus').textContent,/저장 공간/);}finally{app.close();}
+});
+
+test('in-world facility and placement trays stay exclusive; moving requires explicit layout mode',async()=>{
+ const app=await boot();try{
+  app.click('beginBtn');app.register();const original=app.saved.engine.positions[0];
+  app.doc.querySelector('#grid [data-cell="0"]').click();app.click('saveBtn');assert.equal(app.saved.engine.positions[0],original,'normal factory clicks must not move a machine');
+  app.doc.querySelector('#stageRail [data-stage="1"]').click();assert.equal(app.doc.getElementById('facilityPanel').hidden,false);assert.equal(app.doc.querySelector('.stage-card.selected [data-select]').dataset.select,'1');
+  app.click('placeSelectedBtn');assert.equal(app.doc.getElementById('facilityPanel').hidden,true);assert.equal(app.doc.getElementById('placementPanel').hidden,false);
+  app.doc.querySelector('#grid [data-cell="0"]').click();assert.equal(app.saved.engine.positions[1],0);app.click('closePlacement');assert.equal(app.doc.body.dataset.tray,undefined);
+  app.click('startBtn');app.click('layoutBtn');app.doc.querySelector('#grid [data-cell="1"]').click();app.click('saveBtn');assert.equal(app.saved.engine.positions[1],0,'production locks layout changes');assert.deepEqual(app.errors,[]);
+ }finally{app.close();}
+});
+
+test('menu dialogs pause production while nonmodal machine observation leaves it running',async()=>{
+ const app=await boot();try{
+  app.click('beginBtn');app.register();app.click('startBtn');app.frame(100);app.doc.querySelector('#stageRail [data-stage="2"]').click();app.frame(250);app.click('saveBtn');const before=app.saved.engine.time;assert.ok(before>0);assert.equal(app.doc.getElementById('pauseBtn').textContent,'일시정지');
+  app.click('menuBtn');app.doc.querySelector('#menuDialog [data-open="cameraDialog"]').click();app.frame(400);app.click('saveBtn');assert.equal(app.saved.engine.time,before);app.doc.getElementById('menuDialog').close();assert.equal(app.doc.getElementById('pauseBtn').textContent,'재개 ▶','closing a lower dialog cannot resume under another dialog');app.doc.getElementById('cameraDialog').close();app.frame(550);app.click('saveBtn');assert.ok(app.saved.engine.time>before);assert.deepEqual(app.errors,[]);
+ }finally{app.close();}
+});
+
+test('chapter goals follow actual shipments; round report leads to the next briefing',async()=>{
+ const app=await boot();try{
+  app.click('beginBtn');app.register();assert.match(app.doc.getElementById('mission').textContent,/첫 출하/);app.click('startBtn');const speed=app.doc.getElementById('speedSelect');speed.value='20';speed.dispatchEvent(new app.w.Event('change'));
+  let time=100;app.frame(time);for(let i=0;i<30;i++){time+=150;app.frame(time);}assert.match(app.doc.getElementById('chapterGoals').textContent,/1 \/ 1대/);assert.equal(app.doc.getElementById('milestone').hidden,false);
+  for(let i=0;i<75;i++){time+=150;app.frame(time);}assert.equal(app.doc.getElementById('reportDialog').open,true);app.click('reportNext');assert.equal(app.doc.getElementById('reportDialog').open,false);assert.equal(app.doc.getElementById('campaignDialog').open,true);assert.equal(app.saved.engine.round,2);assert.match(app.doc.getElementById('chapterGoals').textContent,/기존 전략 유지/);app.click('questAction');assert.equal(app.saved.engine.phase,'running');assert.equal(app.doc.getElementById('campaignDialog').open,false);assert.deepEqual(app.errors,[]);
+ }finally{app.close();}
+});
+
+test('restoring completed shipment goals does not replay milestone notifications or alter the economy',async()=>{
+ const {FactoryEngine}=await import('../public/games/factory/engine.mjs');const engine=new FactoryEngine();engine.buy(1);engine.start();engine.advance(160);const snapshot=engine.snapshot();
+ const app=await boot({engine:snapshot,speed:1,selected:0,session:{id:'restore-goals-1234',createdAt:new Date().toISOString(),profile:{name:'복원 검증',department:'검증학과'}}});try{
+  app.frame(100);app.frame(250);assert.equal(app.doc.getElementById('milestone').hidden,true);app.click('saveBtn');assert.equal(app.saved.engine.cash,snapshot.cash);assert.equal(app.saved.engine.data.shipped,snapshot.data.shipped);assert.equal(app.saved.engine.time,snapshot.time);assert.deepEqual(app.errors,[]);
+ }finally{app.close();}
 });

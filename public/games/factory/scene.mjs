@@ -44,7 +44,7 @@ function profileBody(parent,outline,width,mat) {
 
 export class FactoryScene {
   constructor(container,engine,onSelect,onMove,onError) {
-    this.container=container;this.engine=engine;this.selected=0;this.machines=[];this.cars=new Map();this.onError=onError;
+    this.placementMode=false;this.container=container;this.engine=engine;this.selected=0;this.machines=[];this.cars=new Map();this.onError=onError;
     this.scene=new T.Scene();this.scene.background=new T.Color('#0c141d');this.scene.fog=new T.Fog('#0c141d',32,68);
     this.renderer=new T.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
     this.renderer.shadowMap.type=T.PCFSoftShadowMap;this.renderer.toneMapping=T.ACESFilmicToneMapping;this.renderer.toneMappingExposure=1.18;
@@ -65,7 +65,7 @@ export class FactoryScene {
       const r=this.renderer.domElement.getBoundingClientRect();this.pointer.set((e.clientX-r.left)/r.width*2-1,-(e.clientY-r.top)/r.height*2+1);this.ray.setFromCamera(this.pointer,this.camera);
       const machines=this.ray.intersectObjects(this.machines.map(m=>m.g),true).filter(h=>h.object.isMesh&&h.object.userData.station!==undefined);
       if(machines.length){onSelect(machines[0].object.userData.station);return;}
-      const hits=this.ray.intersectObjects(this.tiles,false);if(!hits.length)return;const cell=hits[0].object.userData.cell,i=this.engine.s.positions.indexOf(cell);if(i>=0)onSelect(i);else if(this.engine.editable)onMove(cell);
+      const hits=this.ray.intersectObjects(this.tiles,false);if(!hits.length)return;const cell=hits[0].object.userData.cell,i=this.engine.s.positions.indexOf(cell);if(i>=0)onSelect(i);else if(this.placementMode&&this.engine.editable)onMove(cell);
     });
     this.renderer.domElement.addEventListener('pointercancel',e=>{this.activePointers.delete(e.pointerId);this.dragStart=null;});
     this.renderer.domElement.addEventListener('webglcontextlost',e=>{e.preventDefault();onError('3D 화면 연결이 중단되었습니다. 저장 후 새로고침하거나 배치 편집기를 이용하세요.');});
@@ -104,7 +104,7 @@ export class FactoryScene {
     this.renderer.shadowMap.enabled=quality!=='low';this.keyLight.shadow.mapSize.set(quality==='high'?2048:1024,quality==='high'?2048:1024);
     this.keyLight.shadow.map?.dispose();this.keyLight.shadow.map=null;this.resize();
   }
-  resize(){const w=this.container.clientWidth,h=this.container.clientHeight;if(!w||!h)return;this.renderer.setSize(w,h);this.camera.aspect=w/h;this.camera.updateProjectionMatrix();}
+  resize(){const w=this.container.clientWidth,h=this.container.clientHeight;if(!w||!h)return;this.renderer.setSize(w,h);this.camera.aspect=w/h;this.camera.fov=w/h<.75?60:36;this.camera.updateProjectionMatrix();}
   at(p){return new T.Vector3((p.x-1.5)*SPACE,.39,(p.z-1.5)*SPACE);}
   robot(parent,x,z,side=1) {
     const g=new T.Group();g.position.set(x,.28,z);parent.add(g);
@@ -224,7 +224,7 @@ export class FactoryScene {
   rotate(direction){const p=this.camera.position.clone().sub(this.controls.target);p.applyAxisAngle(axis,direction*Math.PI/8);this.camera.position.copy(this.controls.target).add(p);this.controls.update();}
   zoom(direction){const p=this.camera.position.clone().sub(this.controls.target);p.multiplyScalar(direction>0?.85:1.18).clampLength(5,38);this.camera.position.copy(this.controls.target).add(p);this.controls.update();}
   render(selected) {
-    this.selected=selected;this.sync();const s=this.engine.s;this.tileEdges.visible=this.engine.editable;
+    this.selected=selected;this.sync();const s=this.engine.s;this.tileEdges.visible=this.placementMode&&this.engine.editable;
     this.machines.forEach((m,i)=>{
       const job=s.jobs.find(j=>j.id===s.processing[i]),p=job?T.MathUtils.clamp((s.time-job.start)/(job.end-job.start),0,1):0;
       const approach=Math.sin(Math.PI*p),work=job&&p>.22&&p<.82;
